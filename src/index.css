@@ -11,3 +11,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* NAVBAR */
+.navbar-header{
+  height: 90px;
+  padding-top: 30px;
+}
+
+/* ABOUT US */
+.btn-green {
+  background-color: #25bcb5;
+  border-color: #25bcb5;
+}
+
+.btn-green:hover {
+  background-color: #23a6a0;
+  border-color: #23a6a0;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid #f1f2f8;
+}
+.footer-links a{
+  margin: 0 10px;
+  color: #111236;
+}
+a{
+  text-decoration: none;
+}
+.social-link {
+  color: #2c3e50;
+  margin: 0 10px;
+}
+.copyright{
+  background: #f9f9f9;
+  font-size: .75rem;
+  color: #999;
+  padding: 4px 0;
+}
+.select-language{
+  width: 258px;
+}

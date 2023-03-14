@@ -1,0 +1,30 @@
+{
+    "nav":{
+        "aboutUs": "Despre noi",
+        "how-it-works": "Cum funcționează",
+        "questions": "Înterbări frecvente",
+        "login": "Login",
+        "buy-now": "CUMPĂRĂ ACUM"
+    },
+    "about-us":{
+        "title": "Despre Cardanti",
+        "part1":{
+            "h1": "Cum am început",
+            "1-paragraph": "În ultimii ani am petrecut mult timp la evenimente promovând un alt produs pe care il dezvoltăm: un portofel electronic care permite efectuarea de plăţi securizate pe blockchain.",
+            "2-paragraph": "În ciuda futurismului discuţiei, la un moment dat oamenii ne cereau cărţi de vizită pentru a ne contacta. Pentru noi această antiteză a fost puţin ciudată: promovăm sisteme sofisticate de plăţi electronice descentralizate în societăţi fără cash, în timp oamenii vor să se conecteze cu noi folosind echivalentul banilor fizici pentru date de contact: cărţile de vizită printate pe hârtie sau carton.",
+            "3-paragraph": "Apoi, aproape fără excepţie, urma partea în care ne căutam profilele de LinkedIn pe telefoanele străinilor pentru că nu ne puteau pronunţa numele corect."
+        },
+        "part2":{
+            "h1": "Soluţia noastră",
+            "1-paragraph": "Având experienţa dezvoltării cardurilor NFC în ecosistem bazat pe privacy, am creat un produs care elimină problemele de tipul celei menţionate mai sus, în care un utilizator digital se întâlneşte cu un utilizator al cărţilor de vizită clasice, printate.",
+            "2-paragraph": "După chipul si asemănarea noastră, produsul pe care l-am dezvoltat are două componente, cea fizică şi cea digitală: Cardul de Vizită Smart Cardanti şi Profilul Cardanti de Business. Cele două componente se completează astfel încât să simuleze cât mai fidel experienţa conferită de cărţile de vizită clasice, păstrând acest placut obicei nealterat.",
+            "3-paragraph": "Asemenea cărţilor de vizită de hârtie, oamenii care folosesc Cardanti nu sunt nevoiţi să instaleze vreo aplicaţie pentru a face schimb de informaţii de contact.",
+            "4-paragraph": "Cardanti este o soluţie de business unică ce concurează pe nişele cărţilor de vizită luxury şi a cărţilor de vizită premium."
+        },
+        "part3":{
+            "h1": "Misiunea noastră",
+            "1-paragraph": "Avem misiunea de a face din Cardanti cea mai bună versiune de carte de vizită fizică, eliminând nevoia de a printa cărţi de vizită de hartie. Ethos-ul nostru este bazat pe sustenabilitate făcând din asta prioritatea noastră. În acest sens, plantăm câte un copac pentru fiecare dintre cărţile de vizită ecologice pe care le vindem."
+        },
+        "how-it-works-btn": "Cum funcționează"
+    }
+}

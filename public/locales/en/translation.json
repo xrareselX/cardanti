@@ -1,0 +1,30 @@
+{
+    "nav":{
+    "aboutUs": "About us",
+    "how-it-works": "How it works",
+    "questions": "Help",
+    "login": "Login",
+    "buy-now": "BUY NOW"
+    },
+    "about-us":{
+        "title": "About Us",
+        "part1":{
+            "h1": "How it started",
+            "1-paragraph": "For the past years we've been going to events with our other product: a Blockchain Wallet that allows you to make blockchain transactions face to face using a proprietary card, making your phone a POS.",
+            "2-paragraph": "Regardless of how futuristic our discussions were, at some point people asked for our business cards. For us it felt a bit off brand to talk about decentralized payments in cashless societies and hand over the equivalent of cash for information: a paper business card.",
+            "3-paragraph": "What followed next was the part where you end up searching your LinkedIn profile on strangers' smartphones because they can't spell your name."
+        },
+        "part2":{
+            "h1": "Our Solution",
+            "1-paragraph": "Using our knowledge of NFC cards and data privacy, we created a product that eliminates this friction between digital business cards and paper business card users. Our NFC Business Cards had no initial market purpose, but as soon as we used it, people asked us how to get their own, and this is how Cardanti was born.",
+            "2-paragraph": "Just like ourselves, the product has both a physical and a digital side: your Cardanti Card and Cardanti Business Profile. We built it to be as close as possible to the experience of offering paper business cards. As with using paper business cards, people using Cardanti don't need an app to exchange contact information.",
+            "3-paragraph": "Cardanti enhances networking. It allows people who just met to easily add themselves in their digital contact lists using a smart business card.",
+            "4-paragraph": "Cardanti is a unique business card solution, it was designed to compete on the luxury business cards and premium business cards market."
+        },
+        "part3":{
+            "h1": "Our mission",
+            "1-paragraph": "Our mission is to make Cardanti the best version of business cards and eliminate the need to print paper cards. We believe sustainability is a matter of now, so for every of our eco business cards sold, a tree is planted."
+        },
+        "how-it-works-btn": "How it works"
+    }
+}
