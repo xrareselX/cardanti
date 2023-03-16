@@ -12,16 +12,76 @@ code {
     monospace;
 }
 /* NAVBAR */
-.navbar-header{
-  height: 90px;
-  padding-top: 30px;
+header{
+  transition: height .2s linear,padding-top .2s linear;
+  background-color: #fff;
 }
+@media only screen and (min-width: 992px) {
+  .navbar-header{
+    height: 90px;
+    padding-top: 30px;
+  }
+}
+.btn-uppercase{
+  text-transform: uppercase;
+  letter-spacing: 2px;;
+}
+.btn-login{
+  padding: 9px 25px 9px 20px;
+  color: #111236;
+  margin-left: 20px;
+  font-weight: 600; 
+  position: relative;
+  right:-3px; 
+  font-size: 1rem;
+}
+.btn-login::before{
+  content : "";
+  position: absolute;
+  left    : 0;
+  height  : 50%;
+  width   : 1px;  
+  border-left :1px solid #b2b2bf;
+}
+.btn-login:hover{
+  color: #25bcb5;
+}
+.top-link{
+  padding: 9px 0 9px 0 ;
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111236;
+}
+top-link :hover{
+  color: #23a6a0 !important ;
+}
+
+header.scrolled{
+  padding-top: 0;
+  border-bottom: 1px solid rgba(72,94,144,.16);
+}
+@media screen and (min-width: 768px){
+  .scrolled{
+    height: 60px;
+  }
+}
+
 
 /* ABOUT US */
 .btn-green {
   background-color: #25bcb5;
   border-color: #25bcb5;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
 }
+.btn-small{
+  padding: 9px 14px;
+  font-size: 1rem;
+} 
 
 .btn-green:hover {
   background-color: #23a6a0;
