@@ -67,7 +67,52 @@ header.scrolled{
     height: 60px;
   }
 }
-
+.locale-selector{
+  width: 26px;
+  margin-left: 10px;
+  position: relative;
+}
+.locale-selector ul{
+  padding-left: 0;
+  padding-top: 11px;
+  list-style: none;
+  /* display: none; */
+}
+.loc-switcher{
+    position: absolute;
+    top: 30px;
+    left: -98px;
+    background-color: #fff;
+    border: 1px solid #000;
+    z-index: 10000;
+}
+.loc-switcher-item{
+  cursor: pointer;
+  display: flex;
+  min-width: 200px;
+  margin: 0 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: "Source Sans Pro",sans-serif;
+}
+/* practic mai jos ca sa obtii sageata aia ai fct un patrat rotit cu 45 de grade */
+.loc-switcher-special{ 
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  position: absolute;
+  top: -10px;
+  left: 100px;
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+}
+.round-icon{
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  margin-right: 8px;
+}
 
 /* ABOUT US */
 .btn-green {

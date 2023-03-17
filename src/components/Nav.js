@@ -4,19 +4,21 @@ import { faTiktok } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "react-i18next";
 import Button from "react-bootstrap/Button"
 import { useState } from "react";
-
+import Dropdown from "./Dropdown";
+import LanguageSwitcher from "./LanguageSwitcher";
+import {ReactComponent as FirstIcon} from "../countries/ro.svg"
 
 
 function Nav() {
 
-    const [isScrolled, setIsScroller] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const addScrolledClass = () => {
         const scrollValue = document.documentElement.scrollTop;
         if (scrollValue > 0) {
-            setIsScroller(true);
+            setIsScrolled(true);
         } else{
-            setIsScroller(false);
+            setIsScrolled(false);
         }
     }
     window.addEventListener("scroll", addScrolledClass);
@@ -48,8 +50,11 @@ function Nav() {
                         <Link className="top-link" to='/new-meetup'>Business</Link>
                         <Link className="top-link" to='/favorites'>{t('nav.how-it-works')}</Link>
                         <Link className="top-link" to='/new-meetup'>{t('nav.questions')}</Link>
+                        {/* <FirstIcon /> */}
                     </div>
-                        <Link className="" to='/new-meetup'>Limba steag selector</Link>
+                        {/* <Link className="" to='/new-meetup'>Lim ba steag selector</Link> */}
+                        {/* <Dropdown /> */}
+                        <LanguageSwitcher />
                         <Link className="btn-login" to='/login'>{t('nav.login')}</Link>
                         <Link to="buy-now">
                             <Button className="btn-green btn-small btn-uppercase">

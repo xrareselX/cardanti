@@ -10,6 +10,7 @@ import { useState } from "react";
 
 function Footer() {
 
+    // data is used for footer country Select, not for Form.Select
     const data = [
         {
             value: "en",
