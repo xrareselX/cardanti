@@ -26,5 +26,12 @@
             "1-paragraph": "Our mission is to make Cardanti the best version of business cards and eliminate the need to print paper cards. We believe sustainability is a matter of now, so for every of our eco business cards sold, a tree is planted."
         },
         "how-it-works-btn": "How it works"
+    },
+    "login":{
+        "h2": "Login",
+        "forgotten-pass":"Forgot password?",
+        "email": "Email address",
+        "pass": "Password",
+        "submit-btn": "Log in"
     }
 }

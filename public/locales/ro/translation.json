@@ -26,5 +26,12 @@
             "1-paragraph": "Avem misiunea de a face din Cardanti cea mai bună versiune de carte de vizită fizică, eliminând nevoia de a printa cărţi de vizită de hartie. Ethos-ul nostru este bazat pe sustenabilitate făcând din asta prioritatea noastră. În acest sens, plantăm câte un copac pentru fiecare dintre cărţile de vizită ecologice pe care le vindem."
         },
         "how-it-works-btn": "Cum funcționează"
+    },
+    "login":{
+        "h2": "Autentificare",
+        "forgotten-pass":"Ai uitat parola?",
+        "email": "Adresă de e-mail",
+        "pass": "Parolă",
+        "submit-btn": "Autentifică-te"
     }
 }

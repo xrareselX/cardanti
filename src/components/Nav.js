@@ -56,7 +56,7 @@ function Nav() {
                         {/* <Dropdown /> */}
                         <LanguageSwitcher />
                         <Link className="btn-login" to='/login'>{t('nav.login')}</Link>
-                        <Link to="buy-now">
+                        <Link to="order-card">
                             <Button className="btn-green btn-small btn-uppercase">
                                 {t("nav.buy-now")}
                             </Button>
