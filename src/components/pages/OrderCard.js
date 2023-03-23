@@ -1,8 +1,42 @@
 import roImg from "../../countries/ro.svg";
 // import { ColorPicker } from '@wellbees/color-picker-input'
 import Swatcher from "../Swatcher";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { EffectCoverflow, Navigation } from "swiper";
+import { useRef, useState } from "react";
+import InputComponent from "../InputComponent";
 function OrderCard() {
+
+    const [isFlipped, setIsFlipped] = useState(false);
+    // const [isFocused, setIsFocused] = useState(false);
+
+    function slideOnClickHandler(e) {
+        const hasClass = e.currentTarget.classList.contains('show-side');
+        if (hasClass) {
+            e.currentTarget.classList.remove("show-side");
+        }else{
+            e.currentTarget.className += " show-side";
+        }
+    }
+    let toggleFrontRef = useRef();
+    let toggleBackRef = useRef();
+    function flipFrontHandle(){
+            setIsFlipped(false);
+            const element = document.getElementsByClassName("swiper-slide-active")[0];
+            element.classList.remove("flipped");
+            console.log(element);
+    }
+    function flipBackHandle() {
+            setIsFlipped(true);
+            const element = document.getElementsByClassName("swiper-slide-active")[0];
+            element.className += " flipped"
+            console.log(element);
+
+    }
 
     return (
         <div className="fix-content">
@@ -18,7 +52,7 @@ function OrderCard() {
                         </div>
                         <div>
                             <div className="main-content w-100">
-                                <div className="col-3 menu d-flex flex-column justify-content-center mt-3 align-items-center">
+                                <div className="col-md-3 menu d-flex flex-column justify-content-center mt-3 align-items-center">
                                     <div className="personalize w-100 d-flex flex-column align-items-center">
                                         <div className="w-100 text-white mb-3">
                                             <span class="text-center d-block mb-2" style={{fontSize: "20px", color: "rgb(143, 144, 160)"}}>Material:</span>
@@ -37,8 +71,10 @@ function OrderCard() {
                                         <div className="w-100">
                                             <div className="form-group animated">
                                                 <div className="d-flex flex-row">
-                                                    <label  for="name">Nume</label>
-                                                    <input  id="name" type="text" name="name" className="form-control me-1" /> 
+                                                    {/* <label  for="name" className="focused">Nume</label>
+                                                    <input  id="name" type="text" name="name" className="form-control me-1"
+                                                    onFocus={onFocusHandle} />  */}
+                                                    <InputComponent inputId="name" inputType="text" inputName="name" label="Nume"/>
                                                     <div className="name-buttons">
                                                         <button className="name-button btn btn-green"> - </button>
                                                         <button className="name-button btn btn-green"> + </button>
@@ -52,9 +88,11 @@ function OrderCard() {
                                         </div>
                                         <div className="w-100">
                                             <div className="form-group animated">
-                                                <div className="d-flex flex-row">
-                                                    <label  for="role">Rol</label>
-                                                    <input  id="role" type="text" name="name" className="form-control me-1" /> 
+                                                <div className="d-flex flex-row ">
+                                                    {/* <label  for="role">Rol</label>
+                                                    <input  id="role" type="text" name="name" className="form-control me-1" 
+                                                    />  */}
+                                                    <InputComponent inputId="role" inputType="text" inputName="role" label="Rol"/>
                                                     <div className="name-buttons">
                                                         <button className="name-button btn btn-green"> - </button>
                                                         <button className="name-button btn btn-green"> + </button>
@@ -69,8 +107,9 @@ function OrderCard() {
                                         <div className="w-100">
                                             <div className="form-group animated">
                                                 <div className="d-flex flex-row">
-                                                    <label  for="company">Companie</label>
-                                                    <input  id="company" type="text" name="name" className="form-control me-1" /> 
+                                                    {/* <label  for="company">Companie</label>
+                                                    <input  id="company" type="text" name="name" className="form-control me-1" />  */}
+                                                    <InputComponent inputId="company" inputType="text" inputName="company" label="Companie"/>
                                                     <div className="name-buttons">
                                                         <button className="name-button btn btn-green"> - </button>
                                                         <button className="name-button btn btn-green"> + </button>
@@ -89,7 +128,7 @@ function OrderCard() {
                                                     <span className="logo-list-text">EMPTY</span>
                                                 </div>
                                                 <div className="logo-list-item selected">
-                                                    <img src={roImg} className="round-icon" />
+                                                    <img src={roImg} className="round-icon"  alt=""/>
                                                 </div>
                                                 <div className="logo-list-item">
                                                     <span className="logo-list-text">CUSTOM</span>
@@ -119,14 +158,16 @@ function OrderCard() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-9 result main-content-cards">
+                                <div className="col-md-9 result main-content-cards">
                                     <div className="row">
                                         <div className="col-12 px-md-2">
                                             <div className="carousel-container">
                                                 <div className="flip-it">
                                                     <div className="flip-it-buttons customizer-actions row justify-content-center btn-group">
-                                                        <button className="col-6 btn text-white btn-green">Față</button> 
-                                                        <button className="col-6 btn text-white btn-dark">Spate</button>
+                                                        <button ref={toggleFrontRef} className={"col-6 btn text-white " + (isFlipped ? "btn-dark" : "btn-green")}
+                                                         onClick={flipFrontHandle}>Față</button> 
+                                                        <button ref={toggleBackRef} className={"col-6 btn text-white "+ (!isFlipped ? "btn-dark" : "btn-green")} 
+                                                         onClick={flipBackHandle}>Spate</button>
                                                     </div>
                                                     <div className="row">
                                                         <div className="col-12">
@@ -138,6 +179,64 @@ function OrderCard() {
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
+                                                <div className="carousel-3d-container order-card-carousel">
+                                                    <Swiper navigation={true} modules={[EffectCoverflow, Navigation]} className="mySwiper"
+                                                     rewind={true} 
+                                                     initialSlide={4}
+                                                     centeredSlides={true}
+                                                     effect={"coverflow"} 
+                                                     coverflowEffect={{
+                                                        rotate: 55,
+                                                        stretch: 20,
+                                                        depth: 100,
+                                                        modifier: 1,
+                                                        slideShadows: true
+                                                      }}
+                                                      slidesPerView={"auto"}
+                                                      >
+                                                    {/* <SwiperSlideComponent src="https://swiperjs.com/demos/images/nature-9.jpg" /> */}
+                                                    <SwiperSlide onClick={slideOnClickHandler}>
+                                                        <img className="card__face card-face--front" style={{display: "block", width: "100%"}} 
+                                                        src="https://swiperjs.com/demos/images/nature-5.jpg" alt=""/>
+                                                        <div className="card__face card-face-back text-white"
+                                                        style={{display: "block", width: "100%",  transform: "rotateY(180deg)"}}>sdfas<h4>sfasd</h4></div>
+                                                    </SwiperSlide>
+                                                    <SwiperSlide onClick={slideOnClickHandler}>
+                                                        {/* <div style={{backgroundColor: "yellow", width: "350px", height:"250px"}}></div> */}
+                                                        <img style={{display: "block", width: "100%"}} 
+                                                        src="https://swiperjs.com/demos/images/nature-6.jpg"  alt=""/>
+                                                    </SwiperSlide>
+                                                    <SwiperSlide onClick={slideOnClickHandler}>
+                                                        {/* <div style={{backgroundColor: "blue", width: "350px", height:"250px"}}></div> */}
+                                                        <img style={{display: "block", width: "100%"}} 
+                                                        src="https://swiperjs.com/demos/images/nature-7.jpg"  alt=""/>
+                                                    </SwiperSlide>
+                                                    <SwiperSlide onClick={slideOnClickHandler}>
+                                                        <img style={{display: "block", width: "100%"}} 
+                                                        src="https://swiperjs.com/demos/images/nature-8.jpg"  alt=""/>
+                                                    </SwiperSlide>
+                                                    <SwiperSlide onClick={slideOnClickHandler}>
+                                                        <img style={{display: "block", width: "100%"}} 
+                                                        src="https://swiperjs.com/demos/images/nature-1.jpg"  alt=""/>
+                                                    </SwiperSlide>
+                                                    <SwiperSlide onClick={slideOnClickHandler}>
+                                                        <img style={{display: "block", width: "100%"}} 
+                                                        src="https://swiperjs.com/demos/images/nature-2.jpg"  alt=""/>
+                                                    </SwiperSlide>
+                                                    <SwiperSlide onClick={slideOnClickHandler}>
+                                                        <img style={{display: "block", width: "100%"}} 
+                                                        src="https://swiperjs.com/demos/images/nature-3.jpg"  alt=""/>
+                                                    </SwiperSlide>
+                                                    <SwiperSlide onClick={slideOnClickHandler}>
+                                                        <img style={{display: "block", width: "100%"}} 
+                                                        src="https://swiperjs.com/demos/images/nature-4.jpg"  alt=""/>
+                                                    </SwiperSlide>
+                                                    <SwiperSlide onClick={slideOnClickHandler}>
+                                                        <img style={{display: "block", width: "100%"}} 
+                                                        src="https://swiperjs.com/demos/images/nature-8.jpg"  alt=""/>
+                                                    </SwiperSlide>
+                                                    </Swiper>
                                                 </div>
                                             </div>
                                         </div>
