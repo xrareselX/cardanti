@@ -469,7 +469,10 @@ label.focused{
 .show-side{
   transform:rotateX(85deg) !important;
 }
-.flipped{
+/* .flipped{
+  transform: rotateY(180deg) !important;
+} */
+.swiper-slide-active.flipped{
   transform: rotateY(180deg) !important;
 }
 .swiper-slide img{
@@ -486,4 +489,16 @@ label.focused{
   font-weight: bold;
   font-size: 40px;
   justify-content: center;
+}
+.custom-data{
+  position: absolute;
+  transition: opacity .5s ease 0s;
+  z-index: 3;
+  bottom: 20px;
+  right: 20px; /* imaginea  din spate e rotita deci dadca vreei sa fie un tesxt din spate in stanga tre sa pui right, nu left */
+  color: #000;
+  text-align: left;
+}
+.custom-data div{
+  transform: scale(-1, 1) /* s[ arate textul bn nu in oglinda */
 }
