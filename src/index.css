@@ -164,18 +164,18 @@ header.scrolled{
 }
 
 /* ABOUT US */
-.btn-green {
-  background-color: #25bcb5;
-  border-color: #25bcb5;
-  color: #fff;
-  display: inline-flex; 
-  justify-content: center;
-  align-content: center; 
-}
 .btn-dark {
   color: #fff;
   background-color: #343a40;
   border-color: #343a40;
+  display: inline-flex; 
+  justify-content: center;
+  align-content: center; 
+}
+.btn-green {
+  background-color: #25bcb5;
+  border-color: #25bcb5;
+  color: #fff;
   display: inline-flex; 
   justify-content: center;
   align-content: center; 
@@ -427,7 +427,13 @@ label.focused{
   align-items: center;
   justify-content: center;
 }
-.logo-list-text[data-v-11d3587a] {
+.logo-list-item.selected{
+  border: 5px solid #00a698;
+}
+.logo-list-item svg{
+  width: 50px;
+}
+.logo-list-text {
   font-weight: 700;
   color: #000;
 }
@@ -460,8 +466,8 @@ label.focused{
 }
 
 .swiper-slide {
-  background-position: center;
-  background-size: cover;
+  /* background-position: center;
+  background-size: cover; */
   width: 300px;
   height: 300px;
   transition: transform 1s ease-in .05s !important;
@@ -469,36 +475,57 @@ label.focused{
 .show-side{
   transform:rotateX(85deg) !important;
 }
-/* .flipped{
-  transform: rotateY(180deg) !important;
-} */
 .swiper-slide-active.flipped{
   transform: rotateY(180deg) !important;
 }
 .swiper-slide img{
   backface-visibility: hidden;
-  z-index: 99;
-}
-.card__face{
+ } 
+.card-logo{
+  fill: #fff;
   position: absolute;
+  z-index: 9;
+  top: 14px;
+  left: 14px;
+  width: 144px;
+  height: 72px;
+  /* color: white; */
+  backface-visibility: hidden;
+}
+.card-logo-svg{
+  width: 72px;
+  height: 72px;
+}
+.card-back-side{
   width: 100%;
-  height: 100%;
-  line-height: 260px;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  font-size: 40px;
-  justify-content: center;
+  backface-visibility: hidden;
+  transform: rotateY(180deg); /* deci ambele div uri aka front si back au spatele gol deci daca vrem sa avem o fata si un spate, pe spate il rotim cu 180 de grade si astfel cele 2 div uri stau cu fata in directii opuse*/
 }
 .custom-data{
   position: absolute;
   transition: opacity .5s ease 0s;
   z-index: 3;
   bottom: 20px;
-  right: 20px; /* imaginea  din spate e rotita deci dadca vreei sa fie un tesxt din spate in stanga tre sa pui right, nu left */
+  left: 20px;
   color: #000;
   text-align: left;
+  backface-visibility: hidden;
 }
-.custom-data div{
-  transform: scale(-1, 1) /* s[ arate textul bn nu in oglinda */
+.product-title{
+  color: #fff;
+}
+.flip-it{
+  position: relative;
+  top: -10px;
+}
+.flip-it-buttons{
+  width: 200px;
+  cursor: pointer;
+  display: inline-flex;
+  vertical-align: middle;
+}
+.btn-group{
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
 }

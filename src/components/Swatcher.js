@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { TwitterPicker } from "react-color";
 
-function Swatcher(props ) {
+function Swatcher(props) {
 
     const [displaySwatch, setDisplaySwatch] = useState(false);
     const [colorValue, setColorValue] = useState("#ffffff");
@@ -15,6 +15,18 @@ function Swatcher(props ) {
     function swatcherChangeHandler(color) {
         setDisplaySwatch(false);
         setColorValue(color.hex);
+        const elements = document.getElementsByClassName(props.for);
+        if(props.for == "card-logo")
+        {
+            for(let element of elements){
+                element.style.fill = color.hex;
+            }
+
+        } else {
+            for(let element of elements){
+                element.style.color = color.hex;
+            }
+        }
     }
     useEffect(() => {
         document.addEventListener("mousedown", (event) => {

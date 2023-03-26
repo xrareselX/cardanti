@@ -9,10 +9,130 @@ import 'swiper/css/navigation';
 import { EffectCoverflow, Navigation } from "swiper";
 import { useRef, useState } from "react";
 import InputComponent from "../InputComponent";
+import CardantiC from "../../assets/icons/CardantiC";
+// PVC imports
+import PersonalImg from "../../assets/pvc/personal.webp";
+import ShiftImg from "../../assets/pvc/shift.webp";
+import CanvasImg from "../../assets/pvc/canvas.webp";
+import BreachImg from "../../assets/pvc/breach.webp";
+import VisionaryImg from "../../assets/pvc/visionary.webp";
+import OriginImg from "../../assets/pvc/origin.webp";
+import BeginningsImg from "../../assets/pvc/beginnings.webp";
+
+import BlackMetalImg from "../../assets/metal/metal1.webp";
+import GoldMetalImg from "../../assets/metal/metal2.webp";
+import SilverMetalImg from "../../assets/metal/metal3.webp";
+import BlackCarbonImg from "../../assets/carbon/carbon1.webp";
+import GoldCarbonImg from "../../assets/carbon/carbon2.webp";
+import SilverCarbonImg from "../../assets/carbon/carbon3.webp";
+
 function OrderCard() {
+    const pvcInitialSlide = 3;
+    const carbonInitialSlide = 1;
+    const metalInitialSlide = 1;
 
     const [isFlipped, setIsFlipped] = useState(false);
-    // const [isFocused, setIsFocused] = useState(false);
+    const [nameSize, setNameSize] = useState(10);
+    const [roleSize, setRoleSize] = useState(8);
+    const [companySize, setCompanySize] = useState(8);
+    const [emptyLogo, setEmptyLogo] = useState(false);
+    const [cardantiLogo, setCardantiLogo] = useState(true);
+    const [isPVC, setIsPVC] = useState(true);
+    const [isCarbon, setIsCarbon] = useState(false);
+
+    const pvcCards = [
+        {
+            "title": "The Personal Touch Persolanized",
+            "img-source" : PersonalImg,
+            "img-back" : "back text"
+        },
+        {
+            "title": "The Sift Personalized",
+            "img-source" : ShiftImg,
+            "img-back" : "back text"
+        },
+        {
+            "title": "The Canvas Personalized",
+            "img-source" : CanvasImg,
+            "img-back" : "back text"
+        },
+        {
+            "title": "The Breach Personalized",
+            "img-source" : BreachImg,
+            "img-back" : "back text"
+        },
+        {
+            "title": "The Visionary Personalized",
+            "img-source" : VisionaryImg,
+            "img-back" : "back text"
+        },
+        {
+            "title": "The Origin Personalized",
+            "img-source" : OriginImg,
+            "img-back" : "back text"
+        },
+        {
+            "title": "The New Beginnings Personalized",
+            "img-source" : BeginningsImg,
+            "img-back" : "back text"
+        }
+    ];
+    const carbonCards = [
+        {
+            "title": "Carbon Gold",
+            "img-source" : GoldCarbonImg,
+            "img-back" : "back text"
+        },
+        {
+            "title": "Carbon Black",
+            "img-source" : BlackCarbonImg,
+            "img-back" : "back text"
+        },
+        {
+            "title": "Carbon Silver",
+            "img-source" : SilverCarbonImg,
+            "img-back" : "back text"
+        }
+    ];
+
+    const metalCards = [
+        {
+            "title": "Metal Gold",
+            "img-source" : GoldMetalImg,
+            "img-back" : "back text" 
+        },
+        {
+            "title": "Metal Black",
+            "img-source" : BlackMetalImg,
+            "img-back" : "back text" 
+        },
+        {
+            "title": "Metal Gun Brushed",
+            "img-source" : SilverMetalImg,
+            "img-back" : "back text" 
+        }
+    ];
+    function onClickPvcHandle(){
+        setIsPVC(true);
+        setIsCarbon(false);
+    }
+
+    function onClickCarbonHandle(){
+        setIsPVC(false);
+        setIsCarbon(true);
+    }
+
+    function onClickMetalHandle(){
+        setIsPVC(false);
+        setIsCarbon(false);
+    }
+
+    function displayCardTitle(){
+        const element = document.getElementsByClassName("swiper-slide-active")[0];
+        let title = element.title;
+        const TitleElement = document.getElementsByClassName("product-title")[0];
+        TitleElement.innerHTML = title;
+    }
 
     function slideOnClickHandler(e) {
         const hasClass = e.currentTarget.classList.contains('show-side');
@@ -22,21 +142,57 @@ function OrderCard() {
             e.currentTarget.className += " show-side";
         }
     }
+
     let toggleFrontRef = useRef();
     let toggleBackRef = useRef();
 
     function nameOnChangeHandle(e){
-        const element = document.getElementById("name-data");
-        element.innerHTML = e.target.value;
+        const elements = document.getElementsByClassName("name");
+        for(let element of elements){
+            element.innerHTML = e.target.value;
+        }
     }
     function roleOnChangeHandle(e){
-        const element = document.getElementById("role-data");
-        element.innerHTML = e.target.value;
+        const elements = document.getElementsByClassName("role");
+        for(let element of elements){
+            element.innerHTML = e.target.value;
+        }
     }
     function companyOnChangeHandle(e){
-        const element = document.getElementById("company-data");
-        element.innerHTML = e.target.value;
+        const elements = document.getElementsByClassName("company");
+        for(let element of elements){
+            element.innerHTML = e.target.value;
+        }
     }
+
+    function removeClassNamefromAllElements(className, removeClassName){
+        const elements = document.getElementsByClassName(className);
+        for(let element of elements){
+            element.classList.remove(removeClassName);
+        }
+    }
+
+    function setLogoOnClickHandleEmpty(e){
+        removeClassNamefromAllElements("logo-list-item", "selected");
+        e.currentTarget.className += " selected";
+        setEmptyLogo(true);
+        setCardantiLogo(false);
+    }
+
+    function setLogoOnClickHandleCardanti(e){
+        removeClassNamefromAllElements("logo-list-item", "selected");
+        e.currentTarget.className += " selected";
+        setEmptyLogo(false);
+        setCardantiLogo(true);
+    }
+    
+    function setLogoOnClickHandleCustom(e){
+        removeClassNamefromAllElements("logo-list-item", "selected");
+        e.currentTarget.className += " selected";
+        setEmptyLogo(false);
+        setCardantiLogo(false);
+    }
+
 
     return (
         <div className="fix-content">
@@ -57,29 +213,30 @@ function OrderCard() {
                                         <div className="w-100 text-white mb-3">
                                             <span class="text-center d-block mb-2" style={{fontSize: "20px", color: "rgb(143, 144, 160)"}}>Material:</span>
                                             <div className="w-100 customizer-actions row justify-content-center btn-group">
-                                                <button className="col-4 btn text-white text-center btn-green">PVC</button>
-                                                <button className="col-4 btn text-white text-center btn-dark">CARBON</button>
-                                                <button className="col-4 btn text-white text-center btn-dark">METAL</button>
+                                                <button className={"col-4 btn text-white btn-card-material text-center btn-dark" + (isPVC ? " btn-green" : "")} 
+                                                onClick={onClickPvcHandle}>PVC</button>
+                                                <button className={"col-4 btn text-white btn-card-material text-center btn-dark" + (isCarbon ? " btn-green" : "")}
+                                                onClick={onClickCarbonHandle}>CARBON</button>
+                                                <button className={"col-4 btn text-white btn-card-material text-center btn-dark" + (!isPVC && !isCarbon? " btn-green" : "")} onClick={onClickMetalHandle}>METAL</button>
                                             </div>
-                                            <div className="w-100 row justify-content-center">
-                                                <div  className="material-color selected" style={{backgroundColor: "rgb(238, 238, 238)"}}></div>
-                                                <div  className="material-color" style={{backgroundColor: "rgb(216, 29, 52)"}}></div>
-                                                <div  className="material-color" style={{backgroundColor: "rgb(34, 34, 34)"}}></div>
-                                                <div  className="material-color" style={{backgroundColor: "rgb(19, 67, 153)"}}></div>
-                                            </div>
+                                            {isPVC && (
+                                                <div className="w-100 row justify-content-center">
+                                                    <div  className="material-color selected" style={{backgroundColor: "rgb(238, 238, 238)"}}></div>
+                                                    <div  className="material-color" style={{backgroundColor: "rgb(216, 29, 52)"}}></div>
+                                                    <div  className="material-color" style={{backgroundColor: "rgb(34, 34, 34)"}}></div>
+                                                    <div  className="material-color" style={{backgroundColor: "rgb(19, 67, 153)"}}></div>
+                                                </div>
+                                                )}
                                         </div>
                                         <div className="w-100">
                                             <div className="form-group animated">
                                                 <div className="d-flex flex-row">
-                                                    {/* <label  for="name" className="focused">Nume</label>
-                                                    <input  id="name" type="text" name="name" className="form-control me-1"
-                                                    onFocus={onFocusHandle} />  */}
                                                     <InputComponent  inputId="name" inputType="text" inputName="name" label="Nume"
                                                     onChange={nameOnChangeHandle}/>
                                                     <div className="name-buttons">
-                                                        <button className="name-button btn btn-green"> - </button>
-                                                        <button className="name-button btn btn-green"> + </button>
-                                                        <Swatcher id="name-color" />
+                                                        <button className="name-button btn btn-green" onClick={() => setNameSize(nameSize-1)}> - </button>
+                                                        <button className="name-button btn btn-green" onClick={() => setNameSize(nameSize+1)}> + </button>
+                                                        <Swatcher id="name-color" for="name"/>
                                                     </div>
                                                 </div>
                                                 <div className="errors">
@@ -90,15 +247,12 @@ function OrderCard() {
                                         <div className="w-100">
                                             <div className="form-group animated">
                                                 <div className="d-flex flex-row ">
-                                                    {/* <label  for="role">Rol</label>
-                                                    <input  id="role" type="text" name="name" className="form-control me-1" 
-                                                    />  */}
                                                     <InputComponent inputId="role" inputType="text" inputName="role" label="Rol"
                                                      onChange={roleOnChangeHandle}/>
                                                     <div className="name-buttons">
-                                                        <button className="name-button btn btn-green"> - </button>
-                                                        <button className="name-button btn btn-green"> + </button>
-                                                        <Swatcher id="role-color" />
+                                                        <button className="name-button btn btn-green" onClick={() => setRoleSize(roleSize-1)}> - </button>
+                                                        <button className="name-button btn btn-green" onClick={() => setRoleSize(roleSize+1)}> + </button>
+                                                        <Swatcher id="role-color" for="role"/>
                                                     </div>
                                                 </div>
                                                 <div className="errors">
@@ -109,14 +263,12 @@ function OrderCard() {
                                         <div className="w-100">
                                             <div className="form-group animated">
                                                 <div className="d-flex flex-row">
-                                                    {/* <label  for="company">Companie</label>
-                                                    <input  id="company" type="text" name="name" className="form-control me-1" />  */}
                                                     <InputComponent inputId="company" inputType="text" inputName="company" label="Companie"
                                                      onChange={companyOnChangeHandle}/>
                                                     <div className="name-buttons">
-                                                        <button className="name-button btn btn-green"> - </button>
-                                                        <button className="name-button btn btn-green"> + </button>
-                                                        <Swatcher id="company-color" />
+                                                        <button className="name-button btn btn-green" onClick={() => setCompanySize(companySize-1)}> - </button>
+                                                        <button className="name-button btn btn-green" onClick={() => setCompanySize(companySize+1)}> + </button>
+                                                        <Swatcher id="company-color" for="company"/>
                                                     </div>
                                                 </div>
                                                 <div className="errors">
@@ -127,19 +279,19 @@ function OrderCard() {
                                         <div className="w-100 mb-2">
                                             <span class="text-center d-block mb-2" style={{fontSize: "20px", color: "rgb(143, 144, 160)"}}>Logo-ul tău:</span>
                                             <div className="logo-list">
-                                                <div className="logo-list-item">
+                                                <div className="logo-list-item" onClick={setLogoOnClickHandleEmpty}>
                                                     <span className="logo-list-text">EMPTY</span>
                                                 </div>
-                                                <div className="logo-list-item selected">
-                                                    <img src={roImg} className="round-icon"  alt=""/>
+                                                <div className="logo-list-item selected" onClick={setLogoOnClickHandleCardanti}>
+                                                    <CardantiC />
                                                 </div>
-                                                <div className="logo-list-item">
+                                                <div className="logo-list-item" onClick={setLogoOnClickHandleCustom}>
                                                     <span className="logo-list-text">CUSTOM</span>
                                                 </div>
                                             </div>
                                             <div className="logo-color-select text-center d-flex justify-content-center align-items-center" >
                                                 <label for="logo-color" className="me-2" style={{color: "#c8c8c8"}}>Logo color:</label>
-                                                <Swatcher id="logo-color" />
+                                                <Swatcher id="logo-color" for="card-logo"/>
                                             </div>
                                         </div>
                                         <div className="w-100 text-white display-flex flex-column align-items-center">
@@ -166,114 +318,180 @@ function OrderCard() {
                                         <div className="col-12 px-md-2">
                                             <div className="carousel-container">
                                                 <div className="flip-it">
-                                                    <div className="flip-it-buttons customizer-actions row justify-content-center btn-group">
-                                                        <button ref={toggleFrontRef} className={"col-6 btn text-white " + (isFlipped ? "btn-dark" : "btn-green")}
-                                                         onClick={() => setIsFlipped(false)}
-                                                         >Față</button> 
-                                                        <button ref={toggleBackRef} className={"col-6 btn text-white "+ (!isFlipped ? "btn-dark" : "btn-green")} 
-                                                         onClick={() => setIsFlipped(true)}
-                                                         >Spate</button>
-                                                    </div>
+                                                    {isPVC && (
+                                                        // <div className="flip-it-buttons customizer-actions row justify-content-center btn-group">
+                                                        <div className="row justify-content-center">
+                                                            <button ref={toggleFrontRef} className={"col-6 align-self-center btn text-white " + (isFlipped ? "btn-dark" : "btn-green")}
+                                                            onClick={() => setIsFlipped(false)}
+                                                            >Față</button> 
+                                                            <button ref={toggleBackRef} className={"col-6 align-self-center btn text-white "+ (!isFlipped ? "btn-dark" : "btn-green")} 
+                                                            onClick={() => setIsFlipped(true)}
+                                                            >Spate</button>
+                                                        </div>
+                                                         )}
                                                     <div className="row">
                                                         <div className="col-12">
                                                             <div className="card-name">
                                                                 <h3 className="product-title" style={{display: "flex", 
                                                                 alignItems: "flex-end", justifyContent: "center"}}>
-                                                                    The Shift Personalized
+                                                                    
+                                                                    {/* {isPVC && pvcCards[pvcInitialSlide].title} */}
+                                                                    {/* {isCarbon && carbonCards[carbonInitialSlide].title} */}
+                                                                    {/* {!isPVC && !isCarbon && metalCards[metalInitialSlide].title} */}
                                                                 </h3>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="carousel-3d-container order-card-carousel">
-                                                    <Swiper navigation={true} modules={[EffectCoverflow, Navigation]} className="mySwiper"
-                                                     rewind={true} 
-                                                     initialSlide={4}
-                                                     centeredSlides={true}
-                                                     effect={"coverflow"} 
-                                                     coverflowEffect={{
-                                                        rotate: 55,
-                                                        stretch: 20,
-                                                        depth: 100,
-                                                        modifier: 1,
-                                                        slideShadows: true
-                                                      }}
-                                                      slidesPerView={"auto"}
-                                                    //   onNavigationPrev={flipBackHandle}
-                                                    //   onNavigationNext={flipFrontHandle}
-                                                      >
-                                                    {/* <SwiperSlideComponent src="https://swiperjs.com/demos/images/nature-9.jpg" /> */}
-                                                    <SwiperSlide 
-                                                    className={isFlipped? "flipped": ""} 
-                                                    onClick={slideOnClickHandler}>
-                                                        <img className="card__face card-face--front" style={{display: "block", width: "100%"}} 
-                                                        src="https://swiperjs.com/demos/images/nature-5.jpg" alt=""/>
-                                                        <div className="card__face card-face-back text-white" style={{display: "block", 
-                                                        width: "100%",  transform: "rotateY(180deg)"}}>
-                                                        </div>
-                                                            <div className="custom-data">
-                                                                <div id="name-data" className="name-data card-inner-text name" style={{color: "white", fontSize: "10pt"}}>
-                                                                    reqwef
+                                                    {isPVC && (
+                                                        <Swiper navigation={true} modules={[EffectCoverflow, Navigation]} className="mySwiper"
+                                                            rewind={true} 
+                                                            // loop={true}
+                                                            initialSlide={pvcInitialSlide}
+                                                            centeredSlides={true}
+                                                            effect={"coverflow"} 
+                                                            coverflowEffect={{
+                                                                rotate: 55,
+                                                                stretch: 20,
+                                                                depth: 100,
+                                                                modifier: 1,
+                                                                slideShadows: true
+                                                            }}
+                                                            slidesPerView={"auto"}
+                                                            onSlideChangeTransitionStart={displayCardTitle}
+                                                        >
+                                                            {pvcCards.map((pvcCard, index) =>(
+                                                                <SwiperSlide className={isFlipped? "flipped": ""} onClick={slideOnClickHandler}
+                                                                    title={pvcCard.title} >
+                                                                    <div className="card-logo" >
+                                                                        {cardantiLogo && !emptyLogo && (
+                                                                            <div className="card-logo-svg">
+                                                                                <CardantiC/>    
+                                                                            </div>
+                                                                            )}
+                                                                        {!cardantiLogo && !emptyLogo && (
+                                                                            <div className="card-logo-svg text-white">
+                                                                                custom    
+                                                                            </div>
+                                                                            )}
+                                                                    </div>
+                                                                    <img style={{ width: "100%"}} 
+                                                                        src={pvcCard["img-source"]} alt="" />
+                                                                    <div className="custom-data">
+                                                                        <div  className="name-data card-inner-text name" style={{color: "white", fontSize: `${nameSize}pt`}}>
+                                                                        </div>
+                                                                        <div  className="role-data card-inner-text role" style={{color: "white", fontSize: `${roleSize}pt`}}>
+                                                                        </div>
+                                                                        <div  className="company-data card-inner-text company" style={{color: "white", fontSize: `${companySize}pt`}}>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="card-back-side text-white">
+                                                                        {pvcCard["img-back"]}
+                                                                    </div>
+                                                                </SwiperSlide>
+                                                            ))
+                                                            }
+                                                        </Swiper>
+                                                    )}
+                                                    {isCarbon && (
+                                                        <Swiper navigation={true} modules={[EffectCoverflow, Navigation]} className="mySwiper"
+                                                        rewind={true} 
+                                                        initialSlide={carbonInitialSlide}
+                                                        centeredSlides={true}
+                                                        effect={"coverflow"} 
+                                                        coverflowEffect={{
+                                                            rotate: 55,
+                                                            stretch: 20,
+                                                            depth: 100,
+                                                            modifier: 1,
+                                                            slideShadows: true
+                                                        }}
+                                                        slidesPerView={"auto"}
+                                                        onSlideChangeTransitionStart={displayCardTitle}
+                                                        >
+                                                        {carbonCards.map((carbonCard, index) =>(
+                                                            <SwiperSlide className={isFlipped? "flipped": ""} onClick={slideOnClickHandler}
+                                                                title={carbonCard.title} >
+                                                                <div className="card-logo" >
+                                                                    {cardantiLogo && !emptyLogo && (
+                                                                        <div className="card-logo-svg">
+                                                                            <CardantiC/>    
+                                                                        </div>
+                                                                        )}
+                                                                    {!cardantiLogo && !emptyLogo && (
+                                                                        <div className="card-logo-svg text-white">
+                                                                            custom    
+                                                                        </div>
+                                                                        )}
                                                                 </div>
-                                                                <div id="role-data" className="role-data card-inner-text role" style={{color: "white", fontSize: "8pt"}}>
-                                                                    wefgw
+                                                                <img style={{ width: "100%"}} 
+                                                                    src={carbonCard["img-source"]} alt="" />
+                                                                <div className="custom-data">
+                                                                    <div  className="name-data card-inner-text name" style={{color: "white", fontSize: `${nameSize}pt`}}>
+                                                                    </div>
+                                                                    <div  className="role-data card-inner-text role" style={{color: "white", fontSize: `${roleSize}pt`}}>
+                                                                    </div>
+                                                                    <div  className="company-data card-inner-text company" style={{color: "white", fontSize: `${companySize}pt`}}>
+                                                                    </div>
                                                                 </div>
-                                                                <div id="company-data" className="company-data card-inner-text company" style={{color: "white", fontSize: "8pt"}}>
-                                                                    sadf
+                                                                <div className="card-back-side text-white">
+                                                                    {carbonCard["img-back"]}
                                                                 </div>
-                                                            </div>
-                                                    </SwiperSlide>
-                                                    <SwiperSlide onClick={slideOnClickHandler}
-                                                     className={isFlipped? "flipped": ""}
-                                                     >
-                                                        {/* <div style={{backgroundColor: "yellow", width: "350px", height:"250px"}}></div> */}
-                                                        <img style={{display: "block", width: "100%"}} 
-                                                        src="https://swiperjs.com/demos/images/nature-6.jpg"  alt=""/>
-                                                    </SwiperSlide>
-                                                    <SwiperSlide onClick={slideOnClickHandler}
-                                                     className={isFlipped? "flipped": ""}
-                                                     >
-                                                        {/* <div style={{backgroundColor: "blue", width: "350px", height:"250px"}}></div> */}
-                                                        <img style={{display: "block", width: "100%"}} 
-                                                        src="https://swiperjs.com/demos/images/nature-7.jpg"  alt=""/>
-                                                    </SwiperSlide>
-                                                    <SwiperSlide onClick={slideOnClickHandler}
-                                                     className={isFlipped? "flipped": ""}
-                                                     >
-                                                        <img style={{display: "block", width: "100%"}} 
-                                                        src="https://swiperjs.com/demos/images/nature-8.jpg"  alt=""/>
-                                                    </SwiperSlide>
-                                                    <SwiperSlide onClick={slideOnClickHandler}
-                                                     className={isFlipped? "flipped": ""}
-                                                     >
-                                                        <img style={{display: "block", width: "100%"}} 
-                                                        src="https://swiperjs.com/demos/images/nature-1.jpg"  alt=""/>
-                                                    </SwiperSlide>
-                                                    <SwiperSlide onClick={slideOnClickHandler}
-                                                     className={isFlipped? "flipped": ""}
-                                                     >
-                                                        <img style={{display: "block", width: "100%"}} 
-                                                        src="https://swiperjs.com/demos/images/nature-2.jpg"  alt=""/>
-                                                    </SwiperSlide>
-                                                    <SwiperSlide onClick={slideOnClickHandler}
-                                                     className={isFlipped? "flipped": ""}
-                                                     >
-                                                        <img style={{display: "block", width: "100%"}} 
-                                                        src="https://swiperjs.com/demos/images/nature-3.jpg"  alt=""/>
-                                                    </SwiperSlide>
-                                                    <SwiperSlide onClick={slideOnClickHandler}
-                                                     className={isFlipped? "flipped": ""}
-                                                     >
-                                                        <img style={{display: "block", width: "100%"}} 
-                                                        src="https://swiperjs.com/demos/images/nature-4.jpg"  alt=""/>
-                                                    </SwiperSlide>
-                                                    <SwiperSlide onClick={slideOnClickHandler}
-                                                     className={isFlipped? "flipped": ""}
-                                                     >
-                                                        <img style={{display: "block", width: "100%"}} 
-                                                        src="https://swiperjs.com/demos/images/nature-8.jpg"  alt=""/>
-                                                    </SwiperSlide>
+                                                            </SwiperSlide>
+                                                        ))
+                                                        }
                                                     </Swiper>
+                                                    )}
+                                                    {!isPVC && !isCarbon && (
+                                                        <Swiper navigation={true} modules={[EffectCoverflow, Navigation]} className="mySwiper"
+                                                        rewind={true} 
+                                                        initialSlide={metalInitialSlide}
+                                                        centeredSlides={true}
+                                                        effect={"coverflow"} 
+                                                        coverflowEffect={{
+                                                            rotate: 55,
+                                                            stretch: 20,
+                                                            depth: 100,
+                                                            modifier: 1,
+                                                            slideShadows: true
+                                                        }}
+                                                        slidesPerView={"auto"}
+                                                        onSlideChangeTransitionStart={displayCardTitle}
+                                                        >
+                                                        {metalCards.map((metalCard, index) =>(
+                                                            <SwiperSlide className={isFlipped? "flipped": ""} onClick={slideOnClickHandler}
+                                                                title={metalCard.title} >
+                                                                <div className="card-logo" >
+                                                                    {cardantiLogo && !emptyLogo && (
+                                                                        <div className="card-logo-svg">
+                                                                            <CardantiC/>    
+                                                                        </div>
+                                                                        )}
+                                                                    {!cardantiLogo && !emptyLogo && (
+                                                                        <div className="card-logo-svg text-white">
+                                                                            custom    
+                                                                        </div>
+                                                                        )}
+                                                                </div>
+                                                                <img style={{ width: "100%"}} 
+                                                                    src={metalCard["img-source"]} alt="" />
+                                                                <div className="custom-data">
+                                                                    <div  className="name-data card-inner-text name" style={{color: "white", fontSize: `${nameSize}pt`}}>
+                                                                    </div>
+                                                                    <div  className="role-data card-inner-text role" style={{color: "white", fontSize: `${roleSize}pt`}}>
+                                                                    </div>
+                                                                    <div  className="company-data card-inner-text company" style={{color: "white", fontSize: `${companySize}pt`}}>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="card-back-side text-white">
+                                                                    {metalCard["img-back"]}
+                                                                </div>
+                                                            </SwiperSlide>
+                                                        ))
+                                                        }
+                                                    </Swiper>
+                                                    )}
                                                 </div>
                                             </div>
                                         </div>
