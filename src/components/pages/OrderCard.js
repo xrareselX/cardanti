@@ -320,11 +320,11 @@ function OrderCard() {
                                                 <div className="flip-it">
                                                     {isPVC && (
                                                         // <div className="flip-it-buttons customizer-actions row justify-content-center btn-group">
-                                                        <div className="row justify-content-center">
-                                                            <button ref={toggleFrontRef} className={"col-6 align-self-center btn text-white " + (isFlipped ? "btn-dark" : "btn-green")}
+                                                        <div className="flip-it-buttons text-center customizer-actions">
+                                                            <button ref={toggleFrontRef} className={"btn text-white " + (isFlipped ? "btn-dark" : "btn-green")}
                                                             onClick={() => setIsFlipped(false)}
                                                             >Față</button> 
-                                                            <button ref={toggleBackRef} className={"col-6 align-self-center btn text-white "+ (!isFlipped ? "btn-dark" : "btn-green")} 
+                                                            <button ref={toggleBackRef} className={"btn text-white "+ (!isFlipped ? "btn-dark" : "btn-green")} 
                                                             onClick={() => setIsFlipped(true)}
                                                             >Spate</button>
                                                         </div>
@@ -364,30 +364,32 @@ function OrderCard() {
                                                             {pvcCards.map((pvcCard, index) =>(
                                                                 <SwiperSlide className={isFlipped? "flipped": ""} onClick={slideOnClickHandler}
                                                                     title={pvcCard.title} >
-                                                                    <div className="card-logo" >
-                                                                        {cardantiLogo && !emptyLogo && (
-                                                                            <div className="card-logo-svg">
-                                                                                <CardantiC/>    
+                                                                        <div className="card__face card__face--front">
+                                                                            <div className="card-logo" >
+                                                                                {cardantiLogo && !emptyLogo && (
+                                                                                    <div className="card-logo-svg">
+                                                                                        <CardantiC/>    
+                                                                                    </div>
+                                                                                    )}
+                                                                                {!cardantiLogo && !emptyLogo && (
+                                                                                    <div className="card-logo-svg text-white">
+                                                                                        custom    
+                                                                                    </div>
+                                                                                    )}
                                                                             </div>
-                                                                            )}
-                                                                        {!cardantiLogo && !emptyLogo && (
-                                                                            <div className="card-logo-svg text-white">
-                                                                                custom    
+                                                                            <img style={{ width: "100%"}} src={pvcCard["img-source"]} alt="" />
+                                                                            <div className="custom-data">
+                                                                                <div  className="name-data card-inner-text name" style={{color: "white", fontSize: `${nameSize}pt`}}>
+                                                                                </div>
+                                                                                <div  className="role-data card-inner-text role" style={{color: "white", fontSize: `${roleSize}pt`}}>
+                                                                                </div>
+                                                                                <div  className="company-data card-inner-text company" style={{color: "white", fontSize: `${companySize}pt`}}>
+                                                                                </div>
                                                                             </div>
-                                                                            )}
-                                                                    </div>
-                                                                    <img style={{ width: "100%"}} 
+                                                                         </div>
+                                                                    <div className="card__face card__face--back text-white">
+                                                                        <img style={{ width: "100%"}} 
                                                                         src={pvcCard["img-source"]} alt="" />
-                                                                    <div className="custom-data">
-                                                                        <div  className="name-data card-inner-text name" style={{color: "white", fontSize: `${nameSize}pt`}}>
-                                                                        </div>
-                                                                        <div  className="role-data card-inner-text role" style={{color: "white", fontSize: `${roleSize}pt`}}>
-                                                                        </div>
-                                                                        <div  className="company-data card-inner-text company" style={{color: "white", fontSize: `${companySize}pt`}}>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className="card-back-side text-white">
-                                                                        {pvcCard["img-back"]}
                                                                     </div>
                                                                 </SwiperSlide>
                                                             ))
