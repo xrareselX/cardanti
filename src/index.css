@@ -505,8 +505,6 @@ label.focused{
   backface-visibility: hidden;
 }
 .card__face img{
-  /* width: 240px; */
-  /* height: 300px; */
   object-fit: cover;
 }
 .card__face--back{
@@ -531,4 +529,82 @@ label.focused{
 }
 .flip-it-buttons button{
   width: 100px;
+}
+/* MODEL */
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity .3s ease;
+}
+.modal-mask, .modal-overlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.modal-overlay {
+  position: absolute;
+  background-color: rgba(0,0,0,.7);
+}
+.modal-wrapper {
+  width: 100%;
+  vertical-align: middle;
+}
+.modal-container {
+  position: relative;
+  z-index: 99;
+  max-height: calc(100vh - 80px);
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.33);
+  transition: all .3s ease;
+  font-family: Helvetica,Arial,sans-serif;
+}
+.close-modal {
+  position: absolute;
+  cursor: pointer;
+  z-index: 9;
+  right: 10px;
+  top: 6px;
+  font-size: 20px;
+  color: #999;
+}
+.modal-body {
+  margin-bottom: 20px;
+  height: 100%;
+  padding: 0;
+  flex-wrap: wrap;
+  display: flex;
+}
+.upload-modal-content{
+  padding: 20px 20px 0;
+}
+.canvas-cont{
+  position: relative;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+}
+.canvas-cont .canvas-content{
+  flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.canvas-cont .canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.guidelines p{
+  font-size: 12px;
+  text-align: left;
 }

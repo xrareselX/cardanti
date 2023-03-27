@@ -6,11 +6,13 @@ import Button from "react-bootstrap/Button"
 import { useState } from "react";
 import Dropdown from "./Dropdown";
 import LanguageSwitcher from "./LanguageSwitcher";
-import {ReactComponent as FirstIcon} from "../countries/ro.svg"
+import {ReactComponent as FirstIcon} from "../countries/ro.svg";
+import { useLocation } from "react-router-dom";
 
 
 function Nav() {
 
+    const location = useLocation();
     const [isScrolled, setIsScrolled] = useState(false);
 
     const addScrolledClass = () => {
@@ -35,32 +37,23 @@ function Nav() {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div className="navbar-right collapse navbar-collapse"  id="navbarSupportedContent">
-                {/* <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active"><Link className="nav-link" to="/about-us">Despre noi</Link></li>
-                    <li><Link className="nav-link" to='/new-meetup'>Business</Link></li>
-                    <li><Link className="nav-link" to='/favorites'>Cum funcționează</Link></li>
-                    <li><Link className="nav-link" to='/new-meetup'>Întrebări frecvente</Link></li>
-                    <li><Link className="nav-link" to='/new-meetup'>Limba steag</Link></li>
-                    <li><Link className="nav-link" to='/new-meetup'>Login</Link></li>
-                    <li><Link className="nav-link" to='/buy-now'>Cumpără acum</Link></li>
-                </ul> */}
                 <div className="navbar-nav navbar-right"> 
                     <div className="top-links navbar-nav"> {/** navbar-nav ofera flex-direction: row */}
                         <Link className="top-link" to="/about-us">{t('nav.aboutUs')}</Link>
-                        <Link className="top-link" to='/new-meetup'>Business</Link>
+                        <Link className="top-link" to='/business'>Business</Link>
                         <Link className="top-link" to='/favorites'>{t('nav.how-it-works')}</Link>
                         <Link className="top-link" to='/new-meetup'>{t('nav.questions')}</Link>
-                        {/* <FirstIcon /> */}
+                        {/* <Link className="top-link" to='/new-meetup'>{location.pathname}</Link> */}
                     </div>
-                        {/* <Link className="" to='/new-meetup'>Lim ba steag selector</Link> */}
-                        {/* <Dropdown /> */}
                         <LanguageSwitcher />
                         <Link className="btn-login" to='/login'>{t('nav.login')}</Link>
-                        <Link to="order-card">
-                            <Button className="btn-green btn-small btn-uppercase">
-                                {t("nav.buy-now")}
-                            </Button>
-                        </Link>
+                        {location.pathname != "/order-card" && (
+                            <Link to="order-card">
+                                <Button className="btn-green btn-small btn-uppercase">
+                                    {t("nav.buy-now")}
+                                </Button>
+                            </Link>
+                        )}
                 </div>
             </div>
         {/* </nav> */}
