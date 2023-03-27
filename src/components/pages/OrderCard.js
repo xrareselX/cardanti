@@ -10,21 +10,17 @@ import { EffectCoverflow, Navigation } from "swiper";
 import { useRef, useState } from "react";
 import InputComponent from "../InputComponent";
 import CardantiC from "../../assets/icons/CardantiC";
-// PVC imports
-import PersonalImg from "../../assets/pvc/personal.webp";
-import ShiftImg from "../../assets/pvc/shift.webp";
-import CanvasImg from "../../assets/pvc/canvas.webp";
-import BreachImg from "../../assets/pvc/breach.webp";
-import VisionaryImg from "../../assets/pvc/visionary.webp";
-import OriginImg from "../../assets/pvc/origin.webp";
-import BeginningsImg from "../../assets/pvc/beginnings.webp";
+// PVC front imports
+import pvcImages from "../../assets/pvc-front/pvcImport";
 
-import BlackMetalImg from "../../assets/metal/metal1.webp";
-import GoldMetalImg from "../../assets/metal/metal2.webp";
-import SilverMetalImg from "../../assets/metal/metal3.webp";
-import BlackCarbonImg from "../../assets/carbon/carbon1.webp";
-import GoldCarbonImg from "../../assets/carbon/carbon2.webp";
-import SilverCarbonImg from "../../assets/carbon/carbon3.webp";
+// PVC back imports
+import pvcBackImages from "../../assets/pvc-back/pvcBackImport";
+// Carbon front imports
+import carbonImages from "../../assets/carbon-front/carbonImport";
+
+// Metal front imports
+
+import metalImages from "../../assets/metal-front/metalImport";
 
 function OrderCard() {
     const pvcInitialSlide = 3;
@@ -43,54 +39,54 @@ function OrderCard() {
     const pvcCards = [
         {
             "title": "The Personal Touch Persolanized",
-            "img-source" : PersonalImg,
-            "img-back" : "back text"
+            "img-source" : pvcImages.PersonalImg,
+            "img-back" : pvcBackImages.PersonalImg
         },
         {
             "title": "The Sift Personalized",
-            "img-source" : ShiftImg,
-            "img-back" : "back text"
+            "img-source" : pvcImages.ShiftImg,
+            "img-back" : pvcBackImages.ShiftImg
         },
         {
             "title": "The Canvas Personalized",
-            "img-source" : CanvasImg,
-            "img-back" : "back text"
+            "img-source" : pvcImages.CanvasImg,
+            "img-back" : pvcBackImages.CanvasImg
         },
         {
             "title": "The Breach Personalized",
-            "img-source" : BreachImg,
-            "img-back" : "back text"
+            "img-source" : pvcImages.BreachImg,
+            "img-back" : pvcBackImages.BreachImg
         },
         {
             "title": "The Visionary Personalized",
-            "img-source" : VisionaryImg,
-            "img-back" : "back text"
+            "img-source" : pvcImages.VisionaryImg,
+            "img-back" : pvcBackImages.VisionaryImg
         },
         {
             "title": "The Origin Personalized",
-            "img-source" : OriginImg,
-            "img-back" : "back text"
+            "img-source" : pvcImages.OriginImg,
+            "img-back" : pvcBackImages.OriginImg
         },
         {
             "title": "The New Beginnings Personalized",
-            "img-source" : BeginningsImg,
-            "img-back" : "back text"
+            "img-source" : pvcImages.BeginningsImg,
+            "img-back" : pvcBackImages.BeginningsImg
         }
     ];
     const carbonCards = [
         {
             "title": "Carbon Gold",
-            "img-source" : GoldCarbonImg,
+            "img-source" : carbonImages.GoldCarbonImg,
             "img-back" : "back text"
         },
         {
             "title": "Carbon Black",
-            "img-source" : BlackCarbonImg,
+            "img-source" : carbonImages.BlackCarbonImg,
             "img-back" : "back text"
         },
         {
             "title": "Carbon Silver",
-            "img-source" : SilverCarbonImg,
+            "img-source" : carbonImages.SilverCarbonImg,
             "img-back" : "back text"
         }
     ];
@@ -98,17 +94,17 @@ function OrderCard() {
     const metalCards = [
         {
             "title": "Metal Gold",
-            "img-source" : GoldMetalImg,
+            "img-source" : metalImages.GoldMetalImg,
             "img-back" : "back text" 
         },
         {
             "title": "Metal Black",
-            "img-source" : BlackMetalImg,
+            "img-source" : metalImages.BlackMetalImg,
             "img-back" : "back text" 
         },
         {
             "title": "Metal Gun Brushed",
-            "img-source" : SilverMetalImg,
+            "img-source" : metalImages.SilverMetalImg,
             "img-back" : "back text" 
         }
     ];
@@ -389,7 +385,7 @@ function OrderCard() {
                                                                          </div>
                                                                     <div className="card__face card__face--back text-white">
                                                                         <img style={{ width: "100%"}} 
-                                                                        src={pvcCard["img-source"]} alt="" />
+                                                                        src={pvcCard["img-back"]} alt="" />
                                                                     </div>
                                                                 </SwiperSlide>
                                                             ))
