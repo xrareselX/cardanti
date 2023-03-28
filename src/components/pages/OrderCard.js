@@ -573,9 +573,9 @@ function OrderCard() {
                                                                 <input  id="company" type="text" name="company" className="form-control" /> */}
                                                             </div>
                                                         </div>
-                                                        <div className="customizer-actions row justify-content-center">
-                                                            <a  className="btn btn-green" style={{marginRight: "10px"}}>Adaugă în coș</a>
-                                                            <div className="">
+                                                        <div className="customizer-actions w-100 row justify-content-center text-center">
+                                                            <button  className="btn btn-green d-inline w-50 col-4 offset-1" style={{marginRight: "10px"}}>Adaugă în coș</button>
+                                                            <div className="col-3">
                                                                 <div className="price">
                                                                     <span className="amount">289</span>
                                                                     <span className="currency">lei</span>
