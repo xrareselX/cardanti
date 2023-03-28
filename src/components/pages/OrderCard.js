@@ -537,11 +537,11 @@ function OrderCard() {
                                             <div  className="col-12">
                                                 <div  className="row">
                                                     <div  className="col-12 mb-4">
-                                                        <div  className="card-name mb-3">
-                                                            <h3  className="product-title" style={{display: "flex", alignItems: "flex-end", justifyContent: "center"}}>
+                                                        <div  className="card-name mb-3 text-center">
+                                                            <h3  className="col-12 product-title" style={{display: "flex", alignItems: "flex-end", justifyContent: "center"}}>
                                                                 CB Limited Edition
                                                             </h3>
-                                                            <span>ediție limitată</span>
+                                                            <span className="">ediție limitată</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -551,17 +551,26 @@ function OrderCard() {
                                                     </div>
                                                     <div className="d-flex menu flex-column col-3 personalize mb-4 justify-content-center align-items-center">
                                                         <div>
-                                                            <div className="form-group animated focused">
-                                                                <label for="name">Nume si prenume</label>
-                                                                <input  id="name" type="text" name="name" className="form-control" />
+                                                            <div className="form-group animated">
+                                                                <InputComponent inputId="portrait-name" inputType="text" inputName="name" label="Nume și prenume"
+                                                                // onChange={portraitNameOnChangeHandle} 
+                                                                />
+                                                                {/* <label for="name">Nume si prenume</label>
+                                                                <input  id="name" type="text" name="name" className="form-control" /> */}
                                                             </div>
                                                             <div className="form-group animated">
-                                                                <label for="role">Rol</label>
-                                                                <input id="role" type="text" name="role" className="form-control" />
+                                                                <InputComponent inputId="portrait-role" inputType="text" inputName="role" label="Rol"
+                                                                    // onChange={portraitRoleOnChangeHandle} 
+                                                                />
+                                                                {/* <label for="role">Rol</label>
+                                                                <input id="role" type="text" name="role" className="form-control" /> */}
                                                             </div>
                                                             <div className="form-group animated">
-                                                                <label  for="company">Companie</label>
-                                                                <input  id="company" type="text" name="company" className="form-control" />
+                                                            <InputComponent inputId="portrait-company" inputType="text" inputName="company" label="Companie"
+                                                                    // onChange={portraitCompanyOnChangeHandle} 
+                                                                />
+                                                                {/* <label  for="company">Companie</label>
+                                                                <input  id="company" type="text" name="company" className="form-control" /> */}
                                                             </div>
                                                         </div>
                                                         <div className="customizer-actions row justify-content-center">

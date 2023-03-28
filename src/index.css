@@ -642,7 +642,7 @@ label.focused{
   font-size: 16px;
   color: #8f90a0;
 }
-.card-name>span :after, .card-name>span :before {
+.card-name>span::before{
   content: "";
   width: 14px;
   height: 1px;
@@ -650,4 +650,13 @@ label.focused{
   top: 50%;
   background-color: #8f90a0;
   left: -25px;
+}
+.card-name>span::after{
+  content: "";
+  width: 14px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  background-color: #8f90a0;
+  right: -25px;
 }
