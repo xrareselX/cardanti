@@ -608,3 +608,46 @@ label.focused{
   font-size: 12px;
   text-align: left;
 }
+.card-logo-placeholder {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px dashed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* ORDER CARD PORTRAIT */
+.customizer-wrapper {
+  position: relative;
+}
+.customizer-wrapper>.row {
+  padding: 0 0 40px;
+}
+.customizer-row{
+  z-index: 11;
+  position: relative;
+}
+.order-card-cont h3{
+  padding: 0 15px;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.card-name>span{
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #8f90a0;
+}
+.card-name>span :after, .card-name>span :before {
+  content: "";
+  width: 14px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  background-color: #8f90a0;
+  left: -25px;
+}

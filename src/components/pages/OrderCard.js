@@ -47,6 +47,11 @@ function OrderCard() {
     const [isPVC, setIsPVC] = useState(true);
     const [isCarbon, setIsCarbon] = useState(false);
     const [showModal, setShowModal] = useState(false);
+    const [isPortrait, setIsPortrait] = useState(false);
+    
+    function closeModalHandle(){
+        setShowModal(false);
+    }
 
     const pvcCards = [
         {
@@ -202,19 +207,20 @@ function OrderCard() {
         setShowModal(true);
     }
 
-
     return (
+        <>
         <div className="fix-content">
             <div id="top" style={{backgroundColor: "rgb(29, 30, 33)"}}>
                 <section className="order-card-cont">
                     <div className="w-100 customizer-cont">
                         <div className="row triggers">
                             <div className="card-type d-flex justify-content-center">
-                                <div  className="trigger active">Design</div>
+                                <div  className={"trigger " + (!isPortrait ? "active" : "")} onClick={() => setIsPortrait(false)}>Design</div>
                                 <div  className="separator"></div>
-                                <div  className="trigger">Portrait</div>
+                                <div  className={"trigger " + (isPortrait ? "active" : "")} onClick={() => setIsPortrait(true)}>Portrait</div>
                             </div>
                         </div>
+                            {!isPortrait && (
                         <div>
                             <div className="main-content w-100">
                                 <div className="col-md-3 menu d-flex flex-column justify-content-center mt-3 align-items-center">
@@ -310,10 +316,9 @@ function OrderCard() {
                                                 <button className="col-6 btn text-white btn-dark">Emboss</button>
                                             </div>
                                         </div>
-                                        {/* {showModal && (
-                                            <UploadModal />
-                                        )} */}
-                                        {/* <div className="asta cu dialogul"></div> */}
+                                        {showModal && (
+                                            <UploadModal onCloseHandle={closeModalHandle} />
+                                         )}
                                     </div>
                                     <div className="customizer-actions w-100 mt-3 row justify-content-center">
                                         <button className="btn btn-green w-50 d-inline col" style={{marginRight: "10px"}}>Adaugă în coș</button>
@@ -378,7 +383,17 @@ function OrderCard() {
                                                                                     )}
                                                                                 {!cardantiLogo && !emptyLogo && (
                                                                                     <div className="card-logo-svg text-white" >
-                                                                                        custom    
+                                                                                        <div className="card-logo">
+                                                                                            <div className="card-logo-placeholder" style={{borderColor: "rgba(255, 255, 255, 0.6)"}}>
+                                                                                                <span style={{color: "rgba(255, 255, 255, 0.6)"}}>
+                                                                                                    Logo-ul tău
+                                                                                                </span>
+                                                                                            </div>
+                                                                                            <div className="preview w-100 d-flex justify-content-center" style={{overflow: "hidden"}}>
+                                                                                                <canvas width="200" height="80" style={{visibility: "visible"}}>
+                                                                                                </canvas>
+                                                                                            </div>
+                                                                                        </div>  
                                                                                     </div>
                                                                                     )}
                                                                             </div>
@@ -513,10 +528,66 @@ function OrderCard() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        )}
+                        {isPortrait && (
+                            <div  id="top" className="row" style={{backgroundColor: "rgb(29, 30, 33)"}}>
+                                <section className="order-card-cont">
+                                    <div  className="container-fluid customizer-wrapper">
+                                        <div  id="customizer" className="row customizer-row">
+                                            <div  className="col-12">
+                                                <div  className="row">
+                                                    <div  className="col-12 mb-4">
+                                                        <div  className="card-name mb-3">
+                                                            <h3  className="product-title" style={{display: "flex", alignItems: "flex-end", justifyContent: "center"}}>
+                                                                CB Limited Edition
+                                                            </h3>
+                                                            <span>ediție limitată</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex flex-row-reverse w-100 main-content-tailored">
+                                                    <div className="row result col-9 customizer justify-content-center">
+                                                        
+                                                    </div>
+                                                    <div className="d-flex menu flex-column col-3 personalize mb-4 justify-content-center align-items-center">
+                                                        <div>
+                                                            <div className="form-group animated focused">
+                                                                <label for="name">Nume si prenume</label>
+                                                                <input  id="name" type="text" name="name" className="form-control" />
+                                                            </div>
+                                                            <div className="form-group animated">
+                                                                <label for="role">Rol</label>
+                                                                <input id="role" type="text" name="role" className="form-control" />
+                                                            </div>
+                                                            <div className="form-group animated">
+                                                                <label  for="company">Companie</label>
+                                                                <input  id="company" type="text" name="company" className="form-control" />
+                                                            </div>
+                                                        </div>
+                                                        <div className="customizer-actions row justify-content-center">
+                                                            <a  className="btn btn-green" style={{marginRight: "10px"}}>Adaugă în coș</a>
+                                                            <div className="">
+                                                                <div className="price">
+                                                                    <span className="amount">289</span>
+                                                                    <span className="currency">lei</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        )}
+                    </div>  {/*  width 100 customizer-cont*/}
                 </section>
             </div>
         </div>
+        
+        </>
+
     );
 }
 

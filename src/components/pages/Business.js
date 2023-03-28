@@ -2,7 +2,7 @@ import UploadModal from "../UploadModal";
 
 function Business(){
     return (
-        <UploadModal />
+        <h2>business</h2>
     );
 }
 
