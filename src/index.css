@@ -660,3 +660,97 @@ label.focused{
   background-color: #8f90a0;
   right: -25px;
 }
+.customizer-card{
+  position: relative;
+  z-index: 999;
+  margin-bottom: 80px;
+}
+.pulse{
+  position: absolute;
+  height: 1px;
+  transition: box-shadow .4s ease-out;
+  left: calc(50% - 1px);
+  top: calc(50% - 1px);
+  width: 1px;
+  border-radius: 100px;
+  /* animation: pulse-animation 2s infinite; */
+    /* la animation mai lucreaza*/
+}
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 50px rgba(0, 0, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 200px rgba(225, 0, 0, 0.1);
+  }
+}
+.spacer-data{
+  display: block;
+  width: 25px;
+  height: 1px;
+  margin: 2px 0;
+  border-top: 1px solid hsla(0,0%,100%,.8);
+}
+.flip-it-portrait {
+  position: absolute;
+  bottom: -60px;
+  left: calc(50% - 40px);
+  cursor: pointer;
+}
+.flip-it-portrait svg{
+  transition: all .2s linear;
+}
+.flip-it-portrait :hover{
+  fill: #fff;
+}
+.image-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 4px;
+}
+.customizer-container{
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+.portrait {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  max-width: 250px;
+}
+.portrait-uploader{
+  min-width: 220px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border-bottom-right-radius: 16px;
+  overflow: hidden;
+}
+.upload-icon {
+  max-width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9;
+}
+.load-text {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+}

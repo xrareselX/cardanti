@@ -4,11 +4,15 @@ import { useState } from "react";
 function InputComponent(props){
 
     const [isFocused, setIsFocused] = useState(false);
-    // const [isInput, setIsInput] = useState(false);
 
     function onBlurHandle(e){
         if(e.currentTarget.value=='')
-            setIsFocused(false);
+            {
+                setIsFocused(false);
+                let valueOnBlur = 0;
+            } else{
+                let valueOnBlur = 1;
+            }
     }
 
     function onFocusHandle(e) {
@@ -18,7 +22,7 @@ function InputComponent(props){
         <>
         <label  for={props.inputId} className={isFocused ? "focused" : ""}>{props.label}</label>
         <input  id={props.inputId} type={props.inputType} name={props.inputName} className="form-control me-1"
-        onFocus={onFocusHandle} onBlur={onBlurHandle} onChange={props.onChange} /> 
+        onFocus={onFocusHandle} onBlur={onBlurHandle} onChange={props.onChange}  /> 
         </>
     );
 }
