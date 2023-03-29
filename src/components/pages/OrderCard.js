@@ -589,15 +589,17 @@ function OrderCard() {
                                                                             C130.7,40.9,124.2,34.6,113.9,30.2z"></path>
                                                                     </svg>
                                                                 </div>
-                                                                <div className="image-wrapper align-self-center">
+                                                                {/* <div className="image-wrapper align-self-center"> */}
                                                                     <div role="dialogue"></div> {/* aici vine modal ul*/}
                                                                     <div className={"flip-card "+ (isPortraitFlipped ? "flip-portrait" : "")}>
-                                                                        <div className="flip-card-inner">
+                                                                        {/* <div className="flip-card-inner"> */}
                                                                             {/* aica cu thickness cred ca e doar pt design nu si portret*/}
-                                                                            <div className="portrait-card__face portrait-card__face--front" style={{height: "104%"}}>
+                                                                            <div className="portrait-card__face portrait-card__face--front" 
+                                                                            // style={{height: "104%"}}
+                                                                            >
                                                                                 <div className="logo-container"></div>
                                                                                 <div className="card-logo" style={{width: "72px"}}>
-                                                                                    <a href="javascript:void(0);" className="logo-control prev">
+                                                                                    <a href="" className="logo-control prev">
                                                                                         <span>
                                                                                             <svg width="15" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" 
                                                                                                 className="svg-inline--fa fa-chevron-left fa-w-3">
@@ -609,8 +611,9 @@ function OrderCard() {
                                                                                     <div className="card-logo-svg-portrait">
                                                                                         <CardantiC width="50px" />
                                                                                     </div>
-                                                                                     <div className="logo-overlay"></div> {/*aici vine ala de upload */}
-                                                                                    <a href="javascript:void(0);" className="logo-control next">
+                                                                                     {/*aici sub vine ala de upload */}
+                                                                                     <div className="logo-overlay"></div> 
+                                                                                    <a href="" className="logo-control next">
                                                                                         <span>
                                                                                             <svg width="15" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" 
                                                                                                 className="svg-inline--fa fa-chevron-right fa-w-3">
@@ -657,9 +660,12 @@ function OrderCard() {
                                                                             <div className="portrait-card__face portrait-card__face--back">
                                                                                 <img src={portraitBack} alt="" style={{width: "100%"}}/>
                                                                             </div>
-                                                                        </div> {/*inner */}
+                                                                        {/*sub einner */}
+                                                                        {/* </div>  */}
+                                                                        {/* sub e flip-card */}
                                                                     </div>
-                                                                </div> {/*img wrapper */}
+                                                                {/* sub img wrapper */}
+                                                                {/* </div>  */}
                                                             </div>
                                                         </div>
                                                     </div>
