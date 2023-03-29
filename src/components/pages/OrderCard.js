@@ -50,8 +50,7 @@ function OrderCard() {
     const [isCarbon, setIsCarbon] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [isPortrait, setIsPortrait] = useState(false);
-    const [portraitRoleInput, setPortraitRoleInput] = useState(false);    
-    const [portraitCompanyInput, setPortraitCompanyInput] = useState(false);    
+    const [displayPortraitSeparator, setDisplayPortraitSeparator] = useState(false);    
 
     function closeModalHandle(){
         setShowModal(false);
@@ -182,7 +181,7 @@ function OrderCard() {
         }
     }
     function portraitRoleOnChangeHandle(e){
-        setPortraitRoleInput(true);
+        setDisplayPortraitSeparator(true);
         const elements = document.getElementsByClassName("portrait-role-data");
         for(let element of elements){
             element.innerHTML = e.target.value;
@@ -195,10 +194,18 @@ function OrderCard() {
         }
     }
     function portraitCompanyOnChangeHandle(e){
-        setPortraitCompanyInput(true);
+        setDisplayPortraitSeparator(true);
         const elements = document.getElementsByClassName("portrait-company-data");
         for(let element of elements){
             element.innerHTML = e.target.value;
+        }
+    }
+
+    function setPortraitRoleInputValueOnBlurHandle(useSeparator) {
+        if(useSeparator == 0){
+            setDisplayPortraitSeparator(false);
+        } else{
+            setDisplayPortraitSeparator(true);
         }
     }
 
@@ -619,7 +626,7 @@ function OrderCard() {
                                                                                 <div className="custom-data">
                                                                                     <div  className="portrait-name-data card-inner-text" style={{color: "white", fontSize: "20px"}}>
                                                                                     </div>
-                                                                                    {(portraitRoleInput || portraitCompanyInput) && (
+                                                                                    {displayPortraitSeparator && (
                                                                                         <div className="spacer-data" style={{borderColor:"white"}}></div>
                                                                                     )}
                                                                                     <div  className="portrait-role-data card-inner-text" style={{color: "white", fontSize: "13px", fontWeight: "300"}}>
