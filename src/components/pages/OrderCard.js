@@ -186,6 +186,8 @@ function OrderCard() {
         for(let element of elements){
             element.innerHTML = e.target.value;
         }
+        if(e.currentTarget.value == "")
+            setDisplayPortraitSeparator(false);
     }
     function companyOnChangeHandle(e){
         const elements = document.getElementsByClassName("company");
@@ -199,14 +201,8 @@ function OrderCard() {
         for(let element of elements){
             element.innerHTML = e.target.value;
         }
-    }
-
-    function setPortraitRoleInputValueOnBlurHandle(useSeparator) {
-        if(useSeparator == 0){
+        if(e.currentTarget.value == "")
             setDisplayPortraitSeparator(false);
-        } else{
-            setDisplayPortraitSeparator(true);
-        }
     }
 
     function removeClassNamefromAllElements(className, removeClassName){
@@ -671,7 +667,7 @@ function OrderCard() {
                                                             </div>
                                                             <div className="form-group animated">
                                                                 <InputComponent inputId="portrait-role" inputType="text" inputName="role" label="Rol"
-                                                                    onChange={portraitRoleOnChangeHandle} onPortraitInputBlur={setPortraitRoleInputValueOnBlurHandle}
+                                                                    onChange={portraitRoleOnChangeHandle}
                                                                 />
                                                             </div>
                                                             <div className="form-group animated">

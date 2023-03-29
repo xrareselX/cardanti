@@ -6,13 +6,8 @@ function InputComponent(props){
     const [isFocused, setIsFocused] = useState(false);
 
     function onBlurHandle(e){
-        let valueOnBlur = 1;
         if(e.currentTarget.value=='')
-            {
-                setIsFocused(false);
-                valueOnBlur = 0;
-            }
-            props.onPortraitInputBlur(valueOnBlur);
+            setIsFocused(false);
     }
 
     function onFocusHandle(e) {
