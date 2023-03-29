@@ -32,6 +32,7 @@ import metalBackImages from "../../assets/metal-back/metalBackImport";
 // Portrait imports
 import portraitFront from "../../assets/portrait/portrait-front.png";
 import portraitBack from "../../assets/portrait/portrait-back.png";
+
 import UploadModal from "../UploadModal";
 
 
@@ -594,7 +595,7 @@ function OrderCard() {
                                                                             {/* aica cu thickness cred ca e doar pt design nu si portret*/}
                                                                             <div className="flip-card-front">
                                                                                 <div className="logo-container"></div>
-                                                                                <div className="card-logo">
+                                                                                <div className="card-logo" style={{width: "72px"}}>
                                                                                     <a href="javascript:void(0);" className="logo-control prev">
                                                                                         <span>
                                                                                             <svg width="15" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" 
@@ -604,10 +605,10 @@ function OrderCard() {
                                                                                             </svg>
                                                                                         </span>
                                                                                     </a>
-                                                                                    <div className="card-logo-svg" style={{fill: "white"}}>
-                                                                                        <CardantiC />
+                                                                                    <div className="card-logo-svg-portrait">
+                                                                                        <CardantiC width="50px" />
                                                                                     </div>
-                                                                                    <div className="logo=overlay"></div>
+                                                                                     <div className="logo-overlay"></div> {/*aici vine ala de upload */}
                                                                                     <a href="javascript:void(0);" className="logo-control next">
                                                                                         <span>
                                                                                             <svg width="15" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" 
@@ -651,6 +652,9 @@ function OrderCard() {
                                                                                         <span className="load-text text-white d-block w-100 mb-1 sb-text">Încarcă o poză cu tine</span>
                                                                                     </div>
                                                                                 </div>
+                                                                            </div>
+                                                                            <div className="flip-card-back">
+                                                                                <img src={portraitBack} alt="" style={{width: "100%"}}/>
                                                                             </div>
                                                                         </div>
                                                                     </div>

@@ -754,3 +754,26 @@ label.focused{
   text-align: center;
   bottom: 0;
 }
+.card-logo .logo-control {
+  width: 20px;
+  height: 40px;
+  line-height: 40px;
+  z-index: 999;
+  position: absolute;
+}
+.card-logo .logo-control.prev {
+  left: -12px;
+}
+.card-logo .logo-control.next{
+  top: 0;
+  right: -16px;
+  left: auto!important;
+}
+.card-logo .logo-control svg{
+  color: #fff;
+}
+.card-logo-svg-portrait svg{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
