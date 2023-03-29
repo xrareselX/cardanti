@@ -42,6 +42,7 @@ function OrderCard() {
     const metalInitialSlide = 1;
 
     const [isFlipped, setIsFlipped] = useState(false);
+    const [isPortraitFlipped, setIsPortraitFlipped] = useState(false);
     const [nameSize, setNameSize] = useState(10);
     const [roleSize, setRoleSize] = useState(8);
     const [companySize, setCompanySize] = useState(8);
@@ -578,7 +579,7 @@ function OrderCard() {
                                                         <div className="col-12 customizer-card">
                                                             <div className="pulse"></div>
                                                             <div className="customizer-container d-flex justify-content-center align-items-center">
-                                                                <div className="flip-it-portrait">
+                                                                <div className="flip-it-portrait" onClick={() => setIsPortraitFlipped(!isPortraitFlipped)}>
                                                                     <svg fill="rgba(255,255,255,.8)" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" 
                                                                         xmlnsXlink="http://www.w3.org/1999/xlink" width="80" x="0px" y="0px" viewBox="0 0 151.4 99.7" 
                                                                         style={{enableBackground: "new 0 0 151.4 99.7"}} xmlSpace="preserve" className="">
@@ -590,10 +591,10 @@ function OrderCard() {
                                                                 </div>
                                                                 <div className="image-wrapper align-self-center">
                                                                     <div role="dialogue"></div> {/* aici vine modal ul*/}
-                                                                    <div className="flip-card">
+                                                                    <div className={"flip-card "+ (isPortraitFlipped ? "flip-portrait" : "")}>
                                                                         <div className="flip-card-inner">
                                                                             {/* aica cu thickness cred ca e doar pt design nu si portret*/}
-                                                                            <div className="flip-card-front">
+                                                                            <div className="portrait-card__face portrait-card__face--front" style={{height: "104%"}}>
                                                                                 <div className="logo-container"></div>
                                                                                 <div className="card-logo" style={{width: "72px"}}>
                                                                                     <a href="javascript:void(0);" className="logo-control prev">
@@ -653,12 +654,12 @@ function OrderCard() {
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div className="flip-card-back">
+                                                                            <div className="portrait-card__face portrait-card__face--back">
                                                                                 <img src={portraitBack} alt="" style={{width: "100%"}}/>
                                                                             </div>
-                                                                        </div>
+                                                                        </div> {/*inner */}
                                                                     </div>
-                                                                </div>
+                                                                </div> {/*img wrapper */}
                                                             </div>
                                                         </div>
                                                     </div>
