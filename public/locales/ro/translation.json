@@ -33,5 +33,28 @@
         "email": "Adresă de e-mail",
         "pass": "Parolă",
         "submit-btn": "Autentifică-te"
+    },
+    "business":{
+        "section4": {
+            "h2": "Pentru a acoperi toate nevoile brand-ului tău îţi punem la dispoziţie",
+            "h1": "Două modalităţi de personalizare a cărţilor tale de vizită"
+        },
+        "section5": {
+            "row1": {
+                "h2": "Îţi inserăm logo-ul şi culorile de brand pe cardurile Cardanti",
+                "li1": "Astfel beneficiezi de pe urma design-ului neutru si elegant care rămâne actual în timp ce brand-ul tău este scos în evidenţă în cel mai bun mod posibil.",
+                "li2": "Soluţie simplă care îţi economiseşte timp prin design-ul predefinit şi prin rapiditatea comenzii."
+            },
+            "row2": {
+                "h2": "Noi venim cu o machetă de card, iar tu cu design-ul",
+                "li1": "Am pregătit un şablon Cardanti pe care un designer îl poate transforma în cardul dorit de tine.",
+                "li2": "Descarcă şablonul, schiţează cardul folosind instrucţiunile noastre şi contactează-ne."
+            },
+            "btn": "Downloadează Fișierul"
+        },
+        "section6": {
+            "h2-1": "Trimite-ne un email la",
+            "h2-2": "business@cardanti.com"
+        }
     }
 }

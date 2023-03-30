@@ -589,14 +589,10 @@ function OrderCard() {
                                                                             C130.7,40.9,124.2,34.6,113.9,30.2z"></path>
                                                                     </svg>
                                                                 </div>
-                                                                {/* <div className="image-wrapper align-self-center"> */}
                                                                     <div role="dialogue"></div> {/* aici vine modal ul*/}
                                                                     <div className={"flip-card "+ (isPortraitFlipped ? "flip-portrait" : "")}>
-                                                                        {/* <div className="flip-card-inner"> */}
                                                                             {/* aica cu thickness cred ca e doar pt design nu si portret*/}
-                                                                            <div className="portrait-card__face portrait-card__face--front" 
-                                                                            // style={{height: "104%"}}
-                                                                            >
+                                                                            <div className="portrait-card__face portrait-card__face--front">
                                                                                 <div className="logo-container"></div>
                                                                                 <div className="card-logo" style={{width: "72px"}}>
                                                                                     <a href="" className="logo-control prev">
@@ -660,12 +656,7 @@ function OrderCard() {
                                                                             <div className="portrait-card__face portrait-card__face--back">
                                                                                 <img src={portraitBack} alt="" style={{width: "100%"}}/>
                                                                             </div>
-                                                                        {/*sub einner */}
-                                                                        {/* </div>  */}
-                                                                        {/* sub e flip-card */}
                                                                     </div>
-                                                                {/* sub img wrapper */}
-                                                                {/* </div>  */}
                                                             </div>
                                                         </div>
                                                     </div>

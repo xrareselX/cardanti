@@ -799,3 +799,57 @@ label.focused{
 .flip-portrait{
   transform: rotateY(180deg); 
 }
+/* BUSINESS */
+ul.list{
+  padding-left: 0;
+  list-style-type: none;
+  margin-bottom: 40px;
+  color: #1c273c;
+}
+ul.list li{
+  font-size: 1.12rem;
+  line-height: 1.6;
+  margin-left: 0;
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 12px;
+}
+ul.list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #25bcb5;
+  top: 10px;
+}
+@media screen  and (min-width: 1200px) {
+  .container, .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1140px;
+  }
+}
+.lighter-gray {
+  color: #68697f;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+.card-image{
+  width: 100%;
+  height: auto;
+  align-self: center;
+}
+@media (min-width: 570px){
+  .card-image {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+.custom-h1{
+  font-size: 2.625rem;
+  font-weight: 600;
+}
+.custom-h2{
+  font-weight: 600;
+  font-size: 1.6rem;
+}
