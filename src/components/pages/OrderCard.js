@@ -403,6 +403,12 @@ function OrderCard() {
                                                             {pvcCards.map((pvcCard, index) =>(
                                                                 <SwiperSlide className={isFlipped? "flipped": ""} onClick={slideOnClickHandler}
                                                                     title={pvcCard.title} >
+                                                                        <div className="flip-it-overlay overlay-tooltip mb-3">
+                                                                            <div className="w-100 d-flex justify-content-center">
+                                                                                <flip-card />
+                                                                            </div> 
+                                                                            <p className="text-white">Apasă pe card pentru a îl înclina și a vedea culoarea muchei</p>
+                                                                        </div>
                                                                         <div className="card__face card__face--front">
                                                                             <div className="card-logo" >
                                                                                 {cardantiLogo && !emptyLogo && (
