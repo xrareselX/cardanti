@@ -403,49 +403,52 @@ function OrderCard() {
                                                             {pvcCards.map((pvcCard, index) =>(
                                                                 <SwiperSlide className={isFlipped? "flipped": ""} onClick={slideOnClickHandler}
                                                                     title={pvcCard.title} >
-                                                                        <div className="flip-it-overlay overlay-tooltip mb-3">
+                                                                    {/* <div className="flip-card-wrapper"> */}
+                                                                    <div className="card__face card__face--front">
+                                                                        {/* <div className="flip-it-overlay overlay-tooltip mb-3">
                                                                             <div className="w-100 d-flex justify-content-center">
                                                                                 <flip-card />
                                                                             </div> 
                                                                             <p className="text-white">Apasă pe card pentru a îl înclina și a vedea culoarea muchei</p>
+                                                                        </div> */}
+                                                                        <div className="card-logo" >
+                                                                            {cardantiLogo && !emptyLogo && (
+                                                                                <div className="card-logo-svg">
+                                                                                    <CardantiC/>    
+                                                                                </div>
+                                                                                )}
+                                                                            {!cardantiLogo && !emptyLogo && (
+                                                                                <div className="card-logo-svg text-white" >
+                                                                                    <div className="card-logo">
+                                                                                        <div className="card-logo-placeholder" style={{borderColor: "rgba(255, 255, 255, 0.6)"}}>
+                                                                                            <span style={{color: "rgba(255, 255, 255, 0.6)"}}>
+                                                                                                Logo-ul tău
+                                                                                            </span>
+                                                                                        </div>
+                                                                                        <div className="preview w-100 d-flex justify-content-center" style={{overflow: "hidden"}}>
+                                                                                            <canvas width="200" height="80" style={{visibility: "visible"}}>
+                                                                                            </canvas>
+                                                                                        </div>
+                                                                                    </div>  
+                                                                                </div>
+                                                                                )}
                                                                         </div>
-                                                                        <div className="card__face card__face--front">
-                                                                            <div className="card-logo" >
-                                                                                {cardantiLogo && !emptyLogo && (
-                                                                                    <div className="card-logo-svg">
-                                                                                        <CardantiC/>    
-                                                                                    </div>
-                                                                                    )}
-                                                                                {!cardantiLogo && !emptyLogo && (
-                                                                                    <div className="card-logo-svg text-white" >
-                                                                                        <div className="card-logo">
-                                                                                            <div className="card-logo-placeholder" style={{borderColor: "rgba(255, 255, 255, 0.6)"}}>
-                                                                                                <span style={{color: "rgba(255, 255, 255, 0.6)"}}>
-                                                                                                    Logo-ul tău
-                                                                                                </span>
-                                                                                            </div>
-                                                                                            <div className="preview w-100 d-flex justify-content-center" style={{overflow: "hidden"}}>
-                                                                                                <canvas width="200" height="80" style={{visibility: "visible"}}>
-                                                                                                </canvas>
-                                                                                            </div>
-                                                                                        </div>  
-                                                                                    </div>
-                                                                                    )}
+                                                                        <img style={{ width: "100%"}} src={pvcCard["img-source"]} alt="" />
+                                                                        <div className="custom-data">
+                                                                            <div  className="name-data card-inner-text name" style={{color: "white", fontSize: `${nameSize}pt`}}>
                                                                             </div>
-                                                                            <img style={{ width: "100%"}} src={pvcCard["img-source"]} alt="" />
-                                                                            <div className="custom-data">
-                                                                                <div  className="name-data card-inner-text name" style={{color: "white", fontSize: `${nameSize}pt`}}>
-                                                                                </div>
-                                                                                <div  className="role-data card-inner-text role" style={{color: "white", fontSize: `${roleSize}pt`}}>
-                                                                                </div>
-                                                                                <div  className="company-data card-inner-text company" style={{color: "white", fontSize: `${companySize}pt`}}>
-                                                                                </div>
+                                                                            <div  className="role-data card-inner-text role" style={{color: "white", fontSize: `${roleSize}pt`}}>
                                                                             </div>
-                                                                         </div>
+                                                                            <div  className="company-data card-inner-text company" style={{color: "white", fontSize: `${companySize}pt`}}>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
                                                                     <div className="card__face card__face--back text-white">
                                                                         <img style={{ width: "100%"}} 
                                                                         src={pvcCard["img-back"]} alt="" />
                                                                     </div>
+                                                                    {/* below is the wrapper div */}
+                                                                    {/* </div> */}
                                                                 </SwiperSlide>
                                                             ))
                                                             }
