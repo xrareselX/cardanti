@@ -41,7 +41,7 @@ function Nav() {
                     <div className="top-links navbar-nav"> {/** navbar-nav ofera flex-direction: row */}
                         <Link className="top-link" to="/about-us">{t('nav.aboutUs')}</Link>
                         <Link className="top-link" to='/business'>Business</Link>
-                        <Link className="top-link" to='/favorites'>{t('nav.how-it-works')}</Link>
+                        <Link className="top-link" to='/how_it_works'>{t('nav.how-it-works')}</Link>
                         <Link className="top-link" to='/new-meetup'>{t('nav.questions')}</Link>
                         {/* <Link className="top-link" to='/new-meetup'>{location.pathname}</Link> */}
                     </div>

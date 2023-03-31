@@ -56,5 +56,28 @@
             "h2-1": "Trimite-ne un email la",
             "h2-2": "business@cardanti.com"
         }
+    },
+    "how_it_works": {
+        "section1": {
+            "h1-1": "Socializează fără limite",
+            "h1-2": "Cu o singură carte de vizită",
+            "h2": "Personalizează şi comandă cartea de vizită în mai puţin de un minut",
+            "a1": "Cumpără acum",
+            "a2": "Cum funcționează"
+        },
+        "section2": {
+            "card1":{
+                "h3": "Doar Cardanti",
+                "p": "Cardanti este tot ce ai nevoie pentru o experienţă completă de networking, atât faţă în faţă cât şi online."
+            },
+            "card2":{
+                "h3": "Un simplu gest",
+                "p": "Iar partenerul tău de discuţie primeşte profilul tău Cardanti. Profilul este afişat în browser, fără instalarea unei aplicaţii."
+            },
+            "card3":{
+                "h3": "Profilul tău de Business",
+                "p": "Editează oricând informaţiile tale de contact: număr de telefon, adresă, linkuri social media, video, prezentări."
+            }
+        }
     }
 }
