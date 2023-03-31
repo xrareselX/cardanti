@@ -18,6 +18,7 @@ function App() {
       <Route path="/login" element={<Login />}/>
       <Route path="/order-card" element={<OrderCard />}/>
     </Routes>
+    <How_it_works />
     <Footer />
     </Layout>
   );

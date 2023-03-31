@@ -78,6 +78,26 @@
                 "h3": "Profilul tău de Business",
                 "p": "Editează oricând informaţiile tale de contact: număr de telefon, adresă, linkuri social media, video, prezentări."
             }
+        },
+        "section4": {
+            "part1": {
+                "h2": "Pentru tine",
+                "strong": "Cardanti Personal",
+                "li1": "Alege din două stiluri de culori: Deschis şi Închis",
+                "li2": "Fiecare stil conţine trei culori atent selecţionate",
+                "li3": "Personalizează-l cu nume/poziţie/companie",
+                "btn1": "Cumpără acum",
+                "btn2": "Vezi mai mult"
+            },
+            "part2": {
+                "h2": "Pentru afacerea ta",
+                "strong": "Cardanti Business",
+                "li1": "Cărţi de vizită adaptate brand-ului tău",
+                "li2": "Modul de autogăzduire a datelor",
+                "li3": "Oferte speciale în funcţie de cantitate",
+                "btn1": "Obține ofertă",
+                "btn2": "Vezi mai mult"
+            }
         }
     }
 }

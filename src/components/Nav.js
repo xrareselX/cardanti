@@ -42,7 +42,7 @@ function Nav() {
                         <Link className="top-link" to="/about-us">{t('nav.aboutUs')}</Link>
                         <Link className="top-link" to='/business'>Business</Link>
                         <Link className="top-link" to='/how_it_works'>{t('nav.how-it-works')}</Link>
-                        <Link className="top-link" to='/new-meetup'>{t('nav.questions')}</Link>
+                        <Link className="top-link" to='https://help.cardanti.com/help' target="_blank">{t('nav.questions')}</Link>
                         {/* <Link className="top-link" to='/new-meetup'>{location.pathname}</Link> */}
                     </div>
                         <LanguageSwitcher />

@@ -888,3 +888,79 @@ ul.list li::before {
   margin-bottom: 0;
   color: #68697f;
 }
+.video-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.proposals h1{
+  margin-bottom: 70px;
+  font-size: 2.625rem;
+  font-weight: 600;
+}
+.card-title {
+  padding: 40px 40px 0;
+  border-bottom: 1px solid #f1f2f8;
+  width: 100%;
+}
+.card-title h2{
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.card-title h2 span{
+  color: #00a698;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  z-index: 9;
+}
+.card-title h2 .cardanti-opt-text{
+  text-transform: capitalize;
+  line-height: 1;
+  display: block;
+  color: #1c273c;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.btn-border {
+  background: transparent;
+  border: 1px solid #cdcdd7;
+  color: #111236;
+}
+.card-content{
+  text-align: center;
+  padding: 40px 86px;
+}
+.card-content .card-img{
+  position: relative;
+  margin-bottom: 38px;
+}
+.card-content .card-img::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: 100px;
+  box-shadow: 0 6px 30px rgba(77,87,104,.55);
+}
+.card-content .card-img img {
+  position: relative;
+}
+.card-content ul {
+  color: #111236;
+}
+.card-content li{
+  margin-right: -30px;
+}
+.card-content button {
+  font-weight: 600;
+}
