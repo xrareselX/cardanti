@@ -53,9 +53,17 @@ function OrderCard() {
     const [showModal, setShowModal] = useState(false);
     const [isPortrait, setIsPortrait] = useState(false);
     const [displayPortraitSeparator, setDisplayPortraitSeparator] = useState(false);    
+    const [displayFlipModal, setDisplayFlipModal] = useState(true);    
 
     function closeModalHandle(){
         setShowModal(false);
+    }
+    function flipModalClickedHandle(){
+        setDisplayFlipModal(false);
+        const elements = document.getElementsByClassName("swiper-slide-active");
+        for(let element of elements){
+            element.classList += " show-side";
+        }
     }
 
     const pvcCards = [
@@ -400,17 +408,24 @@ function OrderCard() {
                                                             slidesPerView={"auto"}
                                                             onSlideChangeTransitionStart={displayCardTitle}
                                                         >
-                                                            {pvcCards.map((pvcCard, index) =>(
-                                                                <SwiperSlide className={isFlipped? "flipped": ""} onClick={slideOnClickHandler}
-                                                                    title={pvcCard.title} >
-                                                                    {/* <div className="flip-card-wrapper"> */}
-                                                                    <div className="card__face card__face--front">
-                                                                        {/* <div className="flip-it-overlay overlay-tooltip mb-3">
+                                                            {displayFlipModal && (
+                                                                        <div className="flip-it-overlay overlay-tooltip mb-3" onClick={flipModalClickedHandle}>
                                                                             <div className="w-100 d-flex justify-content-center">
-                                                                                <flip-card />
+                                                                                {/* <flip-card /> */}
                                                                             </div> 
                                                                             <p className="text-white">Apasă pe card pentru a îl înclina și a vedea culoarea muchei</p>
-                                                                        </div> */}
+                                                                        </div>
+                                                            )}
+                                                            {pvcCards.map((pvcCard, index) =>(
+                                                                <SwiperSlide 
+                                                                className={isFlipped? "flipped": ""} 
+                                                                    onClick={slideOnClickHandler}
+                                                                    title={pvcCard.title}
+                                                                     >
+                                                                    {/* <div 
+                                                                    className={"flip-card-wrapper " + (isFlipped ? "flipped": "")}
+                                                                    > */}
+                                                                    <div className="card__face card__face--front">
                                                                         <div className="card-logo" >
                                                                             {cardantiLogo && !emptyLogo && (
                                                                                 <div className="card-logo-svg">
