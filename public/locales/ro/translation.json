@@ -39,6 +39,28 @@
             "row": {
                 "h2": "Am creat un premium business card care vine în dezvoltarea procesului de sales al agenților companiei. Cardul vine cu câteva extra beneficii adăugate cardului de vizită Smart Cardanti şi profilului Cardanti de business:",
                 "h1": "Cardanti Custom propune:"
+            },
+            "cards":{
+                "card1": {
+                    "h3": "Livrarea rezultatelor",
+                    "p": "Accesul datelor este rapid și easy to share. Datele se pot accesa de oriunde după scanare, nu mai este nevoie de cartea de vizită în format fizic, iar datele se păstrează pe landing page, fără să se piardă precum în cazul cărților de vizită obișnuite."
+                },
+                "card2": {
+                    "h3": "Design contemporan și branding",
+                    "p": "Design-ul cărților de vizită este premium, customizat cu elementele identității de brand ale companiei – logo."
+                },
+                "card3": {
+                    "h3": "Dashboard și monitorizare",
+                    "p": "Am creat o interfață care centralizează toate datele tuturor cardurilor și vine cu o evidența a performanței acestora. Fiecare agent primește un card nominal care va transmite date specifice: în ce locații a fost utilizat, câte persoane au accesat cartea de vizită, traficul generat în anumite zone de tip evenimente, business meetings. Astfel, creează un status de performanță a echipei și oferă datele de contact într-un mod rapid, eficient și ușor de accesat."
+                },
+                "card4": {
+                    "h3": "Custom Number",
+                    "p": "Se pot crea un număr personalizat de cărți de vizită, în funcție de dimensiunea echipei."
+                },
+                "card5": {
+                    "h3": "Personalizat și Actualizat",
+                    "p": "Datele de contact ale membrului se pot edita și actualiza constant în funcție de creșterea și schimbarea în carieră și la nivelul companiei."
+                }
             }
         },
         "section4": {
