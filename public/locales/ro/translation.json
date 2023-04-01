@@ -35,6 +35,12 @@
         "submit-btn": "Autentifică-te"
     },
     "business":{
+        "section2": {
+            "row": {
+                "h2": "Am creat un premium business card care vine în dezvoltarea procesului de sales al agenților companiei. Cardul vine cu câteva extra beneficii adăugate cardului de vizită Smart Cardanti şi profilului Cardanti de business:",
+                "h1": "Cardanti Custom propune:"
+            }
+        },
         "section4": {
             "h2": "Pentru a acoperi toate nevoile brand-ului tău îţi punem la dispoziţie",
             "h1": "Două modalităţi de personalizare a cărţilor tale de vizită"

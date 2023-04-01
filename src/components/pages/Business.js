@@ -16,6 +16,16 @@ function Business(){
                 </div>
             </div>
         </section>
+        <section className="usps">
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 d-flex justify-content-center flex-wrap">
+                        <h2 className="text-center w-100 lighter-gray">{t("business.section2.row.h2")}</h2>
+                        <h1 className="text-center w-100 mt-5">{t("business.section2.row.h1")}</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
         {/* section 2 will be here */}
         <section>
             <div className="container">
