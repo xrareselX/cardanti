@@ -33,5 +33,56 @@
         "email": "Email address",
         "pass": "Password",
         "submit-btn": "Log in"
+    },
+    "business":{
+        "section2": {
+            "row": {
+                "h2": "We created a premium business card that comes in the development of the sales process of the company's agents. The card comes with some extra benefits added to the Smart Cardanti business card and the Cardanti business profile:",
+                "h1": "Cardanti Custom proposes:"
+            },
+            "cards":{
+                "card1": {
+                    "h3": "Livrarea rezultatelor",
+                    "p": "Accesul datelor este rapid și easy to share. Datele se pot accesa de oriunde după scanare, nu mai este nevoie de cartea de vizită în format fizic, iar datele se păstrează pe landing page, fără să se piardă precum în cazul cărților de vizită obișnuite."
+                },
+                "card2": {
+                    "h3": "Design contemporan și branding",
+                    "p": "Design-ul cărților de vizită este premium, customizat cu elementele identității de brand ale companiei – logo."
+                },
+                "card3": {
+                    "h3": "Dashboard și monitorizare",
+                    "p": "Am creat o interfață care centralizează toate datele tuturor cardurilor și vine cu o evidența a performanței acestora. Fiecare agent primește un card nominal care va transmite date specifice: în ce locații a fost utilizat, câte persoane au accesat cartea de vizită, traficul generat în anumite zone de tip evenimente, business meetings. Astfel, creează un status de performanță a echipei și oferă datele de contact într-un mod rapid, eficient și ușor de accesat."
+                },
+                "card4": {
+                    "h3": "Custom Number",
+                    "p": "Se pot crea un număr personalizat de cărți de vizită, în funcție de dimensiunea echipei."
+                },
+                "card5": {
+                    "h3": "Personalizat și Actualizat",
+                    "p": "Datele de contact ale membrului se pot edita și actualiza constant în funcție de creșterea și schimbarea în carieră și la nivelul companiei."
+                }
+            }
+        },
+        "section4": {
+            "h2": "To cover for all your brand's needs we offer",
+            "h1": "Two ways of making your custom business cards."
+        },
+        "section5": {
+            "row1": {
+                "h2": "We place your logo and brand colors on our Timeless Cards",
+                "li1": "You benefit from a neutral and elegant business card design that lasts forever while also representing your brand in the best possible way.",
+                "li2": "Straightforward solution with no back and forth on design, fastest way to order business cards online."
+            },
+            "row2": {
+                "h2": "Our business card mock-up, your design",
+                "li1": "We have prepared a Cardanti Card template with all the necessary information.",
+                "li2": "Download the template, design your cards using our instructions and get back to us."
+            },
+            "btn": "Download Template"
+        },
+        "section6": {
+            "h2-1": "Trimite-ne un email la",
+            "h2-2": "business@cardanti.com"
+        }
     }
 }
