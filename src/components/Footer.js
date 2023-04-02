@@ -7,7 +7,7 @@ import ReactFlagsSelect from "react-flags-select";
 import {Us} from "react-flags-select";
 import Select from "react-select";
 import { useState } from "react";
-
+import CardantiC from "../assets/icons/CardantiC";
 function Footer() {
 
     // data is used for footer country Select, not for Form.Select
@@ -103,8 +103,9 @@ function Footer() {
                         <Link target="_blank" className="social-link">
                             <FontAwesomeIcon icon={faTiktok} size="xl"/>
                         </Link>
-                        <Link target="_blank" className="social-link">
-                            <FontAwesomeIcon icon={faTiktok} size="xl"/>
+                        <Link target="_blank" className="social-link" style={{marginBottom: "10px"}}>
+                            {/* <FontAwesomeIcon icon={faTiktok} size="xl"/> */}
+                            <CardantiC width="25" height="24"/>
                         </Link>
                     </div>
                 </div>

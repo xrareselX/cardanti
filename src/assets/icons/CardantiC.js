@@ -6,6 +6,7 @@ function CardantiC(props) {
          x="0px" y="0px"
           viewBox="0 0 100 100" 
           width={props.width ? props.width : ""} 
+          height={props.height ? props.height : ""} 
           xmlSpace="preserve">
             <circle cx="50" cy="50" r="7.5" className="st0"></circle>
             <path d="M50,89.1c-21.6,0-39.1-17.5-39.1-39.1S28.4,10.9,50,10.9c7.8,0,15.2,2.3,21.3,6.3l8.3-7.5 C71,3.4,60.8,0,50,0C36.6,0,24.1,5.2,14.6,14.6C5.2,24.1,0,36.6,0,50s5.2,25.9,14.6,35.4c9.4,9.4,22,14.6,35.4,14.6

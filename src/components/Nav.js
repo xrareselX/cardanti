@@ -8,6 +8,8 @@ import Dropdown from "./Dropdown";
 import LanguageSwitcher from "./LanguageSwitcher";
 import {ReactComponent as FirstIcon} from "../countries/ro.svg";
 import { useLocation } from "react-router-dom";
+import CardantiC from "../assets/icons/CardantiC";
+import CardantiName from "../assets/icons/CardantiName";
 
 
 function Nav() {
@@ -31,10 +33,10 @@ function Nav() {
             <div className="container">
         {/* <nav className="navbar navbar-expand-lg navbar-header"> */}
         <div className="navbar-brand">
-        <a class="" href="/"><FontAwesomeIcon icon={faTiktok} size=""/>Cardanti</a>
+        <a className="" href="/"><CardantiC width="30"/><CardantiName width="90" className="logo-long"/></a>
         </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button className="navbar-toggler" type="button" dataToggle="collapse" dataTarget="#navbarSupportedContent" ariaControls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
             </button>
             <div className="navbar-right collapse navbar-collapse"  id="navbarSupportedContent">
                 <div className="navbar-nav navbar-right"> 
