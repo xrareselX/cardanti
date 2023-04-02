@@ -84,5 +84,49 @@
             "h2-1": "Trimite-ne un email la",
             "h2-2": "business@cardanti.com"
         }
+    },
+    "how_it_works": {
+        "section1": {
+            "h1-1": "One Business Card",
+            "h1-2": "Unlimited Networking",
+            "h2": "Fill in the template and order one in less than a minute.",
+            "a1": "Buy Now",
+            "a2": "How it works"
+        },
+        "section2": {
+            "card1":{
+                "h3": "One Business Card",
+                "p": "You only need one card to share your contact details be it in face to face or online meetings."
+            },
+            "card2":{
+                "h3": "One Tap. No App",
+                "p": "You don't have to install anything. Cardanti works through the smartphone's Internet Browser."
+            },
+            "card3":{
+                "h3": "One business profile",
+                "p": "Your contact details can be edited at any time. Phone, Address, Social Links, Videos, Presentations."
+            }
+        },
+        "section4": {
+            "h1": "Which Cardanti is right for you?",
+            "part1": {
+                "h2": "For you",
+                "strong": "Personal Cardanti Card",
+                "li1": "Choose Light Theme, or go to the Dark Side",
+                "li2": "Six beautifully selected colors to choose from",
+                "li3": "Personalize it with your name/role/company",
+                "btn1": "Buy now",
+                "btn2": "See more"
+            },
+            "part2": {
+                "h2": "For your business",
+                "strong": "Business Cardanti Card",
+                "li1": "Custom business cards to match your brand",
+                "li2": "Self hosting module",
+                "li3": "Special prices based on quantity",
+                "btn1": "Get offer",
+                "btn2": "See more"
+            }
+        }
     }
 }

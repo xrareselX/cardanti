@@ -91,7 +91,7 @@ function How_it_works() {
             <div className="container">
                 <div className="row">
                     <div className="col-12 text-center">
-                        <h1>Pentru tine sau pentru afacerea ta?</h1>
+                        <h1>{t("how_it_works.section4.h1")}</h1>
                     </div>
                 </div>
                 <div className="row">

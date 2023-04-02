@@ -12,13 +12,13 @@ function App() {
   return (
     <Layout>  {/**avem nevoie de layout pt ca la return, avem voie un singur parent si ala sa fie layout si in ala punem restul */}
     <Routes>
+      <Route path="/" element={<How_it_works />}/>
       <Route path="/about-us" element={<AboutUs />}/>
       <Route path="/business" element={<Business />}/>
       <Route path="/how_it_works" element={<How_it_works />}/>
       <Route path="/login" element={<Login />}/>
       <Route path="/order-card" element={<OrderCard />}/>
     </Routes>
-    <How_it_works />
     <Footer />
     </Layout>
   );
