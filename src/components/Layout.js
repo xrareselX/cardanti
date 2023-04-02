@@ -1,8 +1,8 @@
-import Nav from './Nav';
+import Navigation from './Navigation';
 
 function Layout(props) {
     return <div>
-      <Nav/>
+      <Navigation/>
       <main>
         {props.children}
       </main>

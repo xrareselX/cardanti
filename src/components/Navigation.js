@@ -10,9 +10,10 @@ import {ReactComponent as FirstIcon} from "../countries/ro.svg";
 import { useLocation } from "react-router-dom";
 import CardantiC from "../assets/icons/CardantiC";
 import CardantiName from "../assets/icons/CardantiName";
+import { Navbar, Nav } from "react-bootstrap";
 
 
-function Nav() {
+function Navigation() {
 
     const location = useLocation();
     const [isScrolled, setIsScrolled] = useState(false);
@@ -30,8 +31,19 @@ function Nav() {
 
     return (
         <header className={"sticky-top navbar navbar-expand-lg navbar-header " + (isScrolled ? "scrolled" : "")}>
-            <div className="container">
-        {/* <nav className="navbar navbar-expand-lg navbar-header"> */}
+            <Navbar collapseOnSelect expand="lg">
+                <Navbar.Brand href="/">Brand Name</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="ml-auto">
+                        <Nav.Link href="#link1">Link 1</Nav.Link>
+                        <Nav.Link href="#link2">Link 2</Nav.Link>
+                        <Nav.Link href="#link3">Link 3</Nav.Link>
+                        <Nav.Link href="#link4">Link 4</Nav.Link>
+                     </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+        {/* <div className="container">
         <div className="navbar-brand">
         <a className="" href="/"><CardantiC width="30"/><CardantiName width="90" className="logo-long"/></a>
         </div>
@@ -40,12 +52,11 @@ function Nav() {
             </button>
             <div className="navbar-right collapse navbar-collapse"  id="navbarSupportedContent">
                 <div className="navbar-nav navbar-right"> 
-                    <div className="top-links navbar-nav"> {/** navbar-nav ofera flex-direction: row */}
+                    <div className="top-links navbar-nav">
                         <Link className="top-link" to="/about-us">{t('nav.aboutUs')}</Link>
                         <Link className="top-link" to='/business'>Business</Link>
                         <Link className="top-link" to='/how_it_works'>{t('nav.how-it-works')}</Link>
                         <Link className="top-link" to='https://help.cardanti.com/help' target="_blank">{t('nav.questions')}</Link>
-                        {/* <Link className="top-link" to='/new-meetup'>{location.pathname}</Link> */}
                     </div>
                         <LanguageSwitcher />
                         <Link className="btn-login" to='/login'>{t('nav.login')}</Link>
@@ -58,10 +69,9 @@ function Nav() {
                         )}
                 </div>
             </div>
-        {/* </nav> */}
-        </div>
+        </div> */}
     </header>
     );
 }
 
-export default Nav;
+export default Navigation;
