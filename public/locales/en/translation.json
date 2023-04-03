@@ -128,5 +128,11 @@
                 "btn2": "See more"
             }
         }
+    },
+    "footer": {
+        "link1": "Help",
+        "link2": "Privacy Policy",
+        "link3": "Terms & Conditions",
+        "link4": "Contact"
     }
 }

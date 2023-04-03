@@ -128,5 +128,11 @@
                 "btn2": "Vezi mai mult"
             }
         }
+    },
+    "footer": {
+        "link1": "Ajutor",
+        "link2": "Politica de confidențialitate",
+        "link3": "Termeni și condiții",
+        "link4": "Contact"
     }
 }

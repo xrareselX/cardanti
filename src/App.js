@@ -7,6 +7,7 @@ import Login from './components/pages/Login';
 import OrderCard from './components/pages/OrderCard';
 import Business from "./components/pages/Business";
 import How_it_works from './components/pages/How_it_works';
+import Contact from './components/pages/Contact';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/how_it_works" element={<How_it_works />}/>
       <Route path="/login" element={<Login />}/>
       <Route path="/order-card" element={<OrderCard />}/>
+      <Route path="/contact" element={<Contact />}/>
     </Routes>
     <Footer />
     </Layout>

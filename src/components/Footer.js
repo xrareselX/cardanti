@@ -75,10 +75,10 @@ function Footer() {
                     </div>
                     <div className="col-12 col-sm-8 mb-4 order-sm-3">
                         <div className="d-flex justify-content-center justify-content-sm-end footer-links">
-                            <Link to='https://help.cardanti.com/help' target='_blank'>Ajutor</Link>
-                            <Link to='/privacy-policy'>Politica de confidențialitate</Link>
-                            <Link to='/terms-and-condition'>Termeni și condiții</Link>
-                            <Link to='/contact'>Contact</Link>
+                            <Link to='https://help.cardanti.com/help' target='_blank' className="text-center">{t("footer.link1")}</Link>
+                            <Link to='/privacy-policy'className="text-center">{t("footer.link2")}</Link>
+                            <Link to='/terms-and-condition'className="text-center">{t("footer.link3")}</Link>
+                            <Link to='/contact'className="text-center">{t("footer.link4")}</Link>
                             {/* <ReactFlagsSelect countries={["US", "RO", "IT", "ES", "DE"]} customLabels={{"DE":"UVYFCT"}}
                                     selected={"ro"}
                                     onSelect={changeLanguageHandler}
