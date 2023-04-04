@@ -53,6 +53,7 @@ function Navigation() {
                     <CardantiName width="90" className="logo-long"/>
                      </a>
                 </div>
+                {/* this one is for mobile */}
                 {deviceWidth < 600 && (
                 <div id="navbarMenu" className="navbar-menu-wrapper">
                     <div className="navbar-menu-header">
@@ -78,7 +79,7 @@ function Navigation() {
                         <li className="nav-item mb-3"><a href="/contact" className="nav-link">Contact</a></li> 
                         <li className="nav-item text-center">
                             <a href="/login">
-                                <button    ton className="btn btn-sm w-75 btn-outline-secondary text-uppercase">{t('nav.login')}</button>
+                                <button className="btn btn-sm w-75 btn-outline-secondary text-uppercase">{t('nav.login')}</button>
                             </a>
                         </li>
                         <li className="nav-item text-center">
@@ -120,8 +121,10 @@ function Navigation() {
                     )}
                     {deviceWidth >= 600 && (
                         <> 
-                            <a className="btn btn-sm btn-login">{t('nav.login')}</a>
-                            <button className="btn btn-sm btn-green btn-uppercase btn-order-card">{t("nav.buy-now")}</button>
+                            <a className="btn btn-sm btn-login" href="/login">{t('nav.login')}</a>
+                            <a href="/order-card">
+                                <button className="btn btn-sm btn-green btn-uppercase btn-order-card" >{t("nav.buy-now")}</button>
+                            </a>
                         </>
                     )}
                 </div>

@@ -34,6 +34,7 @@ import portraitFront from "../../assets/portrait/portrait-front.png";
 import portraitBack from "../../assets/portrait/portrait-back.png";
 
 import UploadModal from "../UploadModal";
+import SwiperComponent from "../SwiperComponent";
 
 
 function OrderCard() {
@@ -260,7 +261,7 @@ function OrderCard() {
                             {!isPortrait && (
                         <div>
                             <div className="main-content w-100">
-                                <div className="col-md-3 menu d-flex flex-column justify-content-center mt-3 align-items-center">
+                                <div className="col-12 col-md-3 menu d-flex flex-column justify-content-center mt-3 align-items-center">
                                     <div className="personalize w-100 d-flex flex-column align-items-center">
                                         <div className="w-100 text-white mb-3">
                                             <span class="text-center d-block mb-2" style={{fontSize: "20px", color: "rgb(143, 144, 160)"}}>Material:</span>
@@ -367,7 +368,7 @@ function OrderCard() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-md-9 result main-content-cards">
+                                <div className="col-12 col-md-9 result main-content-cards">
                                     <div className="row">
                                         <div className="col-12 px-md-2">
                                             <div className="carousel-container">
@@ -392,7 +393,12 @@ function OrderCard() {
                                                 </div>
                                                 <div className="carousel-3d-container order-card-carousel">
                                                     {isPVC && (
-                                                        <Swiper navigation={true} modules={[EffectCoverflow, Navigation]} className="mySwiper"
+                                                        <>
+                                                        <SwiperComponent Cards={pvcCards} nameSize={nameSize} roleSize={roleSize} companySize={companySize} initialSlide={pvcInitialSlide}
+                                                        displayCardTitle={displayCardTitle} isFlipped={isFlipped} slideOnClickHandler={slideOnClickHandler} cardantiLogo={cardantiLogo} emptyLogo={emptyLogo}/>
+                                                        <Swiper navigation={true} modules={[
+                                                            EffectCoverflow,
+                                                             Navigation]} className="mySwiper"
                                                             rewind={true} 
                                                             // loop={true}
                                                             initialSlide={pvcInitialSlide}
@@ -403,10 +409,21 @@ function OrderCard() {
                                                                 stretch: 20,
                                                                 depth: 100,
                                                                 modifier: 1,
-                                                                slideShadows: true
+                                                                slideShadows: false
                                                             }}
                                                             slidesPerView={"auto"}
+                                                            // slidesPerView={1}
                                                             onSlideChangeTransitionStart={displayCardTitle}
+                                                            // breakpoints={{
+                                                                // 100: {
+                                                                //     width: 250,
+                                                                //     slidesPerView: 1
+                                                                // },
+                                                            //     1200:{
+                                                            //         width: 400,
+                                                            //         slidesPerView: "auto"
+                                                            //     }
+                                                            // }}
                                                         >
                                                             {displayFlipModal && (
                                                                         <div className="flip-it-overlay overlay-tooltip mb-3" onClick={flipModalClickedHandle}>
@@ -468,6 +485,7 @@ function OrderCard() {
                                                             ))
                                                             }
                                                         </Swiper>
+                                                        </>
                                                     )}
                                                     {isCarbon && (
                                                         <Swiper navigation={true} modules={[EffectCoverflow, Navigation]} className="mySwiper"
