@@ -33,6 +33,14 @@ function SwiperComponent(props){
             //     }
             // }}
         >
+            {props.displayFlipModal && (
+                <div className="flip-it-overlay overlay-tooltip mb-3" onClick={props.flipModalClickedHandle}>
+                    <div className="w-100 d-flex justify-content-center">
+                        {/* <flip-card /> */}
+                    </div> 
+                    <p className="text-white">Apasă pe card pentru a îl înclina și a vedea culoarea muchei</p>
+                </div>
+            )}
             {props.Cards.map((card, index) =>(
                 <SwiperSlide className={props.isFlipped? "flipped": ""} 
                     onClick={props.slideOnClickHandler}
