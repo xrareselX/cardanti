@@ -35,6 +35,7 @@ import portraitBack from "../../assets/portrait/portrait-back.png";
 
 import UploadModal from "../UploadModal";
 import SwiperComponent from "../SwiperComponent";
+import SwiperComponent1 from "../SwiperComponent1";
 
 
 function OrderCard() {
@@ -69,7 +70,7 @@ function OrderCard() {
 
     const pvcCards = [
         {
-            "title": "The Personal Touch Persolanized",
+            "title": "The Personal Touch Personalized",
             "img-source" : pvcImages.PersonalImg,
             "img-back" : pvcBackImages.PersonalImg
         },
@@ -394,7 +395,10 @@ function OrderCard() {
                                                 <div className="carousel-3d-container order-card-carousel">
                                                     {isPVC && (
                                                         <>
-                                                            <SwiperComponent Cards={pvcCards} nameSize={nameSize} roleSize={roleSize} companySize={companySize} initialSlide={pvcInitialSlide}
+                                                            {/* <SwiperComponent Cards={pvcCards} nameSize={nameSize} roleSize={roleSize} companySize={companySize} initialSlide={pvcInitialSlide}
+                                                            displayCardTitle={displayCardTitle} isFlipped={isFlipped} slideOnClickHandler={slideOnClickHandler} cardantiLogo={cardantiLogo}
+                                                             emptyLogo={emptyLogo} displayFlipModal={displayFlipModal} flipModalClickedHandle={flipModalClickedHandle}/> */}
+                                                            <SwiperComponent1 Cards={pvcCards} nameSize={nameSize} roleSize={roleSize} companySize={companySize} initialSlide={pvcInitialSlide}
                                                             displayCardTitle={displayCardTitle} isFlipped={isFlipped} slideOnClickHandler={slideOnClickHandler} cardantiLogo={cardantiLogo}
                                                              emptyLogo={emptyLogo} displayFlipModal={displayFlipModal} flipModalClickedHandle={flipModalClickedHandle}/>
                                                         </>
