@@ -63,9 +63,7 @@ function OrderCard() {
     function flipModalClickedHandle(){
         setDisplayFlipModal(false);
         const elements = document.getElementsByClassName("swiper-slide-active");
-        for(let element of elements){
-            element.classList += " show-side";
-        }
+        elements[0].current.className += " show-side";
     }
 
     const pvcCards = [
@@ -250,9 +248,9 @@ function OrderCard() {
         <>
         <div className="fix-content">
             <div id="top" style={{backgroundColor: "rgb(29, 30, 33)"}}>
-                <section className="order-card-cont">
+                <section className="order-card-cont" style={{marginRight: "0"}}>
                     <div className="w-100 customizer-cont">
-                        <div className="row triggers">
+                        <div className="row triggers" style={{marginRight: "0"}}>
                             <div className="card-type d-flex justify-content-center">
                                 <div  className={"trigger " + (!isPortrait ? "active" : "")} onClick={() => setIsPortrait(false)}>Design</div>
                                 <div  className="separator"></div>
@@ -369,8 +367,8 @@ function OrderCard() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-12 col-md-9 result main-content-cards">
-                                    <div className="row">
+                                <div className="col-12 col-md-9 result main-content-cards" style={{marginRight: "0"}}>
+                                    <div className="row" style={{marginRight: "0"}}>
                                         <div className="col-12 px-md-2">
                                             <div className="carousel-container">
                                                 <div className="flip-it">
