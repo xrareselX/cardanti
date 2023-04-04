@@ -19,6 +19,7 @@ function Navigation() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [showNav, setShowNav] = useState(false);
     // const [isMobile, setIsMobile] = useState(false);
+    const [mobileNav, setMobileNav] = useState(false);
 
     let deviceWidth = useRef(window.innerWidth);
     // function checkIfMobile(){
@@ -41,7 +42,10 @@ function Navigation() {
     const {t, i18n} = useTranslation();
 
     return (
-        <header className={"sticky-top navbar navbar-header navbar-header-fixed " +(isScrolled ? "scrolled" : "")}>
+        <header className={"sticky-top navbar navbar-header navbar-header-fixed " +(isScrolled ? "scrolled " : " ")
+         + (mobileNav ? "navbar-nav-show" :"")
+         }>
+            {/* {deviceWidth < 600 ? setIsMobile(true) : setIsMobile(false)} */}
             <div className="container">
                 <div className="navbar-brand">
                     <a href="/" className="logo">
@@ -55,10 +59,14 @@ function Navigation() {
                         <a href="/" className="df-logo nuxt-link-exact-active nuxt-link-active" aria-current="page">
                             <CardantiC width="30"/> <CardantiName id="logo-long" width="90"/>
                         </a> 
-                        <a id="mainMenuClose">
+                        <a id="mainMenuClose"
+                        onClick={(e) => {
+                            e.preventDefault()
+                            setMobileNav(false)}}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#fff" 
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-x">
-                                <line x1="18" y1="6" x2="6" y2="18"></line> <line x1="6" y1="6" x2="18" y2="18"></line>
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-x">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                 <line x1="6" y1="6" x2="18" y2="18"></line>
                             </svg>
                         </a>
                     </div>
@@ -69,10 +77,14 @@ function Navigation() {
                         <li className="nav-item"><a href="https://help.cardanti.com" target="_blank" className="nav-link">{t('nav.questions')}</a></li>
                         <li className="nav-item mb-3"><a href="/contact" className="nav-link">Contact</a></li> 
                         <li className="nav-item text-center">
-                            <button className="btn btn-sm w-75 btn-outline-secondary text-uppercase">{t('nav.login')}</button>
+                            <a href="/login">
+                                <button    ton className="btn btn-sm w-75 btn-outline-secondary text-uppercase">{t('nav.login')}</button>
+                            </a>
                         </li>
                         <li className="nav-item text-center">
-                            <button className="btn btn-sm w-75 btn-green text-uppercase">{t('nav.buy-now')}</button>
+                            <a href="/order-card">
+                                <button className="btn btn-sm w-75 btn-green text-uppercase">{t('nav.buy-now')}</button>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -91,7 +103,9 @@ function Navigation() {
                     </div>
                     {deviceWidth < 600 && (
                         <div class="toggle-dropdown">
-                            <a id="mainMenuOpen" href="" class="burger-menu">
+                            <a id="mainMenuOpen" href="" className="burger-menu" onClick={(e) => {
+                            e.preventDefault()
+                            setMobileNav(!mobileNav)}}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
                                     <line x1="3" y1="12" x2="21" y2="12"></line>

@@ -57,8 +57,11 @@ header{
   background-color: #fff;
   overflow: hidden;
   z-index: 1060;
-  /* transform: translateX(-300px); */
+  transform: translateX(-300px);
   transition: all .4s;
+}
+.navbar-nav-show .navbar-menu-wrapper {
+  transform: translateX(0);
 }
 .navbar-nav-show .navbar-menu-wrapper {
   transform: translateX(0);
@@ -930,6 +933,14 @@ label.focused{
   transform: rotateY(180deg); 
 }
 /* BUSINESS */
+.container{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.col-12{
+  padding-left: 15px;
+  padding-right: 15px;
+}
 ul.list{
   padding-left: 0;
   list-style-type: none;
@@ -999,6 +1010,11 @@ ul.list li::before {
   padding: 50px 40px;
   border-radius: 24px;
 }
+@media (max-width: 540px){
+  h1{
+    font-size: 2rem;
+  }
+}
 .usps .card-container.crd-bg-white{
   background: #fff;
   border: 1px solid #f1f2f8;
@@ -1017,6 +1033,11 @@ ul.list li::before {
   font-size: 1.125rem;
   margin-bottom: 0;
   color: #68697f;
+}
+@media (max-width: 540px){
+  .usps .col-12{
+    padding: 0 20px!important;
+}
 }
 .video-container {
   position: absolute;
@@ -1102,4 +1123,7 @@ ul.list li::before {
 /* CONTACT */
 .contact-container{
   padding-top: 80px;
+}
+strong{
+  font-weight:500;
 }

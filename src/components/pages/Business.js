@@ -12,10 +12,6 @@ function Business(){
     const windowWidth = useRef(window.innerWidth);
     const cards = [
         {
-            h3: t("business.section2.cards.card1.h3"),
-            p: t("business.section2.cards.card1.p")
-        },
-        {
             h3: t("business.section2.cards.card2.h3"),
             p: t("business.section2.cards.card2.p")
         },
@@ -30,6 +26,10 @@ function Business(){
         {
             h3: t("business.section2.cards.card5.h3"),
             p: t("business.section2.cards.card5.p")
+        },
+        {
+            h3: t("business.section2.cards.card1.h3"),
+            p: t("business.section2.cards.card1.p")
         }
     ]
     return (
