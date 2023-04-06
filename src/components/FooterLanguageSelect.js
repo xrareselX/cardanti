@@ -22,17 +22,16 @@ function FooterLanguageSelect(props) {
   return (
     <div className="custom-select">
     <span className="selected-value" onClick={() => setIsOpen(!isOpen)}>
-      {/* <i className="fas fa-envelope"></i> */}
       <Message className="svg-message" />
       {selectedCountry}
-      <DownArrow className="svg-arrow"/>
+      <DownArrow className={`svg-arrow ` +  (isOpen ? "rotate-svg" :"")}/>
     </span>
     <div className={`options-container ${isOpen ? 'active' : ''}`}>
       <ul className="options-list">
         {options.map((option) => (
           <li
             key={option.value}
-            className={`option ${option.disabled ? 'disabled' : ''} ${option.selected ? 'selected' : ''}`}
+            className="option"
             onClick={() => handleOptionClick(option.value, option.label)}
           >
             <img src={option.flag}/>
@@ -40,9 +39,6 @@ function FooterLanguageSelect(props) {
           </li>
         ))}
       </ul>
-      {/* <li role="option" id="vs1__option-0" class="vs__dropdown-option"><div data-v-b36c6682="" class="option-locale" style="text-align: left;"><img data-v-b36c6682="" src="/_nuxt/59c09ec38560cd2555490c1a2a404796.svg" alt="">
-                English
-              </div></li> */}
     </div>
   </div>
   );
