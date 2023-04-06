@@ -8,6 +8,7 @@ import {Us} from "react-flags-select";
 import Select from "react-select";
 import { useState } from "react";
 import CardantiC from "../assets/icons/CardantiC";
+import FooterLanguageSelect from "./FooterLanguageSelect";
 function Footer() {
 
     // data is used for footer country Select, not for Form.Select
@@ -53,13 +54,14 @@ function Footer() {
                     <div className="col-12 col-sm-4 mb-4 order-sm-1 d-flex justify-content-center">
                         <div className="align-items-center flex-grow-0 pl-2 select-language">
                              {/* Select box to change language */}
-                            <Form.Select className="custom-select"  onChange={changeLanguageHandler}>
+                            {/* <Form.Select className="custom-select"  onChange={changeLanguageHandler}>
                                 <option value="en" >English</option>
                                 <option value="ro" selected>Română</option>
                                 <option value="it" >Italiano</option>
                                 <option value="es" >Español</option>
                                 <option value="de" >Deutsche</option>
-                            </Form.Select>
+                            </Form.Select> */}
+                            <FooterLanguageSelect/>
                             {/* <Select value={selectedOption} options={data} className="custom-select" 
                              onChange={changeLanguageHandler} defaultValue="ro"
                              getOptionLabel={e => (
