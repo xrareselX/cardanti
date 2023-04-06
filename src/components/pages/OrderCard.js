@@ -260,11 +260,11 @@ function OrderCard() {
                             {!isPortrait && (
                         <div>
                             <div className="main-content w-100">
-                                <div className="col-12 col-md-3 menu d-flex flex-column justify-content-center mt-3 align-items-center">
+                                <div className="col-12 col-md-3 order-2 order-md-1 menu d-flex flex-column justify-content-center mt-md-3 align-items-center">
                                     <div className="personalize w-100 d-flex flex-column align-items-center">
                                         <div className="w-100 text-white mb-3">
                                             <span class="text-center d-block mb-2" style={{fontSize: "20px", color: "rgb(143, 144, 160)"}}>Material:</span>
-                                            <div className="w-100 customizer-actions row justify-content-center btn-group">
+                                            <div className="mx-auto w-100 customizer-actions row justify-content-center btn-group">
                                                 <button className={"col-4 btn text-white btn-card-material text-center btn-dark" + (isPVC ? " btn-green" : "")} 
                                                 onClick={onClickPvcHandle}>PVC</button>
                                                 <button className={"col-4 btn text-white btn-card-material text-center btn-dark" + (isCarbon ? " btn-green" : "")}
@@ -348,7 +348,7 @@ function OrderCard() {
                                         </div>
                                         <div className="w-100 text-white display-flex flex-column align-items-center">
                                             <span className="text-center d-block mt-2" style={{fontSize: "20px", color: " rgb(143, 144, 160)"}}>Stilul de imprimare:</span>
-                                            <div className="w-100 customizer-actions row justify-content-center btn-group">
+                                            <div className="mx-auto w-100 customizer-actions row justify-content-center btn-group">
                                                 <button class="col-6 btn text-white btn-green">Flat</button> 
                                                 <button className="col-6 btn text-white btn-dark">Emboss</button>
                                             </div>
@@ -358,8 +358,8 @@ function OrderCard() {
                                          )}
                                     </div>
                                     <div className="customizer-actions w-100 mt-3 row justify-content-center">
-                                        <button className="btn btn-green w-50 d-inline col" style={{marginRight: "10px"}}>Adaugă în coș</button>
-                                        <div className="col">
+                                        <button className="btn btn-green w-50 d-inline col-5" style={{marginRight: "10px"}}>Adaugă în coș</button>
+                                        <div className="col-4">
                                             <div className="price">
                                                 <span className="amount">240  </span>
                                                 <span className="currency">lei</span>
@@ -367,7 +367,7 @@ function OrderCard() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-12 col-md-9 result main-content-cards" style={{marginRight: "0"}}>
+                                <div className="col-12 col-md-9 order-1 order-md-2 result main-content-cards" style={{marginRight: "0"}}>
                                     <div className="row" style={{marginRight: "0"}}>
                                         <div className="col-12 px-md-2">
                                             <div className="carousel-container">

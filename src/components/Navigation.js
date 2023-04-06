@@ -99,9 +99,9 @@ function Navigation() {
                             <a href="https://help.cardanti.com/" target="_blank" className="top-link">{t('nav.questions')}</a>
                         </div> 
                     )}
-                    <div className="locale-selector">
+                    {/* <div className="locale-selector"> */}
                         <LanguageSwitcher />
-                    </div>
+                    {/* </div> */}
                     {deviceWidth < 600 && (
                         <div class="toggle-dropdown">
                             <a id="mainMenuOpen" href="" className="burger-menu" onClick={(e) => {

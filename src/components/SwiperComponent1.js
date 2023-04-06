@@ -66,14 +66,24 @@ function SwiperComponent1(props){
                                     </div>
                                     )}
                                 <div className={"flip-card " + (props.isFlipped? "flipped": "")}>
-                                    <div className="flip-card-inner">
+                                    <div className="flip-card-inner" >
                                         <div className="thickness" style={{backgroundColor: "rgb(238, 238, 238)"}}></div> 
                                         <div className="thickness" style={{backgroundColor: "rgb(238, 238, 238)"}}></div>
                                         <div className="thickness" style={{backgroundColor: "rgb(238, 238, 238)"}}></div>
                                         <div className="flip-card-front">
                                             <div className="card-logo">
                                                 <div className="card-logo-svg">
-                                                    <CardantiC />
+                                                {props.cardantiLogo && !props.emptyLogo && (
+                                                        <div className="card-logo-svg">
+                                                            <CardantiC/>    
+                                                        </div>
+                                                    )}
+                                                    {!props.cardantiLogo && !props.emptyLogo && (
+                                                        <div className="card-logo-svg text-white">
+                                                            custom    
+                                                        </div>
+                                                        )}
+                                                    {/* <CardantiC /> */}
                                                 </div> 
                                                 <div className="preview w-100 d-flex justify-content-center" style={{overflow: "hidden"}}>
                                                     <canvas width="200" height="80" style={{visibility: "hidden"}}></canvas>
