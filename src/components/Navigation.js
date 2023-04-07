@@ -84,7 +84,7 @@ function Navigation() {
                         </li>
                         <li className="nav-item text-center">
                             <a href="/order-card">
-                                <button className="btn btn-sm w-75 btn-green text-uppercase">{t('nav.buy-now')}</button>
+                                <button className="btn btn-sm w-75 btn-green text-uppercase btn-order-card">{t('nav.buy-now')}</button>
                             </a>
                         </li>
                     </ul>

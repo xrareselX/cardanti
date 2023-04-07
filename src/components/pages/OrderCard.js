@@ -55,7 +55,11 @@ function OrderCard() {
     const [showModal, setShowModal] = useState(false);
     const [isPortrait, setIsPortrait] = useState(false);
     const [displayPortraitSeparator, setDisplayPortraitSeparator] = useState(false);    
-    const [displayFlipModal, setDisplayFlipModal] = useState(true);    
+    const [displayFlipModal, setDisplayFlipModal] = useState(true);   
+    const [nameText, setNameText] = useState(""); 
+    const [roleText, setRoleText] = useState(""); 
+    const [companyText, setCompanyText] = useState(""); 
+    const nameInputRef = useRef(null);
 
     function closeModalHandle(){
         setShowModal(false);
@@ -130,12 +134,12 @@ function OrderCard() {
         {
             "title": "Metal Black",
             "img-source" : metalImages.BlackMetalImg,
-            "img-back" : "back text" 
+            "img-back" : metalBackImages.BlackMetalImg 
         },
         {
             "title": "Metal Gun Brushed",
             "img-source" : metalImages.SilverMetalImg,
-            "img-back" : "back text" 
+            "img-back" : metalBackImages.SilverMetalImg
         }
     ];
     function onClickPvcHandle(){
@@ -173,10 +177,7 @@ function OrderCard() {
     let toggleBackRef = useRef();
 
     function nameOnChangeHandle(e){
-        const elements = document.getElementsByClassName("name");
-        for(let element of elements){
-            element.innerHTML = e.target.value;
-        }
+        setNameText(e.target.value);
     }
     function portraitNameOnChangeHandle(e){
         const elements = document.getElementsByClassName("portrait-name-data");
@@ -185,10 +186,7 @@ function OrderCard() {
         }
     }
     function roleOnChangeHandle(e){
-        const elements = document.getElementsByClassName("role");
-        for(let element of elements){
-            element.innerHTML = e.target.value;
-        }
+        setRoleText(e.target.value);
     }
     function portraitRoleOnChangeHandle(e){
         setDisplayPortraitSeparator(true);
@@ -200,10 +198,7 @@ function OrderCard() {
             setDisplayPortraitSeparator(false);
     }
     function companyOnChangeHandle(e){
-        const elements = document.getElementsByClassName("company");
-        for(let element of elements){
-            element.innerHTML = e.target.value;
-        }
+        setCompanyText(e.target.value);
     }
     function portraitCompanyOnChangeHandle(e){
         setDisplayPortraitSeparator(true);
@@ -269,7 +264,8 @@ function OrderCard() {
                                                 onClick={onClickPvcHandle}>PVC</button>
                                                 <button className={"col-4 btn text-white btn-card-material text-center btn-dark" + (isCarbon ? " btn-green" : "")}
                                                 onClick={onClickCarbonHandle}>CARBON</button>
-                                                <button className={"col-4 btn text-white btn-card-material text-center btn-dark" + (!isPVC && !isCarbon? " btn-green" : "")} onClick={onClickMetalHandle}>METAL</button>
+                                                <button className={"col-4 btn text-white btn-card-material text-center btn-dark" + (!isPVC && !isCarbon? " btn-green" : "")}
+                                                 onClick={onClickMetalHandle}>METAL</button>
                                             </div>
                                             {isPVC && (
                                                 <div className="w-100 row justify-content-center">
@@ -283,7 +279,7 @@ function OrderCard() {
                                         <div className="w-100">
                                             <div className="form-group animated">
                                                 <div className="d-flex flex-row">
-                                                    <InputComponent  inputId="name" inputType="text" inputName="name" label="Nume"
+                                                    <InputComponent ref={nameInputRef} inputId="name" inputType="text" inputName="name" label="Nume"
                                                     onChange={nameOnChangeHandle}/>
                                                     <div className="name-buttons">
                                                         <button className="name-button btn btn-green" onClick={() => setNameSize(nameSize-1)}> - </button>
@@ -367,8 +363,12 @@ function OrderCard() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-12 col-md-9 order-1 order-md-2 result main-content-cards" style={{marginRight: "0"}}>
-                                    <div className="row" style={{marginRight: "0"}}>
+                                <div className="col-12 col-md-9 order-1 order-md-2 result main-content-cards"
+                                //  style={{marginRight: "0"}}
+                                 >
+                                    <div className="row" 
+                                    // style={{marginRight: "0"}}
+                                    >
                                         <div className="col-12 px-md-2">
                                             <div className="carousel-container">
                                                 <div className="flip-it">
@@ -398,7 +398,8 @@ function OrderCard() {
                                                              emptyLogo={emptyLogo} displayFlipModal={displayFlipModal} flipModalClickedHandle={flipModalClickedHandle}/> */}
                                                             <SwiperComponent1 Cards={pvcCards} nameSize={nameSize} roleSize={roleSize} companySize={companySize} initialSlide={pvcInitialSlide}
                                                             displayCardTitle={displayCardTitle} isFlipped={isFlipped} slideOnClickHandler={slideOnClickHandler} cardantiLogo={cardantiLogo}
-                                                             emptyLogo={emptyLogo} displayFlipModal={displayFlipModal} flipModalClickedHandle={flipModalClickedHandle}/>
+                                                             emptyLogo={emptyLogo} displayFlipModal={displayFlipModal} flipModalClickedHandle={flipModalClickedHandle}
+                                                             nameText={nameText} roleText={roleText} companyText={companyText}/>
                                                         </>
                                                     )}
                                                     {isCarbon && (
@@ -437,10 +438,13 @@ function OrderCard() {
                                                                         src={carbonCard["img-source"]} alt="" />
                                                                     <div className="custom-data">
                                                                         <div  className="name-data card-inner-text name" style={{color: "white", fontSize: `${nameSize}pt`}}>
+                                                                            {nameText}
                                                                         </div>
                                                                         <div  className="role-data card-inner-text role" style={{color: "white", fontSize: `${roleSize}pt`}}>
+                                                                            {roleText}
                                                                         </div>
                                                                         <div  className="company-data card-inner-text company" style={{color: "white", fontSize: `${companySize}pt`}}>
+                                                                        {companyText}
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -454,56 +458,63 @@ function OrderCard() {
                                                     </Swiper>
                                                     )}
                                                     {!isPVC && !isCarbon && (
-                                                        <Swiper navigation={true} modules={[EffectCoverflow, Navigation]} className="mySwiper"
-                                                        rewind={true} 
-                                                        initialSlide={metalInitialSlide}
-                                                        centeredSlides={true}
-                                                        effect={"coverflow"} 
-                                                        coverflowEffect={{
-                                                            rotate: 55,
-                                                            stretch: 20,
-                                                            depth: 100,
-                                                            modifier: 1,
-                                                            slideShadows: true
-                                                        }}
-                                                        slidesPerView={"auto"}
-                                                        onSlideChangeTransitionStart={displayCardTitle}
-                                                        >
-                                                        {metalCards.map((metalCard, index) =>(
-                                                            <SwiperSlide className={isFlipped? "flipped": ""} onClick={slideOnClickHandler}
-                                                                title={metalCard.title} >
-                                                                <div className="card__face card__face--front">
-                                                                    <div className="card-logo" >
-                                                                        {cardantiLogo && !emptyLogo && (
-                                                                            <div className="card-logo-svg">
-                                                                                <CardantiC/>    
-                                                                            </div>
-                                                                            )}
-                                                                        {!cardantiLogo && !emptyLogo && (
-                                                                            <div className="card-logo-svg text-white">
-                                                                                custom    
-                                                                            </div>
-                                                                            )}
-                                                                    </div>
-                                                                    <img style={{ width: "100%"}} 
-                                                                        src={metalCard["img-source"]} alt="" />
-                                                                    <div className="custom-data">
-                                                                        <div  className="name-data card-inner-text name" style={{color: "white", fontSize: `${nameSize}pt`}}>
-                                                                        </div>
-                                                                        <div  className="role-data card-inner-text role" style={{color: "white", fontSize: `${roleSize}pt`}}>
-                                                                        </div>
-                                                                        <div  className="company-data card-inner-text company" style={{color: "white", fontSize: `${companySize}pt`}}>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="card__face card__face--back text-white">
-                                                                <img style={{ width: "100%"}} 
-                                                                        src={metalCard["img-back"]} alt="" />
-                                                                </div>
-                                                            </SwiperSlide>
-                                                        ))
-                                                        }
-                                                    </Swiper>
+                                                         <SwiperComponent1 Cards={metalCards} nameSize={nameSize} roleSize={roleSize} companySize={companySize} initialSlide={metalInitialSlide}
+                                                         displayCardTitle={displayCardTitle} isFlipped={isFlipped} slideOnClickHandler={slideOnClickHandler} cardantiLogo={cardantiLogo}
+                                                          emptyLogo={emptyLogo} displayFlipModal={displayFlipModal} flipModalClickedHandle={flipModalClickedHandle}
+                                                          nameText={nameText} roleText={roleText} companyText={companyText}/>
+                                                    //     <Swiper navigation={true} modules={[EffectCoverflow, Navigation]} className="mySwiper"
+                                                    //     rewind={true} 
+                                                    //     initialSlide={metalInitialSlide}
+                                                    //     centeredSlides={true}
+                                                    //     effect={"coverflow"} 
+                                                    //     coverflowEffect={{
+                                                    //         rotate: 55,
+                                                    //         stretch: 20,
+                                                    //         depth: 100,
+                                                    //         modifier: 1,
+                                                    //         slideShadows: true
+                                                    //     }}
+                                                    //     slidesPerView={"auto"}
+                                                    //     onSlideChangeTransitionStart={displayCardTitle}
+                                                    //     >
+                                                    //     {metalCards.map((metalCard, index) =>(
+                                                    //         <SwiperSlide className={isFlipped? "flipped": ""} onClick={slideOnClickHandler}
+                                                    //             title={metalCard.title} >
+                                                    //             <div className="card__face card__face--front">
+                                                    //                 <div className="card-logo" >
+                                                    //                     {cardantiLogo && !emptyLogo && (
+                                                    //                         <div className="card-logo-svg">
+                                                    //                             <CardantiC/>    
+                                                    //                         </div>
+                                                    //                         )}
+                                                    //                     {!cardantiLogo && !emptyLogo && (
+                                                    //                         <div className="card-logo-svg text-white">
+                                                    //                             custom    
+                                                    //                         </div>
+                                                    //                         )}
+                                                    //                 </div>
+                                                    //                 <img style={{ width: "100%"}} 
+                                                    //                     src={metalCard["img-source"]} alt="" />
+                                                    //                 <div className="custom-data">
+                                                    //                     <div  className="name-data card-inner-text name" style={{color: "white", fontSize: `${nameSize}pt`}}>
+                                                    //                         {nameText}
+                                                    //                     </div>
+                                                    //                     <div  className="role-data card-inner-text role" style={{color: "white", fontSize: `${roleSize}pt`}}>
+                                                    //                         {roleText}
+                                                    //                     </div>
+                                                    //                     <div  className="company-data card-inner-text company" style={{color: "white", fontSize: `${companySize}pt`}}>
+                                                    //                         {companyText}
+                                                    //                     </div>
+                                                    //                 </div>
+                                                    //             </div>
+                                                    //             <div className="card__face card__face--back text-white">
+                                                    //             <img style={{ width: "100%"}} 
+                                                    //                     src={metalCard["img-back"]} alt="" />
+                                                    //             </div>
+                                                    //         </SwiperSlide>
+                                                    //     ))
+                                                    //     }
+                                                    // </Swiper>
                                                     )}
                                                 </div>
                                             </div>

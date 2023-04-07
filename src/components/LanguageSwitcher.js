@@ -6,6 +6,7 @@ import {Us} from 'react-flags-select'
 
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import roImg from "../countries/ro.svg";
+import roImgProbe from "../countries/footer_ro.svg";
 import usImg from "../countries/us.svg";
 import deImg from "../countries/de.svg";
 

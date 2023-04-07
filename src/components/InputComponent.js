@@ -17,7 +17,7 @@ function InputComponent(props){
         <>
         <label  for={props.inputId} className={isFocused ? "focused" : ""}>{props.label}</label>
         <input  id={props.inputId} type={props.inputType} name={props.inputName} className="form-control me-1"
-        onFocus={onFocusHandle} onBlur={onBlurHandle} onChange={props.onChange}  /> 
+        onFocus={onFocusHandle} onBlur={onBlurHandle} onChange={props.onChange} /> 
         </>
     );
 }

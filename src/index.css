@@ -182,7 +182,7 @@ header{
 }
 
 .top-link{
-  padding: 9px 0 9px 0 ;
+  /* padding: 9px 0 9px 0 ; */
   display: inline-block;
   margin: 0 10px;
   font-size: 1rem;
@@ -202,8 +202,15 @@ header.scrolled{
     height: 60px;
   }
 }
+.scrolled .btn-order-card{
+    height: 60px;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+}
 .locale-selector{
   width: 26px;
+  height: 26px;
   margin-left: 10px;
   margin-right: 10px;
   position: relative;
@@ -215,12 +222,12 @@ header.scrolled{
   /* display: none; */
 }
 .loc-switcher{
-    position: absolute;
-    top: 30px;
-    left: -98px;
-    background-color: #fff;
-    border: 1px solid #000;
-    z-index: 10000;
+  position: absolute;
+  top: 30px;
+  left: -98px;
+  background-color: #fff;
+  border: 1px solid #000;
+  z-index: 10000;
 }
 .loc-switcher-item{
   cursor: pointer;
@@ -244,6 +251,7 @@ header.scrolled{
   transform: rotate(45deg);
 }
 .round-icon{
+  margin-bottom: 10px;
   border-radius: 50%;
   width: 26px;
   height: 26px;
@@ -303,6 +311,7 @@ footer .svg-message{
   margin-right: 10px;
 }
 footer .svg-arrow{
+  fill: rgba(60,60,60,.5);
   /* display: inline; */
   /* margin-top: auto;
   margin-bottom: auto; */
@@ -736,6 +745,13 @@ label.focused{
 .swiper-slide-active{
   width: 400px;
 }
+@media (max-width: 550px){
+  .swiper-slide-active{
+    width: 330px;
+    height: 207px;
+  }
+  
+}
 .show-side{
   transform:rotateX(85deg) !important;
 }
@@ -779,6 +795,7 @@ label.focused{
 .customizer-card img{
   max-width: 450px;
   margin-bottom: 0!important;
+  border-radius: 13px;
 }
 .card__face{
   position: absolute;
@@ -833,6 +850,7 @@ label.focused{
   /* display: none; */
 }
 .overlay-tooltip {
+  height: 260px;
   display: none;
   justify-content: center;
   align-content: center;
@@ -840,7 +858,7 @@ label.focused{
   align-items: center;
   width: 100%;
   /* width: 400px; */
-  height: 100%;
+  /* height: 100%; */
   /* height: 260px; */
   /* top: 12.5%; */
   /* left: 31.3%; */
@@ -851,6 +869,24 @@ label.focused{
 .swiper-slide-active .overlay-tooltip{
   display: flex;
 }
+@media (max-width: 576px){
+  .overlay-tooltip{
+    height: 213px;
+  }
+}
+/* .swiper-slide.swiper-slide-active.image-wrapper ::after{
+  color: white;
+  content: "RARES";
+  position: absolute;
+  background-color: green;
+  background: rgba(0,0,0,.5);
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  z-index: 133;
+} */
 .overlay-tooltip p{
   text-align: center;
   padding: 0 10%;
@@ -1072,6 +1108,11 @@ label.focused{
 }
 .swiper-slide-active .flipped .flip-card-inner{
   transform: rotateY(180deg);
+}
+@media (max-width: 576px){
+  .swiper-slide-active .flip-card-inner{
+    height: 207px;
+  }
 }
 .flip-card-back, .flip-card-front{
   position: absolute;

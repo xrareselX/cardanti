@@ -58,7 +58,8 @@ function SwiperComponent1(props){
                             <div className="image-wrapper align-self-center">
                                 {props.displayFlipModal && (
                                     <div className="flip-it-overlay overlay-tooltip mb-3" onClick={props.flipModalClickedHandle}
-                                    style={{height: "260px"}}>
+                                    // style={{height: "260px"}}
+                                    >
                                         <div className="w-100 d-flex justify-content-center">
                                             {/* <flip-card></flip-card> */}
                                         </div>
@@ -67,9 +68,13 @@ function SwiperComponent1(props){
                                     )}
                                 <div className={"flip-card " + (props.isFlipped? "flipped": "")}>
                                     <div className="flip-card-inner" >
-                                        <div className="thickness" style={{backgroundColor: "rgb(238, 238, 238)"}}></div> 
-                                        <div className="thickness" style={{backgroundColor: "rgb(238, 238, 238)"}}></div>
-                                        <div className="thickness" style={{backgroundColor: "rgb(238, 238, 238)"}}></div>
+                                        {props.Cards == "pvcCards" && (
+                                        <>
+                                            <div className="thickness" style={{backgroundColor: "rgb(238, 238, 238)"}}></div> 
+                                            <div className="thickness" style={{backgroundColor: "rgb(238, 238, 238)"}}></div>
+                                            <div className="thickness" style={{backgroundColor: "rgb(238, 238, 238)"}}></div>
+                                        </>
+                                            )}
                                         <div className="flip-card-front">
                                             <div className="card-logo">
                                                 <div className="card-logo-svg">
@@ -94,9 +99,15 @@ function SwiperComponent1(props){
                                                 src={card["img-source"]} alt="" />
                                             {/* <img src="https://cardanti.com/_nuxt/img/tech-min.61b519b.webp" className="card-img-main" /> */}
                                             <div className="custom-data">
-                                                <div className="name-data card-inner-text name" style={{color: "white", fontSize: `${props.nameSize}pt`}}></div>
-                                                <div className="role-data card-inner-text role" style={{color: "white", fontSize: `${props.roleSize}pt`}}></div>
-                                                <div className="company-data card-inner-text company" style={{color: "white", fontSize: `${props.companySize}pt`}}></div>
+                                                <div className="name-data card-inner-text name" style={{color: "white", fontSize: `${props.nameSize}pt`}}>
+                                                    {props.nameText}
+                                                </div>
+                                                <div className="role-data card-inner-text role" style={{color: "white", fontSize: `${props.roleSize}pt`}}>
+                                                {props.roleText}
+                                                </div>
+                                                <div className="company-data card-inner-text company" style={{color: "white", fontSize: `${props.companySize}pt`}}>
+                                                {props.companyText}
+                                                </div>
                                             </div>
                                         </div> 
                                         <div className="flip-card-back">
