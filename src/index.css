@@ -622,6 +622,11 @@ a:hover{
   padding-right: 15px;
   padding-left: 15px;
 }
+/* @media (max-width: 1176px){
+  .menu{
+    margin-top: 250px;
+  }
+} */
 .customizer-actions{
   position: relative;
   z-index: 9;
@@ -731,6 +736,12 @@ label.focused{
   border-radius: 5px;
   box-shadow: 0 2px 3px rgba(10,10,10,.2), 0 0 0 1px rgba(10,10,10,.2);
   z-index: 50;
+}
+@media (max-width: 576px) {
+  .color-swatcher-container{
+    bottom: 100%;
+    right: 100%;
+  }
 }
 .swiper {
   width: 100%;
@@ -1058,6 +1069,11 @@ label.focused{
   left: calc(50% - 40px);
   cursor: pointer;
 }
+@media (max-width: 576px){
+  .flip-it-portrait{
+    bottom: -20px;
+  }
+}
 .flip-it-portrait svg{
   transition: all .2s linear;
 }
@@ -1080,7 +1096,8 @@ label.focused{
 .customizer-container{
   width: 100%;
   max-width: 400px;
-  height: 100%;
+  height: 252px;
+  /* height: 100%; */
   margin: 0 auto;
   position: relative;
 }
@@ -1154,6 +1171,11 @@ label.focused{
   align-items: flex-end;
   border-bottom-right-radius: 16px;
   overflow: hidden;
+}
+@media (max-width: 576px){
+  .portrait-uploader{
+    min-width: 180px;
+  }
 }
 .upload-icon {
   max-width: 100%;
