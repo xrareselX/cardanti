@@ -59,7 +59,7 @@ function OrderCard() {
     const [nameText, setNameText] = useState(""); 
     const [roleText, setRoleText] = useState(""); 
     const [companyText, setCompanyText] = useState(""); 
-    const [sideColor, setSideColor] = useState("#fff"); 
+    const [sideColor, setSideColor] = useState("rgb(238, 238, 238)"); 
 
     function closeModalHandle(){
         setShowModal(false);
@@ -268,11 +268,22 @@ function OrderCard() {
                                                  onClick={onClickMetalHandle}>METAL</button>
                                             </div>
                                             {isPVC && (
-                                                <div className="w-100 row justify-content-center">
-                                                    <div  className="material-color selected" style={{backgroundColor: "rgb(238, 238, 238)"}}></div>
-                                                    <div  className="material-color" style={{backgroundColor: "rgb(216, 29, 52)"}}></div>
-                                                    <div  className="material-color" style={{backgroundColor: "rgb(34, 34, 34)"}}></div>
-                                                    <div  className="material-color" style={{backgroundColor: "rgb(19, 67, 153)"}}></div>
+                                                // <div className="w-100 row justify-content-center">
+                                                //     <div  className="material-color selected" style={{backgroundColor: "rgb(238, 238, 238)"}}></div>
+                                                //     <div  className="material-color" style={{backgroundColor: "rgb(216, 29, 52)"}}></div>
+                                                //     <div  className="material-color" style={{backgroundColor: "rgb(34, 34, 34)"}}></div>
+                                                //     <div  className="material-color" style={{backgroundColor: "rgb(19, 67, 153)"}}></div>
+                                                // </div>
+                                                  <div className="w-100 row justify-content-center">
+                                                  {[{ color: "rgb(238, 238, 238)" }, { color: "rgb(216, 29, 52)" }, { color: "rgb(34, 34, 34)" }, { color: "rgb(19, 67, 153)" }]
+                                                  .map((item, index) => (
+                                                    <div
+                                                      key={index}
+                                                      className={`material-color ${sideColor === item.color ? "selected" : ""}`}
+                                                      style={{ backgroundColor: item.color }}
+                                                      onClick={() => setSideColor(item.color)}
+                                                    />
+                                                  ))}
                                                 </div>
                                                 )}
                                         </div>

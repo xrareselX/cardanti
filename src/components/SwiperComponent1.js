@@ -70,8 +70,8 @@ function SwiperComponent1(props){
                                     <div className="flip-card-inner" >
                                         {props.useThickness == 1 && (
                                         <>
-                                            {/* <div className="thickness" style={{backgroundColor: props.SideColor}}></div>  */}
-                                            <div className="thickness" style={{backgroundColor: "red"}}></div>
+                                            <div className="thickness" style={{backgroundColor: props.sideColor}}></div> 
+                                            {/* <div className="thickness" style={{backgroundColor: "red"}}></div> */}
                                         </>
                                             )}
                                         <div className="flip-card-front">
