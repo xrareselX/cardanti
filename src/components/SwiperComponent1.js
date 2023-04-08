@@ -69,10 +69,7 @@ function SwiperComponent1(props){
                                 <div className={"flip-card " + (props.isFlipped? "flipped": "")}>
                                     <div className="flip-card-inner" >
                                         {props.useThickness == 1 && (
-                                        <>
                                             <div className="thickness" style={{backgroundColor: props.sideColor}}></div> 
-                                            {/* <div className="thickness" style={{backgroundColor: "red"}}></div> */}
-                                        </>
                                             )}
                                         <div className="flip-card-front">
                                             <div className="card-logo">
@@ -87,7 +84,6 @@ function SwiperComponent1(props){
                                                             custom    
                                                         </div>
                                                         )}
-                                                    {/* <CardantiC /> */}
                                                 </div> 
                                                 <div className="preview w-100 d-flex justify-content-center" style={{overflow: "hidden"}}>
                                                     <canvas width="200" height="80" style={{visibility: "hidden"}}></canvas>

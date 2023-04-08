@@ -11,27 +11,15 @@ import { useRef, useState } from "react";
 import InputComponent from "../InputComponent";
 import CardantiC from "../../assets/icons/CardantiC";
 
-// PVC front imports
 import pvcImages from "../../assets/pvc-front/pvcImport";
-
-// PVC back imports
 import pvcBackImages from "../../assets/pvc-back/pvcBackImport";
-
-// Carbon front imports
 import carbonImages from "../../assets/carbon-front/carbonImport";
-
-// Carbon back imports
 import carbonBackImages from "../../assets/carbon-back/carbonBackImport";
-
-// Metal front imports
 import metalImages from "../../assets/metal-front/metalImport";
-
-// Metal back imports
 import metalBackImages from "../../assets/metal-back/metalBackImport";
-
-// Portrait imports
 import portraitFront from "../../assets/portrait/portrait-front.png";
 import portraitBack from "../../assets/portrait/portrait-back.png";
+import embossImg from "../../assets/emboss.png";
 
 import UploadModal from "../UploadModal";
 import SwiperComponent from "../SwiperComponent";
@@ -60,6 +48,7 @@ function OrderCard() {
     const [roleText, setRoleText] = useState(""); 
     const [companyText, setCompanyText] = useState(""); 
     const [sideColor, setSideColor] = useState("rgb(238, 238, 238)"); 
+    const [isEmboss, setIsEmboss] = useState(false); 
 
     function closeModalHandle(){
         setShowModal(false);
@@ -353,12 +342,20 @@ function OrderCard() {
                                                 <Swatcher id="logo-color" for="card-logo"/>
                                             </div>
                                         </div>
-                                        <div className="w-100 text-white display-flex flex-column align-items-center">
+                                        <div className="w-100 text-white d-flex flex-column align-items-center">
                                             <span className="text-center d-block mt-2" style={{fontSize: "20px", color: " rgb(143, 144, 160)"}}>Stilul de imprimare:</span>
                                             <div className="mx-auto w-100 customizer-actions row justify-content-center btn-group">
-                                                <button class="col-6 btn text-white btn-green">Flat</button> 
-                                                <button className="col-6 btn text-white btn-dark">Emboss</button>
+                                                <button className={`col-6 btn text-white `  + (isEmboss ? `btn-dark` : `btn-green`)} onClick={() => setIsEmboss(false)}>Flat</button> 
+                                                <button className={`col-6 btn text-white ` + (isEmboss ? `btn-green` : `btn-dark`)} onClick={() => setIsEmboss(true)}>Emboss</button>
                                             </div>
+                                            {isEmboss && (
+                                            <div className="w-75" style={{textAlign: "center"}}>
+                                                <span className="d-block" style={{fontSize: "16px", color: "rgb(143, 144, 160)"}}>Apasă pe butonul de mai jos pentru e vedea un exemplu cu un card Emboss</span> 
+                                                <div className="el-image" style={{width: "100px", height: "100px"}}>
+                                                    <img src={embossImg} className="el-image__inner el-image__preview"/>
+                                                </div>
+                                            </div>
+                                                )}
                                         </div>
                                         {showModal && (
                                             <UploadModal onCloseHandle={closeModalHandle} />
@@ -368,7 +365,7 @@ function OrderCard() {
                                         <button className="btn btn-green w-50 d-inline col-5" style={{marginRight: "10px"}}>Adaugă în coș</button>
                                         <div className="col-4">
                                             <div className="price">
-                                                <span className="amount">240  </span>
+                                                <span className="amount">{isEmboss? "310" : "240"}</span>
                                                 <span className="currency">lei</span>
                                             </div>
                                         </div>
