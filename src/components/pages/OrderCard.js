@@ -59,7 +59,7 @@ function OrderCard() {
     const [nameText, setNameText] = useState(""); 
     const [roleText, setRoleText] = useState(""); 
     const [companyText, setCompanyText] = useState(""); 
-    const nameInputRef = useRef(null);
+    const [sideColor, setSideColor] = useState("#fff"); 
 
     function closeModalHandle(){
         setShowModal(false);
@@ -279,7 +279,7 @@ function OrderCard() {
                                         <div className="w-100">
                                             <div className="form-group animated">
                                                 <div className="d-flex flex-row">
-                                                    <InputComponent ref={nameInputRef} inputId="name" inputType="text" inputName="name" label="Nume"
+                                                    <InputComponent  inputId="name" inputType="text" inputName="name" label="Nume"
                                                     onChange={nameOnChangeHandle}/>
                                                     <div className="name-buttons">
                                                         <button className="name-button btn btn-green" onClick={() => setNameSize(nameSize-1)}> - </button>
@@ -395,7 +395,7 @@ function OrderCard() {
                                                         <SwiperComponent1 Cards={pvcCards} nameSize={nameSize} roleSize={roleSize} companySize={companySize} initialSlide={pvcInitialSlide}
                                                             displayCardTitle={displayCardTitle} isFlipped={isFlipped} slideOnClickHandler={slideOnClickHandler} cardantiLogo={cardantiLogo}
                                                             emptyLogo={emptyLogo} displayFlipModal={displayFlipModal} flipModalClickedHandle={flipModalClickedHandle}
-                                                            nameText={nameText} roleText={roleText} companyText={companyText}/>
+                                                            nameText={nameText} roleText={roleText} companyText={companyText} useThickness={1} sideColor={sideColor}/>
                                                     )}
                                                     {isCarbon && (
                                                         <SwiperComponent1 Cards={carbonCards} nameSize={nameSize} roleSize={roleSize} companySize={companySize} initialSlide={carbonInitialSlide}
