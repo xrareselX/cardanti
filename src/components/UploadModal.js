@@ -1,6 +1,5 @@
 
 function UploadModal(props){
-
     return (
         <div role="dialog" className="modal-mask" onClick={props.onCloseHandle}>
             <div className="modal-overlay"></div>

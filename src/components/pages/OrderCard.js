@@ -24,6 +24,7 @@ import embossImg from "../../assets/emboss.png";
 import UploadModal from "../UploadModal";
 import SwiperComponent from "../SwiperComponent";
 import SwiperComponent1 from "../SwiperComponent1";
+import EmbossModal from "../EmbossModal";
 
 
 function OrderCard() {
@@ -49,9 +50,13 @@ function OrderCard() {
     const [companyText, setCompanyText] = useState(""); 
     const [sideColor, setSideColor] = useState("rgb(238, 238, 238)"); 
     const [isEmboss, setIsEmboss] = useState(false); 
+    const [isOpenEmbossModal, setIsOpenEmbossModal] = useState(false); 
 
     function closeModalHandle(){
         setShowModal(false);
+    }
+    function closeEmbossModalHandle(){
+        setIsOpenEmbossModal(false);
     }
     function flipModalClickedHandle(){
         setDisplayFlipModal(false);
@@ -352,9 +357,12 @@ function OrderCard() {
                                             <div className="w-75" style={{textAlign: "center"}}>
                                                 <span className="d-block" style={{fontSize: "16px", color: "rgb(143, 144, 160)"}}>Apasă pe butonul de mai jos pentru e vedea un exemplu cu un card Emboss</span> 
                                                 <div className="el-image" style={{width: "100px", height: "100px"}}>
-                                                    <img src={embossImg} className="el-image__inner el-image__preview"/>
+                                                    <img src={embossImg} className="el-image__inner el-image__preview" onClick={() => setIsOpenEmbossModal(true)}/>
                                                 </div>
                                             </div>
+                                                )}
+                                                {isOpenEmbossModal && (
+                                                    <EmbossModal onCloseHandle={closeEmbossModalHandle}/>
                                                 )}
                                         </div>
                                         {showModal && (
