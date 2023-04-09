@@ -1,6 +1,6 @@
-/* * {
+* {
   outline: 1px solid #f00 !important;
-} */
+}
 /* the rule from above helps you when you have horizontal scroll and don t know how to solve it */
 body {
   margin: 0;
@@ -538,6 +538,79 @@ a:hover{
   text-decoration: none;
   color: #25bcb5;
 }
+/* emboss modal from cardanti */
+.el-image-viewer__wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.el-image-viewer__mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: .5;
+  background: #000;
+}
+.el-image-viewer__btn {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  opacity: .8;
+  box-sizing: border-box;
+  user-select: none;
+}
+.el-image-viewer__close {
+  top: 40px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  color: #fff;
+  background-color: #606266;
+}
+.el-image-viewer__actions {
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  width: 282px;
+  height: 44px;
+  padding: 0 23px;
+  background-color: #606266;
+  border-color: #fff;
+  border-radius: 22px;
+}
+.el-image-viewer__actions__inner {
+  width: 100%;
+  height: 100%;
+  text-align: justify;
+  cursor: default;
+  font-size: 23px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+/* [class*=" el-icon-"], [class^=el-icon-] {
+  font-family: element-icons!important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-feature-settings: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
 /* emboss modal */
 .modal {
   /* display: none; */

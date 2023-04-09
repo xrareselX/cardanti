@@ -239,12 +239,14 @@ function OrderCard() {
             <div id="top" style={{backgroundColor: "rgb(29, 30, 33)"}}>
                 <section className="order-card-cont" style={{marginRight: "0"}}>
                     <div className="w-100 customizer-cont">
+                        <div className="container-fluid">
                         <div className="row triggers" style={{marginRight: "0"}}>
                             <div className="card-type d-flex justify-content-center">
                                 <div  className={"trigger " + (!isPortrait ? "active" : "")} onClick={() => setIsPortrait(false)}>Design</div>
                                 <div  className="separator"></div>
                                 <div  className={"trigger " + (isPortrait ? "active" : "")} onClick={() => setIsPortrait(true)}>Portrait</div>
                             </div>
+                        </div>
                         </div>
                             {!isPortrait && (
                         <div>
@@ -396,6 +398,7 @@ function OrderCard() {
                                                             onClick={() => setIsFlipped(true)}
                                                             >Spate</button>
                                                         </div>
+                                                    <div className="container-fluid">
                                                     <div className="row">
                                                         <div className="col-12">
                                                             <div className="card-name">
@@ -404,6 +407,7 @@ function OrderCard() {
                                                                 </h3>
                                                             </div>
                                                         </div>
+                                                    </div>
                                                     </div>
                                                 </div>
                                                 <div className="carousel-3d-container order-card-carousel">

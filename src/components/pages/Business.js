@@ -125,11 +125,13 @@ function Business(){
                     </div>
                 </div>
             </div> 
+            <div className="container">
             <div  className="row my-5">
                 <div  className="col-12 text-center">
                     <h2 className="custom-h2">{t("business.section6.h2-1")} <a  href="mailto:business@cardanti.com" target="_blank" style={{textDecoration: "underline"}}>{t("business.section6.h2-2")}</a>
                     </h2>
                 </div>
+            </div>
             </div>
         </section>
         </>
