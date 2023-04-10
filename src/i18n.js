@@ -13,8 +13,10 @@ i18n
   .use(initReactI18next)
 
   .init({
+    
+    //default language am comentat asta pt ca la refresh imi baga iar limba romana
 
-    lng: "ro",   //default language
+    // lng: "ro",   
 
     fallbackLng: "ro", //when specified language translations not present 
 
