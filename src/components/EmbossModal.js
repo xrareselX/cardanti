@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import embossImg from "../assets/emboss.png";
-import Plus from '../assets/icons/Plus.js';
+import { faMagnifyingGlassPlus, faMagnifyingGlassMinus, faRotateRight, faRotateLeft, faExpand, faX } from '@fortawesome/free-solid-svg-icons';
 function EmbossModal(props){
 
   const [rotation, setRotation] = useState(0);
@@ -58,18 +59,30 @@ function EmbossModal(props){
     // </div>
     <div tabindex="-1" className="el-image-viewer__wrapper" style={{zIndex: "2011"}}>
         <div className="el-image-viewer__mask"></div>
-        <span className="el-image-viewer__btn el-image-viewer__close">
-            <i className="el-icon-close"></i>
+        <span className="el-image-viewer__btn el-image-viewer__close" onClick={() => props.onCloseHandle()}>
+            <i className="el-icon-close">
+                <FontAwesomeIcon icon={faX} />
+            </i>
         </span>
         <div className="el-image-viewer__btn el-image-viewer__actions">
             <div className="el-image-viewer__actions__inner">
-                <i className="el-icon-zoom-out"></i>
-                <i className="el-icon-zoom-in"></i>
+                <i className="el-icon-zoom-out" onClick={() => handleZoom(false)}> 
+                    <FontAwesomeIcon icon={faMagnifyingGlassMinus} />
+                </i>
+                <i className="el-icon-zoom-in"onClick={() => handleZoom(true)}>
+                    <FontAwesomeIcon icon={faMagnifyingGlassPlus} />
+                </i>
                 <i className="el-image-viewer__actions__divider"></i>
-                <i className="el-icon-full-screen"></i>
+                <i className="el-icon-full-screen" onClick={handleReset}>
+                    <FontAwesomeIcon icon={faExpand} />
+                </i>
                 <i className="el-image-viewer__actions__divider"></i>
-                <i className="el-icon-refresh-left"></i>
-                <i className="el-icon-refresh-right"></i>
+                <i className="el-icon-refresh-left" onClick={handleRotateLeft}>
+                    <FontAwesomeIcon icon={faRotateLeft} />
+                </i>
+                <i className="el-icon-refresh-right" onClick={handleRotateRight}>
+                    <FontAwesomeIcon icon={faRotateRight} />
+                </i>
             </div>
         </div>
         <div className="el-image-viewer__canvas">
