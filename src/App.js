@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import Layout from './components/Layout';
 import AboutUs from './components/pages/AboutUs';
@@ -10,6 +10,7 @@ import How_it_works from './components/pages/How_it_works';
 import Contact from './components/pages/Contact';
 
 function App() {
+  const location = useLocation();
   return (
     <Layout>  {/**avem nevoie de layout pt ca la return, avem voie un singur parent si ala sa fie layout si in ala punem restul */}
     <Routes>
@@ -21,7 +22,9 @@ function App() {
       <Route path="/order-card" element={<OrderCard />}/>
       <Route path="/contact" element={<Contact />}/>
     </Routes>
-    <Footer />
+    {location.pathname != "/login" && (
+      <Footer />
+    )}
     </Layout>
   );
 }

@@ -122,9 +122,11 @@ function Navigation() {
                     {deviceWidth >= 600 && (
                         <> 
                             <a className="btn btn-sm btn-login" href="/login">{t('nav.login')}</a>
-                            <a href="/order-card">
-                                <button className="btn btn-sm btn-green btn-uppercase btn-order-card" >{t("nav.buy-now")}</button>
-                            </a>
+                            {location.pathname != "/order-card" && (
+                                <a href="/order-card">
+                                    <button className="btn btn-sm btn-green btn-uppercase btn-order-card" >{t("nav.buy-now")}</button>
+                                </a>
+                            )}
                         </>
                     )}
                 </div>
