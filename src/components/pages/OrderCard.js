@@ -25,6 +25,7 @@ import UploadModal from "../UploadModal";
 import SwiperComponent from "../SwiperComponent";
 import SwiperComponent1 from "../SwiperComponent1";
 import EmbossModal from "../EmbossModal";
+import { useTranslation } from "react-i18next";
 
 
 function OrderCard() {
@@ -32,6 +33,7 @@ function OrderCard() {
     const carbonInitialSlide = 1;
     const metalInitialSlide = 1;
 
+    const {t, i18n} = useTranslation();
     const [isFlipped, setIsFlipped] = useState(false);
     const [isPortraitFlipped, setIsPortraitFlipped] = useState(false);
     const [nameSize, setNameSize] = useState(10);
@@ -286,7 +288,7 @@ function OrderCard() {
                                         <div className="w-100">
                                             <div className="form-group animated">
                                                 <div className="d-flex flex-row">
-                                                    <InputComponent  inputId="name" inputType="text" inputName="name" label="Nume"
+                                                    <InputComponent  inputId="name" inputType="text" inputName="name" label={t('order_card.inputs.name')}
                                                     onChange={nameOnChangeHandle}/>
                                                     <div className="name-buttons">
                                                         <button className="name-button btn btn-green" onClick={() => setNameSize(nameSize-1)}> - </button>
@@ -302,7 +304,7 @@ function OrderCard() {
                                         <div className="w-100">
                                             <div className="form-group animated">
                                                 <div className="d-flex flex-row ">
-                                                    <InputComponent inputId="role" inputType="text" inputName="role" label="Rol"
+                                                    <InputComponent inputId="role" inputType="text" inputName="role" label={t('order_card.inputs.role')}
                                                      onChange={roleOnChangeHandle}/>
                                                     <div className="name-buttons">
                                                         <button className="name-button btn btn-green" onClick={() => setRoleSize(roleSize-1)}> - </button>
@@ -318,7 +320,7 @@ function OrderCard() {
                                         <div className="w-100">
                                             <div className="form-group animated">
                                                 <div className="d-flex flex-row">
-                                                    <InputComponent inputId="company" inputType="text" inputName="company" label="Companie"
+                                                    <InputComponent inputId="company" inputType="text" inputName="company" label={t('order_card.inputs.company')}
                                                      onChange={companyOnChangeHandle}/>
                                                     <div className="name-buttons">
                                                         <button className="name-button btn btn-green" onClick={() => setCompanySize(companySize-1)}> - </button>
@@ -350,7 +352,7 @@ function OrderCard() {
                                             </div>
                                         </div>
                                         <div className="w-100 text-white d-flex flex-column align-items-center">
-                                            <span className="text-center d-block mt-2" style={{fontSize: "20px", color: " rgb(143, 144, 160)"}}>Stilul de imprimare:</span>
+                                            <span className="text-center d-block mt-2" style={{fontSize: "20px", color: " rgb(143, 144, 160)"}}>{t("order_card.print_style")}</span>
                                             <div className="mx-auto w-100 customizer-actions row justify-content-center btn-group">
                                                 <button className={`col-6 btn text-white `  + (isEmboss ? `btn-dark` : `btn-green`)} onClick={() => setIsEmboss(false)}>Flat</button> 
                                                 <button className={`col-6 btn text-white ` + (isEmboss ? `btn-green` : `btn-dark`)} onClick={() => setIsEmboss(true)}>Emboss</button>
@@ -372,7 +374,7 @@ function OrderCard() {
                                          )}
                                     </div>
                                     <div className="customizer-actions w-100 mt-3 row justify-content-center">
-                                        <button className="btn btn-green w-50 d-inline col-5" style={{marginRight: "10px"}}>Adaugă în coș</button>
+                                        <button className="btn btn-green w-50 d-inline col-5" style={{marginRight: "10px"}}>{t("order_card.add_to_cart_btn")}</button>
                                         <div className="col-4">
                                             <div className="price">
                                                 <span className="amount">{isEmboss? "310" : "240"}</span>
@@ -529,7 +531,7 @@ function OrderCard() {
                                                                                                 <polygon fill="#ffffff" points="66.4,93.1 59.9,93.1 59.9,99.5 59.3,99.5 59.3,93.1 52.9,93.1 52.9,92.5 59.3,92.5 59.3,86 59.9,86
                                                                                                     59.9,92.5 66.4,92.5 "></polygon>
                                                                                         </svg>
-                                                                                        <span className="load-text text-white d-block w-100 mb-1 sb-text">Încarcă o poză cu tine</span>
+                                                                                        <span className="load-text text-white d-block w-100 mb-1 sb-text">{t("order_card.add_picture_w_you")}</span>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -543,23 +545,23 @@ function OrderCard() {
                                                     <div className="d-flex menu flex-column col-12 col-md-3 personalize mb-4 justify-content-center align-items-center">
                                                         <div>
                                                             <div className="form-group animated">
-                                                                <InputComponent inputId="portrait-name" inputType="text" inputName="name" label="Nume și prenume"
+                                                                <InputComponent inputId="portrait-name" inputType="text" inputName="name" label={t('order_card.inputs.first_and_last_name')}
                                                                 onChange={portraitNameOnChangeHandle} 
                                                                 />
                                                             </div>
                                                             <div className="form-group animated">
-                                                                <InputComponent inputId="portrait-role" inputType="text" inputName="role" label="Rol"
+                                                                <InputComponent inputId="portrait-role" inputType="text" inputName="role" label={t('order_card.inputs.role')}
                                                                     onChange={portraitRoleOnChangeHandle}
                                                                 />
                                                             </div>
                                                             <div className="form-group animated">
-                                                            <InputComponent inputId="portrait-company" inputType="text" inputName="company" label="Companie"
+                                                            <InputComponent inputId="portrait-company" inputType="text" inputName="company" label={t('order_card.inputs.company')}
                                                                     onChange={portraitCompanyOnChangeHandle} 
                                                                 />
                                                             </div>
                                                         </div>
                                                         <div className="customizer-actions row w-100 justify-content-center text-center text-align-center"style={{marginBottom: "80px"}}>
-                                                            <button  className="offset-1 col-3 btn btn-green w-50 " style={{marginRight: "10px"}}>Adaugă în coș</button>
+                                                            <button  className="offset-1 col-3 btn btn-green w-50 " style={{marginRight: "10px"}}>{t("order_card.add_to_cart_btn")}</button>
                                                             <div className="col-3" style={{padding: "0px"}}>
                                                                 <div className="price">
                                                                     <span className="amount">289</span>

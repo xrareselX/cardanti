@@ -12,6 +12,7 @@ import FooterLanguageSelect from "./FooterLanguageSelect";
 function Footer() {
 
     // data is used for footer country Select, not for Form.Select
+
     const data = [
         {
             value: "en",
@@ -61,7 +62,7 @@ function Footer() {
                                 <option value="es" >Español</option>
                                 <option value="de" >Deutsche</option>
                             </Form.Select> */}
-                            <FooterLanguageSelect/>
+                            <FooterLanguageSelect />
                             {/* <Select value={selectedOption} options={data} className="custom-select" 
                              onChange={changeLanguageHandler} defaultValue="ro"
                              getOptionLabel={e => (

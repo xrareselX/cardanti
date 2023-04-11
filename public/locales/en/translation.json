@@ -129,6 +129,19 @@
             }
         }
     },
+    "order_card": {
+        "inputs":{
+            "name": "Name",
+            "role": "Role",
+            "company": "Company",
+            "first_and_last_name": "First and last name"
+        },
+        "limited_edition": "limited edition",
+        "add_to_cart_btn": "Add to cart",
+        "flip_modal": "Click on the card to tilt it and see the side color",
+        "print_style": "Print style",
+        "add_picture_w_you": "Upload a photo of you"
+    },
     "footer": {
         "link1": "Help",
         "link2": "Privacy Policy",

@@ -1,8 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import CardantiC from "../assets/icons/CardantiC";
 import { EffectCoverflow, Navigation } from "swiper";
+import { useTranslation } from "react-i18next";
 
 function SwiperComponent1(props){
+    const {t, i18n} = useTranslation();
+
     return (
         <Swiper  navigation={true} modules={[
             EffectCoverflow,
@@ -63,7 +66,7 @@ function SwiperComponent1(props){
                                         <div className="w-100 d-flex justify-content-center">
                                             {/* <flip-card></flip-card> */}
                                         </div>
-                                        <p className="text-white">Apasă pe card pentru a îl înclina și a vedea culoarea muchei</p>
+                                        <p className="text-white">{t("order_card.flip_modal")}</p>
                                     </div>
                                     )}
                                 <div className={"flip-card " + (props.isFlipped? "flipped": "")}>

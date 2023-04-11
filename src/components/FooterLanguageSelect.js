@@ -5,12 +5,15 @@ import Message from "../assets/icons/Message";
 import { useRef, useState } from "react";
 import DownArrow from "../assets/icons/DownArrow";
 import { useTranslation } from "react-i18next";
+
 function FooterLanguageSelect(props) {
+
     const {t,  i18n } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [selectedCountry, setSelectedCountry] = useState("Română"); 
     const menuRef = useRef(null);
     const selectRef = useRef(null);
+
     const options = [
         { value: 'ro', label: 'Română', flag: roImg },
         { value: 'en', label: 'English', flag: usImg },
@@ -32,7 +35,10 @@ function FooterLanguageSelect(props) {
     <div className="custom-select">
     <span ref={selectRef} className="selected-value" onClick={() => setIsOpen(!isOpen)}>
       <Message className="svg-message" />
-      {selectedCountry}
+      {/* {selectedCountry} */}
+      {i18n.language == "ro" ? "Română":""}
+      {i18n.language == "en" ? "English":""}
+      {i18n.language == "de" ? "Deutsch":""}
       <DownArrow className={`svg-arrow ` +  (isOpen ? "rotate-svg" :"")}/>
     </span>
     <div ref={menuRef} className={`options-container ${isOpen ? 'active' : ''}`}>

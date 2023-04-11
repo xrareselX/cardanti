@@ -42,7 +42,7 @@ function Navigation() {
     const {t, i18n} = useTranslation();
 
     return (
-        <header className={"sticky-top navbar navbar-header navbar-header-fixed " +(isScrolled ? "scrolled " : " ")
+        <header className={(deviceWidth >= 600 ? "sticky-top " : "") + "navbar navbar-header navbar-header-fixed " +(isScrolled ? "scrolled " : " ")
          + (mobileNav ? "navbar-nav-show" :"")
          }>
             {/* {deviceWidth < 600 ? setIsMobile(true) : setIsMobile(false)} */}

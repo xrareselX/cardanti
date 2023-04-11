@@ -129,6 +129,19 @@
             }
         }
     },
+    "order_card": {
+        "inputs":{
+            "name": "Nume",
+            "role": "Rol",
+            "company": "Companie",
+            "first_and_last_name": "Nume și prenume"
+        },
+        "limited_edition": "ediție limitată",
+        "add_to_cart_btn": "Adaugă în coș",
+        "flip_modal": "Apasă pe card pentru a îl înclina și a vedea culoarea muchei",
+        "print_style": "Stilul de imprimare",
+        "add_picture_w_you": "Încarcă o poză cu tine"
+    },
     "footer": {
         "link1": "Ajutor",
         "link2": "Politica de confidențialitate",
