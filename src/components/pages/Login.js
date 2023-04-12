@@ -45,7 +45,11 @@ function Login() {
     }
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
-        if(event.target.value.length < 8){
+        if(event.target.value == ""){
+            setPasswordErrorMessage("Acest câmp este obligatoriu");
+            setPasswordError(true);
+        }
+        else if(event.target.value.length < 8){
             setPasswordErrorMessage("Parola trebuie să aibă cel puțin 8 caractere");
             setPasswordError(true);
         }
