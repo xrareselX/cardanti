@@ -1,9 +1,38 @@
+import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import Img1 from "../../assets/how_it_works/1.webp";
 import Img2 from "../../assets/personal/personal1.jpg";
 import Img3 from "../../assets/personal/personal2.jpg";
+import Slicker from "../Slicker";
+import SlickerResponsive from "../SlickerResponsive";
 
 
 function Personal(){
+    const windowWidth = useRef(window.innerWidth);
+    const {t, i18n} = useTranslation();
+
+    const cards = [
+        {
+            h3: t("business.section2.cards.card2.h3"),
+            p: t("business.section2.cards.card2.p")
+        },
+        {
+            h3: t("business.section2.cards.card3.h3"),
+            p: t("business.section2.cards.card3.p")
+        },
+        {
+            h3: t("business.section2.cards.card4.h3"),
+            p: t("business.section2.cards.card4.p")
+        },
+        {
+            h3: t("business.section2.cards.card5.h3"),
+            p: t("business.section2.cards.card5.p")
+        },
+        {
+            h3: t("business.section2.cards.card1.h3"),
+            p: t("business.section2.cards.card1.p")
+        }
+    ]
     return (
         <div>
             <section className="cover">
@@ -54,7 +83,24 @@ function Personal(){
                     </div>
                 </div>
             </section> 
-            {/* aici urmeaaza sectiunea 3 */}
+            <section className="usps">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 mb-3">
+                            <h2 className="text-center">Beneficii – o experiență de network completă</h2>
+                        </div>
+                    </div>
+                    <div className="slicker-slider slick-initialized">
+                        {/* slicker */}
+                    { (windowWidth.current > 800) && (
+                        <Slicker cards={cards}/>
+                     )} 
+                    { (windowWidth.current <= 800) && (
+                        <SlickerResponsive cards={cards}/>
+                     )} 
+                    </div>
+                </div> 
+            </section>
             <section className="story-for-you d-flex justify-content-center align-items-center" style={{padding: "0px" }}>
                 <div className="container">
                     <div className="row">
@@ -82,20 +128,20 @@ function Personal(){
                         </div>
                     </div>
                 </div>
-        </section>
-        <section>
-            <div className="container">
-                <div className="row">
-                    <div className="col-12 mb-3">
-                        <h2 className="text-center" style={{fontSize: "1.6rem"}}>Noua ta carte de network – ești cu un pas înaintea tehnologiei</h2>
-                        <p className="text-center">Investește în tine, află mai multe despre Cardanti Personal</p>
-                        <div className="d-flex align-items-center justify-content-center flex-wrap">
-                            <a href="/order-card" className="btn btn-green mr-4 btn-uppercase mb-3">Cumpără acum</a>
+            </section>
+            <section>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 mb-3">
+                            <h2 className="text-center" style={{fontSize: "1.6rem"}}>Noua ta carte de network – ești cu un pas înaintea tehnologiei</h2>
+                            <p className="text-center">Investește în tine, află mai multe despre Cardanti Personal</p>
+                            <div className="d-flex align-items-center justify-content-center flex-wrap">
+                                <a href="/order-card" className="btn btn-green mr-4 btn-uppercase mb-3">Cumpără acum</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
     </div>
     );
 }

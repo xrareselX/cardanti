@@ -11,7 +11,7 @@ function Slicker(props) {
         slidesToScroll: 1,
         infinite: true,
         dots: true,
-        initialSlide: -1,
+        initialSlide: 0,
         responsive: [
             {
                 breakpoint: 1024,
