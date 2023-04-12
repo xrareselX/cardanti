@@ -54,7 +54,7 @@ function Business(){
                 <div>
                     {/* slicker */}
                     { (windowWidth.current > 800) && (
-                        <Slicker cards={cards}/>
+                        <Slicker cards={cards} initialSlide={0} slidesToShow={2}/>
                      )} 
                     { (windowWidth.current <= 800) && (
                         <SlickerResponsive cards={cards}/>

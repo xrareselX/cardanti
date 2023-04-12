@@ -15,22 +15,6 @@ function LanguageSwitcher() {
   const {t,  i18n } = useTranslation();
   const [isActive, setIsActive]= useState(false);
 
-//   return (
-//     <div className="select">
-//       <select
-//         value={i18n.language}
-//         onChange={(e) =>
-//           i18n.changeLanguage(e.target.value)
-//         }
-//       >
-//         <option value="en">
-//         <span class="fi fi-gr fis"></span>
-//             English</option>
-//         <option value="ro">Ro</option>
-//         <option><i class='fa fa-heart' aria-hidden='true'></i>&#xf2bb; address cardOption3</option>
-//       </select>
-//     </div>
-//   );
     return(
         <div className="locale-selector" onClick={(e) => setIsActive(!isActive)}>
                 {i18n.language == "ro" && (

@@ -142,6 +142,29 @@
         "print_style": "Stilul de imprimare",
         "add_picture_w_you": "Încarcă o poză cu tine"
     },
+    "personal":{
+        "section3":{
+            "h2": "",
+            "cards":{
+                "card1":{
+                    "h3": "Easy to meet & Utility",
+                    "p": "Printr-un singur gest, oferi informații rapide, fără riscul de a nu reține datele de contact"
+                },
+                "card2":{
+                    "h3": "Ușor și portabil",
+                    "p": "Vine în format fizic și în format digital, astfel încât să ai acces oriunde la profilul tău optimizat"
+                },
+                "card3":{
+                    "h3": "Practic și editabil",
+                    "p": "Datele date de contact pot să fie mereu modificate și actualizate"
+                },
+                "card4":{
+                    "h3": "Design contemporan și funcționalitate",
+                    "p": "Un mix contemporan între o carte de vizită premium și un accesoriu de business"
+                }
+            }
+        }
+    },
     "footer": {
         "link1": "Ajutor",
         "link2": "Politica de confidențialitate",

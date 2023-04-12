@@ -18,15 +18,10 @@ function Navigation() {
     const location = useLocation();
     const [isScrolled, setIsScrolled] = useState(false);
     const [showNav, setShowNav] = useState(false);
-    // const [isMobile, setIsMobile] = useState(false);
     const [mobileNav, setMobileNav] = useState(false);
 
     let deviceWidth = useRef(window.innerWidth);
-    // function checkIfMobile(){
-        deviceWidth = deviceWidth.current;
-        // if(deviceWidth < 600)
-            // setIsMobile(true);
-    // }
+    deviceWidth = deviceWidth.current;
     function toggleNav(){
         setShowNav(!showNav);
     }
@@ -45,7 +40,6 @@ function Navigation() {
         <header className={(location.pathname != "/order-card"  ? "sticky-top " : "no-sticky ") + "navbar navbar-header navbar-header-fixed " +(isScrolled ? "scrolled " : " ")
          + (mobileNav ? "navbar-nav-show" :"")
          }>
-            {/* {deviceWidth < 600 ? setIsMobile(true) : setIsMobile(false)} */}
             <div className="container">
                 <div className="navbar-brand">
                     <a href="/" className="logo">
@@ -99,9 +93,7 @@ function Navigation() {
                             <a href="https://help.cardanti.com/" target="_blank" className="top-link">{t('nav.questions')}</a>
                         </div> 
                     )}
-                    {/* <div className="locale-selector"> */}
                         <LanguageSwitcher />
-                    {/* </div> */}
                     {deviceWidth < 600 && (
                         <div class="toggle-dropdown">
                             <a id="mainMenuOpen" href="" className="burger-menu" onClick={(e) => {

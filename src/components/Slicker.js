@@ -7,11 +7,12 @@ import Cards from './Cards';
 function Slicker(props) {
     const {t, i18n} = useTranslation();
     const sliderSettings = {
-        slidesToShow: 2,
+        slidesToShow: props.slidesToShow,
         slidesToScroll: 1,
         infinite: true,
         dots: true,
-        initialSlide: 0,
+        centerMode: true,
+        initialSlide: props.initialSlide,
         responsive: [
             {
                 breakpoint: 1024,
