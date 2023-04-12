@@ -47,7 +47,7 @@ function AboutUs() {
                 </div> {/** end row */}
                 <div className="row mb-5">
                     <div className="col-12 text-center">
-                        <Link to="how-it-works">
+                        <Link to="/how_it_works">
                             <Button className="btn-green">
                                 {t("about-us.how-it-works-btn")}
                             </Button>

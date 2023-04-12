@@ -22,14 +22,19 @@ header{
   transition: height .2s linear,padding-top .2s linear;
   background-color: #fff;
 }
+.no-sticky{
+  /* position: static; */
+  padding-top: 0!important;
+  height: 60px!important;
+}
+.navbar-header{
+  padding-bottom: 0;
+}
 @media only screen and (min-width: 992px) {
   .navbar-header{
     height: 90px;
     padding-top: 30px;
   }
-}
-.navbar-header{
-  padding-bottom: 0;
 }
 .navbar-brand{
   display: flex;
@@ -1351,7 +1356,7 @@ label.focused{
 .swiper-slide-active .thickness{
   position: absolute;
   width: calc(100% - 1px);
-  height: calc(100% - 1px);
+  height: calc(100% - 8px);
   left: 0.5px;
   transform: translateZ(-1px);
   border-radius: 20px;
@@ -1548,6 +1553,9 @@ ul.list li::before {
   top: 0;
   left: 0;
 }
+.proposals {
+  margin-bottom: 80px;
+}
 .proposals h1{
   margin-bottom: 70px;
   font-size: 2.625rem;
@@ -1628,4 +1636,22 @@ ul.list li::before {
 }
 strong{
   font-weight:500;
+}
+/* PERSONAL */
+.video-overlay h2 {
+  max-width: 500px;
+  /* text-align: left; */
+  color: #68697f;
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-right: auto;
+}
+.video-overlay button {
+  border-color: #25bcb5;
+  font-weight: 600;
+}
+.btn-border:hover {
+  background: transparent;
+  border-color: #25bcb5;
+  color: #25bcb5;
 }

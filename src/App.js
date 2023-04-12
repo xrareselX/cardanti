@@ -8,6 +8,7 @@ import OrderCard from './components/pages/OrderCard';
 import Business from "./components/pages/Business";
 import How_it_works from './components/pages/How_it_works';
 import Contact from './components/pages/Contact';
+import Personal from './components/pages/Personal';
 
 function App() {
   const location = useLocation();
@@ -21,6 +22,7 @@ function App() {
       <Route path="/login" element={<Login />}/>
       <Route path="/order-card" element={<OrderCard />}/>
       <Route path="/contact" element={<Contact />}/>
+      <Route path="/personal" element={<Personal />}/>
     </Routes>
     {location.pathname != "/login" && (
       <Footer />
