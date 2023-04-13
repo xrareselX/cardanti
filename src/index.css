@@ -1049,7 +1049,6 @@ label.focused{
   /* left: 31.3%; */
   z-index: 4;
   background: rgba(0,0,0,.5);
-  /* border-radius: 13px; */
 }
 .overlay-tooltip.notPVC{
   height:252px;
