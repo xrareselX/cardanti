@@ -1042,11 +1042,6 @@ label.focused{
   flex-wrap: wrap;
   align-items: center;
   width: 100%;
-  /* width: 400px; */
-  /* height: 100%; */
-  /* height: 260px; */
-  /* top: 12.5%; */
-  /* left: 31.3%; */
   z-index: 4;
   background: rgba(0,0,0,.5);
 }
@@ -1061,19 +1056,6 @@ label.focused{
     height: 213px;
   }
 }
-/* .swiper-slide.swiper-slide-active.image-wrapper ::after{
-  color: white;
-  content: "RARES";
-  position: absolute;
-  background-color: green;
-  background: rgba(0,0,0,.5);
-  top: 0;
-  left: 0;
-  opacity: 0.5;
-  width: 100%;
-  height: 100%;
-  z-index: 133;
-} */
 .overlay-tooltip p{
   text-align: center;
   padding: 0 10%;
