@@ -14,8 +14,8 @@ function SwiperComponent1(props){
             // loop={true}
             initialSlide={props.initialSlide} centeredSlides={true} effect={"coverflow"} 
             coverflowEffect={{
-                rotate: 55,
-                stretch: 20,
+                rotate: 15,
+                stretch: 150,
                 depth: 100,
                 modifier: 1,
                 slideShadows: false
@@ -60,7 +60,7 @@ function SwiperComponent1(props){
                              src={card["img-back"]} alt="" /> */}
                             <div className="image-wrapper align-self-center">
                                 {props.displayFlipModal && (
-                                    <div className="flip-it-overlay overlay-tooltip mb-3" onClick={props.flipModalClickedHandle}
+                                    <div className={`flip-it-overlay overlay-tooltip mb-3 ${props.overlayClass}`} onClick={props.flipModalClickedHandle}
                                     // style={{height: "260px"}}
                                     >
                                         <div className="w-100 d-flex justify-content-center">

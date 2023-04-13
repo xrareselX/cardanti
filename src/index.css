@@ -1034,6 +1034,7 @@ label.focused{
   /* display: none; */
 }
 .overlay-tooltip {
+  border-radius: 13px;
   height: 260px;
   display: none;
   justify-content: center;
@@ -1049,6 +1050,9 @@ label.focused{
   z-index: 4;
   background: rgba(0,0,0,.5);
   /* border-radius: 13px; */
+}
+.overlay-tooltip.notPVC{
+  height:252px;
 }
 .swiper-slide-active .overlay-tooltip{
   display: flex;

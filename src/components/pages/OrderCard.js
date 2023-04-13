@@ -377,12 +377,8 @@ function OrderCard() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="col-12 col-md-9 order-1 order-md-2 result main-content-cards"
-                                //  style={{marginRight: "0"}}
-                                 >
-                                    <div className="row" 
-                                    // style={{marginRight: "0"}}
-                                    >
+                                <div className="col-12 col-md-9 order-1 order-md-2 result main-content-cards">
+                                    <div className="row">
                                         <div className="col-12 px-md-2">
                                             <div className="carousel-container">
                                                 <div className="flip-it">
@@ -411,19 +407,19 @@ function OrderCard() {
                                                         <SwiperComponent1 Cards={pvcCards} nameSize={nameSize} roleSize={roleSize} companySize={companySize} initialSlide={pvcInitialSlide}
                                                             displayCardTitle={displayCardTitle} isFlipped={isFlipped} slideOnClickHandler={slideOnClickHandler} cardantiLogo={cardantiLogo}
                                                             emptyLogo={emptyLogo} displayFlipModal={displayFlipModal} flipModalClickedHandle={flipModalClickedHandle}
-                                                            nameText={nameText} roleText={roleText} companyText={companyText} useThickness={1} sideColor={sideColor}/>
+                                                            nameText={nameText} roleText={roleText} companyText={companyText} useThickness={1} sideColor={sideColor} overlayClass=""/>
                                                     )}
                                                     {isCarbon && (
                                                         <SwiperComponent1 Cards={carbonCards} nameSize={nameSize} roleSize={roleSize} companySize={companySize} initialSlide={carbonInitialSlide}
                                                             displayCardTitle={displayCardTitle} isFlipped={isFlipped} slideOnClickHandler={slideOnClickHandler} cardantiLogo={cardantiLogo}
                                                             emptyLogo={emptyLogo} displayFlipModal={displayFlipModal} flipModalClickedHandle={flipModalClickedHandle}
-                                                            nameText={nameText} roleText={roleText} companyText={companyText}/>
+                                                            nameText={nameText} roleText={roleText} companyText={companyText} overlayClass="notPVC"/>
                                                     )}
                                                     {!isPVC && !isCarbon && (
                                                          <SwiperComponent1 Cards={metalCards} nameSize={nameSize} roleSize={roleSize} companySize={companySize} initialSlide={metalInitialSlide}
                                                             displayCardTitle={displayCardTitle} isFlipped={isFlipped} slideOnClickHandler={slideOnClickHandler} cardantiLogo={cardantiLogo}
                                                             emptyLogo={emptyLogo} displayFlipModal={displayFlipModal} flipModalClickedHandle={flipModalClickedHandle}
-                                                            nameText={nameText} roleText={roleText} companyText={companyText}/>
+                                                            nameText={nameText} roleText={roleText} companyText={companyText} overlayClass="notPVC"/>
                                                     )}
                                                 </div>
                                             </div>
