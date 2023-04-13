@@ -7,8 +7,8 @@ import {Us} from 'react-flags-select'
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import roImg from "../countries/ro.svg";
 import roImgProbe from "../countries/footer_ro.svg";
-import usImg from "../countries/us.svg";
-import deImg from "../countries/de.svg";
+import usImg from "../assets/flag_icons/usa.svg";
+import deImg from "../assets/flag_icons/de.svg";
 
 function LanguageSwitcher() {
 
@@ -26,7 +26,7 @@ function LanguageSwitcher() {
                 {i18n.language == "de" && (
                 <img src={deImg} className="round-icon" />
                 )}
-            {isActive &&(
+            {/* {isActive &&( */}
             <ul className="loc-switcher">
                 <li className="loc-switcher-special"></li>
                 {i18n.language != "en" && (
@@ -48,7 +48,7 @@ function LanguageSwitcher() {
                 </li>
                 )}
             </ul>
-            )}
+            {/* )} */}
         </div>
     );
 }
