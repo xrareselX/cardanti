@@ -919,7 +919,36 @@ label.focused{
 .swiper {
   width: 100%;
   padding-top: 50px;
-  padding-bottom: 50px;
+  /* padding-bottom: 150px; */
+}
+.swiper-button-next{
+  color: hsla(0,0%,100%,.7);
+  /* width: 0.015rem; */
+  /* right: var(--swiper-navigation-sides-offset,10px); */
+  right: 0;
+  /* height: 10px; */
+  left: auto;
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+  font-size: 25px;
+}
+.swiper-button-prev{
+  color: hsla(0,0%,100%,.7);
+  left: 0;
+}
+.swiper-button-next:hover{
+  opacity: .7;
+}
+.swiper-button-prev:hover{
+  opacity: .7;
+}
+@media (min-width: 1000px){
+  .swiper-button-prev{
+    left: 20%;
+  } 
+  .swiper-button-next{
+    right: 20%;
+  } 
 }
 .swiper-slide {
   width: 300px;
@@ -933,8 +962,8 @@ label.focused{
   .swiper-slide-active{
     width: 330px;
     height: 207px;
+    /* margin: 0 7%; */
   }
-  
 }
 /* .show-side{
   transform:rotateX(80deg) !important;
@@ -1053,7 +1082,7 @@ label.focused{
 }
 @media (max-width: 576px){
   .overlay-tooltip{
-    height: 213px;
+    height: 229px;
   }
 }
 .overlay-tooltip p{
@@ -1325,7 +1354,7 @@ label.focused{
 }
 @media (max-width: 576px){
   .swiper-slide-active .flip-card-inner{
-    height: 207px;
+    height: 228px;
   }
 }
 .flip-card-back, .flip-card-front{

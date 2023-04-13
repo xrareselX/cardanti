@@ -2,35 +2,42 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import CardantiC from "../assets/icons/CardantiC";
 import { EffectCoverflow, Navigation } from "swiper";
 import { useTranslation } from "react-i18next";
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 function SwiperComponent1(props){
     const {t, i18n} = useTranslation();
 
     return (
-        <Swiper  navigation={true} modules={[
-            EffectCoverflow,
-             Navigation]} className="carousel-3d-slider mySwiper"
-            rewind={true} 
-            // loop={true}
-            initialSlide={props.initialSlide} centeredSlides={true} effect={"coverflow"} 
+        <Swiper  navigation={true} modules={[EffectCoverflow,Navigation]} className="carousel-3d-slider mySwiper" rewind={true} 
+            loop={true}
+            initialSlide={props.initialSlide} 
+            centeredSlides={true} 
+            effect={"coverflow"} 
             coverflowEffect={{
-                rotate: 25,
-                stretch: 170,
-                depth: 100,
+                rotate: 15,
+                stretch: 350,
+                depth: 910,
                 modifier: 1,
                 slideShadows: false
             }}
-            slidesPerView={"auto"}
+            // slidesPerView={"auto"}
             // slidesPerView={1}
             onSlideChangeTransitionStart={props.displayCardTitle}
             breakpoints={{
                 100: {
-            //         width: 250,
-                    slidesPerView: 1
+                    // width: 330,
+                    slidesPerView: 1,
+                    effect: false,
+                    // centeredSlides: false ,
+                    // spaceBetween:100
                 },
                 1200:{
             //         width: 400,
-                    slidesPerView: "auto"
+                    // slidesPerView: "auto"
+                    slidesPerView: 2
                 }
             }}
         >
