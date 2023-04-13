@@ -14,8 +14,8 @@ function SwiperComponent1(props){
             // loop={true}
             initialSlide={props.initialSlide} centeredSlides={true} effect={"coverflow"} 
             coverflowEffect={{
-                rotate: 15,
-                stretch: 150,
+                rotate: 25,
+                stretch: 170,
                 depth: 100,
                 modifier: 1,
                 slideShadows: false
