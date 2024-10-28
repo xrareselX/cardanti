@@ -48,6 +48,7 @@ function OrderCard() {
     const [displayPortraitSeparator, setDisplayPortraitSeparator] = useState(false);    
     const [displayFlipModal, setDisplayFlipModal] = useState(true);   
     const [nameText, setNameText] = useState(""); 
+    const [portraitNameText, setPortraitNameText] = useState(""); 
     const [roleText, setRoleText] = useState(""); 
     const [companyText, setCompanyText] = useState(""); 
     const [sideColor, setSideColor] = useState("rgb(238, 238, 238)"); 
@@ -176,10 +177,8 @@ function OrderCard() {
         setNameText(e.target.value);
     }
     function portraitNameOnChangeHandle(e){
-        const elements = document.getElementsByClassName("portrait-name-data");
-        for(let element of elements){
-            element.innerHTML = e.target.value;
-        }
+        setPortraitNameText(e.target.value);
+        
     }
     function roleOnChangeHandle(e){
         setRoleText(e.target.value);
@@ -494,6 +493,7 @@ function OrderCard() {
                                                                                 <img src={portraitFront} alt="" style={{width: "100%"}}/>
                                                                                 <div className="custom-data">
                                                                                     <div  className="portrait-name-data card-inner-text" style={{color: "white", fontSize: "20px"}}>
+                                                                                        {portraitNameText}
                                                                                     </div>
                                                                                     {displayPortraitSeparator && (
                                                                                         <div className="spacer-data" style={{borderColor:"white"}}></div>
