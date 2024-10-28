@@ -2,17 +2,12 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faLinkedin, faTiktok, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "react-i18next";
-import Form from "react-bootstrap/Form";
-import ReactFlagsSelect from "react-flags-select";
-import {Us} from "react-flags-select";
-import Select from "react-select";
 import { useState } from "react";
 import CardantiC from "../assets/icons/CardantiC";
 import FooterLanguageSelect from "./FooterLanguageSelect";
 function Footer() {
 
     // data is used for footer country Select, not for Form.Select
-
     const data = [
         {
             value: "en",
@@ -55,25 +50,9 @@ function Footer() {
                     <div className="col-12 col-sm-4 mb-4 order-sm-1 d-flex justify-content-center">
                         <div className="align-items-center flex-grow-0 pl-2 select-language">
                              {/* Select box to change language */}
-                            {/* <Form.Select className="custom-select"  onChange={changeLanguageHandler}>
-                                <option value="en" >English</option>
-                                <option value="ro" selected>Română</option>
-                                <option value="it" >Italiano</option>
-                                <option value="es" >Español</option>
-                                <option value="de" >Deutsche</option>
-                            </Form.Select> */}
+                            
                             <FooterLanguageSelect />
-                            {/* <Select value={selectedOption} options={data} className="custom-select" 
-                             onChange={changeLanguageHandler} defaultValue="ro"
-                             getOptionLabel={e => (
-                                <div style={{ display: 'flex', alignItems: 'center' }}>
-                                  {e.icon}
-                                  <span style={{ marginLeft: 5 }}>{e.text}</span>
-                                </div>
-                              )} 
-                                >
-                                
-                            </Select> */}
+                            
                         </div>
                     </div>
                     <div className="col-12 col-sm-8 mb-4 order-sm-3">
@@ -82,10 +61,6 @@ function Footer() {
                             <Link to='/privacy-policy'className="text-center">{t("footer.link2")}</Link>
                             <Link to='/terms-and-condition'className="text-center">{t("footer.link3")}</Link>
                             <Link to='/contact'className="text-center">{t("footer.link4")}</Link>
-                            {/* <ReactFlagsSelect countries={["US", "RO", "IT", "ES", "DE"]} customLabels={{"DE":"UVYFCT"}}
-                                    selected={"ro"}
-                                    onSelect={changeLanguageHandler}
-                                />; */}
                         </div>
                     </div>
                 </div>
@@ -116,12 +91,7 @@ function Footer() {
             <div className="container-fluid">
                 <div className="row copyright">
                     <div className="col-12 text-center">
-                        @ Cardanti 2020
-                        
-                        {/* <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
-      </svg>
-                        <Us /> */}
+                        @ Cardanti 2024
                     </div>
                 </div>
             </div>

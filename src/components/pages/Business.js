@@ -9,7 +9,7 @@ import SlickerResponsive from "../SlickerResponsive";
 function Business(){
 
     const {t, i18n} = useTranslation();
-    const windowWidth = useRef(window.innerWidth);
+    const windowWidth = useRef(window.innerWidth);//useRef = doesn t trigger reRenders when the value changes
     const cards = [
         {
             h3: t("business.section2.cards.card1.h3"),

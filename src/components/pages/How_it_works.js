@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Img1 from "../../assets/how_it_works/1.webp";
 function How_it_works() {
-    const {t, i18n} = useTranslation();
+    const {t, i18n} = useTranslation(); // t = function; i18n = the instance
     const [isGif1, setIsGif1] = useState(false);
     const [isGif2, setIsGif2] = useState(false);
     const [isGif3, setIsGif3] = useState(false);
