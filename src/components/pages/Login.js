@@ -72,7 +72,13 @@ function Login(props) {
             navigate("/business");
             alert("User logged in successfully!");
         } catch (error) {
-            console.log(error.message);
+            if (error.code === "auth/user-not-found") {
+                alert("Wrong user");
+            } else if (error.code === "auth/wrong-password") {
+                alert("Wrong password");
+            } else
+            alert("Login error");
+            console.dir(error);
         }
     };
 
