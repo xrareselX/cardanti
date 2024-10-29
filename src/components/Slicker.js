@@ -2,10 +2,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { useTranslation } from 'react-i18next';
-import Cards from './Cards';
 
 function Slicker(props) {
-    const {t, i18n} = useTranslation();
     const sliderSettings = {
         slidesToShow: props.slidesToShow,
         slidesToScroll: 1,

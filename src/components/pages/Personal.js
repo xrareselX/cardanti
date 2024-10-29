@@ -28,7 +28,6 @@ function Personal(){
             h3: t("personal.section3.cards.card4.h3"),
             p: t("personal.section3.cards.card4.p")
         }
-       
     ]
     return (
         <div>
@@ -49,8 +48,6 @@ function Personal(){
                 <div className="container my-md-2 my-5">
                     <div className="row">
                         <div className="col-12 px-0">
-                            {/* sub e o alta imagine poate pe mobile */}
-                            {/* <img src={Img2}alt="" style={{maxHeight: "600px"}}/>  */}
                             <div className="video-overlay flex-wrap align-content-center" style={{maxHeight: "min-content"}}>
                                 <div className="d-flex align-content-center flex-wrap align-items-center row w-100">
                                     <div className="col-md-5 mb-md-0 mb-4">
@@ -73,9 +70,6 @@ function Personal(){
                                     </div>
                                 </div>
                             </div>
-                            {/* <div className="video-container"> */}
-                                {/* <iframe frameborder="0" allowfullscreen="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="One Tap, No App. The Smart Business Card everyone can use." width="100%" height="100%" src="https://www.youtube.com/embed/LOd77m6pxwc?enablejsapi=1&amp;origin=https%3A%2F%2Fcardanti.com&amp;widgetid=10" id="widget11"></iframe> */}
-                            {/* </div> */}
                         </div>
                     </div>
                 </div>

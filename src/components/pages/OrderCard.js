@@ -1,12 +1,8 @@
-import roImg from "../../countries/ro.svg";
-// import { ColorPicker } from '@wellbees/color-picker-input'
 import Swatcher from "../Swatcher";
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { EffectCoverflow, Navigation } from "swiper";
 import { useRef, useState } from "react";
 import InputComponent from "../InputComponent";
 import CardantiC from "../../assets/icons/CardantiC";
@@ -22,7 +18,6 @@ import portraitBack from "../../assets/portrait/portrait-back.png";
 import embossImg from "../../assets/emboss.png";
 
 import UploadModal from "../UploadModal";
-import SwiperComponent from "../SwiperComponent";
 import SwiperComponent1 from "../SwiperComponent1";
 import EmbossModal from "../EmbossModal";
 import { useTranslation } from "react-i18next";
@@ -50,7 +45,9 @@ function OrderCard() {
     const [nameText, setNameText] = useState(""); 
     const [portraitNameText, setPortraitNameText] = useState(""); 
     const [roleText, setRoleText] = useState(""); 
+    const [portraitRoleText, setPortraitRoleText] = useState(""); 
     const [companyText, setCompanyText] = useState(""); 
+    const [portraitCompanyText, setPortraitCompanyText] = useState(""); 
     const [sideColor, setSideColor] = useState("rgb(238, 238, 238)"); 
     const [isEmboss, setIsEmboss] = useState(false); 
     const [isOpenEmbossModal, setIsOpenEmbossModal] = useState(false); 
@@ -185,10 +182,7 @@ function OrderCard() {
     }
     function portraitRoleOnChangeHandle(e){
         setDisplayPortraitSeparator(true);
-        const elements = document.getElementsByClassName("portrait-role-data");
-        for(let element of elements){
-            element.innerHTML = e.target.value;
-        }
+        setPortraitRoleText(e.target.value);
         if(e.currentTarget.value == "")
             setDisplayPortraitSeparator(false);
     }
@@ -197,10 +191,7 @@ function OrderCard() {
     }
     function portraitCompanyOnChangeHandle(e){
         setDisplayPortraitSeparator(true);
-        const elements = document.getElementsByClassName("portrait-company-data");
-        for(let element of elements){
-            element.innerHTML = e.target.value;
-        }
+        setPortraitCompanyText(e.target.value);
         if(e.currentTarget.value == "")
             setDisplayPortraitSeparator(false);
     }
@@ -499,8 +490,10 @@ function OrderCard() {
                                                                                         <div className="spacer-data" style={{borderColor:"white"}}></div>
                                                                                     )}
                                                                                     <div  className="portrait-role-data card-inner-text" style={{color: "white", fontSize: "13px", fontWeight: "300"}}>
+                                                                                        {portraitRoleText}
                                                                                     </div>
                                                                                     <div  className="portrait-company-data card-inner-text" style={{color: "white", fontSize: "13px", fontWeight: "300"}}>
+                                                                                    {portraitCompanyText}
                                                                                     </div>
                                                                                 </div>
                                                                                 <div className="portrait-uploader portrait">

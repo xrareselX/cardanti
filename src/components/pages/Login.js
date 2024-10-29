@@ -110,11 +110,9 @@ function Login(props) {
                                          {passwordError && (
                                              <div className='error'>{passwordErrorMessage}</div>
                                          )}
-                                        {/* <small id="emailHelp" className="form-text text-muted">We'll never share your pass with anyone else.</small> */}
                                     </div>
                                     <button type="submit" className='btn btn-green btn-block'>{t("login.submit-btn")}</button>
                                 </form>
-                                {/* <AuthDetails /> */}
                                 <div className='d-flex justify-content-center mt-3'>
                                     <Link to="/forgotten-pass">{t("login.forgotten-pass")}</Link>
                                 </div>
