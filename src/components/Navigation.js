@@ -1,30 +1,19 @@
-import { Link } from "react-router-dom"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTiktok } from "@fortawesome/free-brands-svg-icons";
 import { useTranslation } from "react-i18next";
-import Button from "react-bootstrap/Button"
 import { useRef, useState } from "react";
-import Dropdown from "./Dropdown";
 import LanguageSwitcher from "./LanguageSwitcher";
-import {ReactComponent as FirstIcon} from "../countries/ro.svg";
 import { useLocation } from "react-router-dom";
 import CardantiC from "../assets/icons/CardantiC";
 import CardantiName from "../assets/icons/CardantiName";
-import { Navbar, Nav } from "react-bootstrap";
 
 
-function Navigation() {
+function Navigation(props) {
 
     const location = useLocation();
     const [isScrolled, setIsScrolled] = useState(false);
-    const [showNav, setShowNav] = useState(false);
     const [mobileNav, setMobileNav] = useState(false);
 
     let deviceWidth = useRef(window.innerWidth);
     deviceWidth = deviceWidth.current;
-    function toggleNav(){
-        setShowNav(!showNav);
-    }
     const addScrolledClass = () => {
         const scrollValue = document.documentElement.scrollTop;
         if (scrollValue > 0) {
@@ -47,7 +36,7 @@ function Navigation() {
                     <CardantiName width="90" className="logo-long"/>
                      </a>
                 </div>
-                {/* this one is for mobile */}
+                {/* for mobile */}
                 {deviceWidth < 600 && (
                 <div id="navbarMenu" className="navbar-menu-wrapper">
                     <div className="navbar-menu-header">
@@ -72,9 +61,16 @@ function Navigation() {
                         <li className="nav-item"><a href="https://help.cardanti.com" target="_blank" className="nav-link">{t('nav.questions')}</a></li>
                         <li className="nav-item mb-3"><a href="/contact" className="nav-link">Contact</a></li> 
                         <li className="nav-item text-center">
+                            {props.user ? (
+                                <a href="/">
+                                <button className="btn btn-sm w-75 btn-outline-secondary text-uppercase"  onClick={props.handleLogout}>{t('nav.logout')}</button>
+                            </a>
+                            ) : (
                             <a href="/login">
                                 <button className="btn btn-sm w-75 btn-outline-secondary text-uppercase">{t('nav.login')}</button>
                             </a>
+                            )}
+                            
                         </li>
                         <li className="nav-item text-center">
                             <a href="/order-card">
@@ -107,13 +103,14 @@ function Navigation() {
                                 </svg>
                             </a>
                         </div>
-                        // <button style={{borderStyle: "none"}} className="navbar-toggler" type="button" dataToggle="collapse" dataTarget="#navbarSupportedContent" ariaControls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        //     <span style={{color: "red"}} className="navbar-toggler-icon"></span>
-                        // </button>
                     )}
                     {deviceWidth >= 600 && (
                         <> 
+                        {props.user ? (
+                            <button className="btn btn-sm btn-login" onClick={props.handleLogout} >{t('nav.logout')} </button>
+                        ): (
                             <a className="btn btn-sm btn-login" href="/login">{t('nav.login')}</a>
+                        )}
                             {location.pathname != "/order-card" && (
                                 <a href="/order-card">
                                     <button className="btn btn-sm btn-green btn-uppercase btn-order-card" >{t("nav.buy-now")}</button>
@@ -124,36 +121,6 @@ function Navigation() {
                 </div>
             </div>
         </header>
-        //  <header className={"sticky-top navbar navbar-expand-lg navbar-header " + (isScrolled ? "scrolled" : "")}>
-
-        //  <div className="container">
-        // <div className="navbar-brand">
-        // <a className="" href="/"><CardantiC width="30"/><CardantiName width="90" className="logo-long"/></a>
-        // </div>
-        //     <button className="navbar-toggler" type="button" dataToggle="collapse" dataTarget="#navbarSupportedContent" ariaControls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        //         <span className="navbar-toggler-icon"></span>
-        //     </button>
-        //     <div className="navbar-right collapse navbar-collapse"  id="navbarSupportedContent">
-        //         <div className="navbar-nav navbar-right"> 
-        //             <div className="top-links navbar-nav">
-        //                 <Link className="top-link" to="/about-us">{t('nav.aboutUs')}</Link>
-        //                 <Link className="top-link" to='/business'>Business</Link>
-        //                 <Link className="top-link" to='/how_it_works'>{t('nav.how-it-works')}</Link>
-        //                 <Link className="top-link" to='https://help.cardanti.com/help' target="_blank">{t('nav.questions')}</Link>
-        //             </div>
-        //                 <LanguageSwitcher />
-        //                 <Link className="btn-login" to='/login'>{t('nav.login')}</Link>
-        //                 {location.pathname != "/order-card" && (
-        //                     <Link to="order-card">
-        //                         <Button className="btn-green btn-small btn-uppercase">
-        //                             {t("nav.buy-now")}
-        //                         </Button>
-        //                     </Link>
-        //                 )}
-        //         </div>
-        //     </div>
-        // </div> 
-    //  </header> 
     );
 }
 

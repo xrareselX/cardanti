@@ -1,14 +1,14 @@
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { auth } from "../../../src/firebase";
 import EyeFill from '../../assets/icons/EyeFill';
 import EyeSlashFill from '../../assets/icons/EyeSlahFill';
-import AuthDetails from '../../AuthDetails';
 
-function Login() {
-
+function Login(props) {
+    
+    const navigate = useNavigate();
     const {t, i18n} = useTranslation();
 
     const [email, setEmail] = useState('');
@@ -25,7 +25,7 @@ function Login() {
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
-        if(event.target.value == ""){
+        if(event.target.value === ""){
             setEmailErrorMessage("Acest câmp este obligatoriu");
             setEmailError(true);
         }
@@ -36,15 +36,17 @@ function Login() {
             setEmailError(false);
         }
     }
+
     const handleEmailBlur = (event) => {
-        if(event.target.value == ""){
+        if(event.target.value === ""){
             setEmailErrorMessage("Acest câmp este obligatoriu");
             setEmailError(true);
         }
     }// onBlur pt a invata functionalitati
+
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
-        if(event.target.value == ""){
+        if(event.target.value === ""){
             setPasswordErrorMessage("Acest câmp este obligatoriu");
             setPasswordError(true);
         }
@@ -57,24 +59,26 @@ function Login() {
         }
     }
     const handlePasswordBlur = (event) => {
-        if(event.target.value.length == 0){
+        if(event.target.value.length === 0){
             setPasswordErrorMessage("Acest câmp este obligatoriu");
             setPasswordError(true);
         }
     }
 
     const handleLogin = async (event) => {
-        event.preventDefault(); // so that the page doens t get reloaded = this is the default for forms but this is react
+        event.preventDefault(); // default react reloads the page
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            // navigate("/business");
-            console.log("User logged in");
+            navigate("/business");
             alert("User logged in successfully!");
         } catch (error) {
             console.log(error.message);
         }
     };
 
+    if(props.user){
+        return <Navigate to={"/"} replace />
+    }
   return (
     <div className='fix-content'>
         <div>
