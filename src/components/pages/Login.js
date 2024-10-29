@@ -1,7 +1,7 @@
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { useTranslation } from "react-i18next";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from "../../../src/firebase";
 import EyeFill from '../../assets/icons/EyeFill';
 import EyeSlashFill from '../../assets/icons/EyeSlahFill';
@@ -13,7 +13,6 @@ function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const [emailError, setEmailError] = useState(true);
     const [emailErrorMessage, setEmailErrorMessage] = useState("Acest câmp este obligatoriu");
@@ -42,7 +41,7 @@ function Login() {
             setEmailErrorMessage("Acest câmp este obligatoriu");
             setEmailError(true);
         }
-    }
+    }// onBlur pt a invata functionalitati
     const handlePasswordChange = (event) => {
         setPassword(event.target.value);
         if(event.target.value == ""){
@@ -64,19 +63,17 @@ function Login() {
         }
     }
 
-    const handleSubmit = (event) => {
-    event.preventDefault(); // so that the page doens t get reloaded = this is the default for forms but this is react
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        console.log(userCredential);
-    }).catch((error) => {
-        console.log(error);
-    })
-  };//MAI TRER SA FACI ALEA CU ROSU LA ERORI la input forms
-
-    if (isLoggedIn) {
-        return <p>You are logged in!</p>;
-    }
+    const handleLogin = async (event) => {
+        event.preventDefault(); // so that the page doens t get reloaded = this is the default for forms but this is react
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            // navigate("/business");
+            console.log("User logged in");
+            alert("User logged in successfully!");
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
 
   return (
     <div className='fix-content'>
@@ -87,15 +84,13 @@ function Login() {
                         <div className='form-wrapper w-75'>
                             <div className='div-wrapper'>
                                 <h2 className="mb-5">{t("login.h2")}</h2>
-                                <form onSubmit={handleSubmit}>
+                                <form onSubmit={handleLogin}>
                                     <div className="form-group">
                                         <input type="email" className="form-control" id="email" value={email} 
                                         placeholder={t("login.email")} onChange={handleEmailChange} onBlur={handleEmailBlur} required/>
                                         {emailError && (
-                                            // <div className='error'>Acest câmp este obligatoriu </div>
                                             <div className='error'>{emailErrorMessage} </div>
                                         )}
-                                        {/* <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small> */}
                                     </div>
                                     <div className="form-group">
                                         <input type={showPassword ? "text" : "password"} className="form-control" id="password" value={password} placeholder={t("login.pass")}
